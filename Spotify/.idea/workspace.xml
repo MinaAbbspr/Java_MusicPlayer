@@ -4,66 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/ArtistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Subscription.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/audio/AlbumModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/audio/AudioModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/audio/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/audio/PlaylistModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/audio/type/MusicModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/audio/type/PodcastModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/UserAccountModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/type/AdminModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/ArtistModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/PodcasterModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/SingerModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/type/listener/ListenerModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/type/listener/type/FreeModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/user/type/listener/type/PremiumModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../phase2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="interfaces">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/exceptions/InvalidFormatException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/exceptions/failedLogin/FailedLoginException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/exceptions/failedLogin/type/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/GeneralOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/UserAccountController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/userType/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/userType/Artist/ArtistController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/userType/Artist/type/PodcasterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/userType/Artist/type/SingerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/userType/Listener/ListenerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/userType/Listener/type/FreeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/controller/userType/Listener/type/PremiumController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/Report.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/Subscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/audio/AlbumModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/audio/AudioModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/audio/Genre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/audio/PlaylistModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/audio/type/MusicModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/audio/type/PodcastModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/UserAccountModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/type/AdminModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/type/artist/ArtistModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/type/artist/type/PodcasterModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/type/artist/type/SingerModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/type/listener/ListenerModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/type/listener/type/FreeModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/spotify/model/user/type/listener/type/PremiumModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/NotEnoughBalanceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/exceptions/NotEnoughBalanceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/failedLogin/type/WrongPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/exceptions/failedLogin/type/WrongPasswordException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,17 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "phase2",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Uni/2/Quera/9/phase2/spotify/src/main/java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;phase2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Uni/2/Quera/9/phase2/spotify/src/main/java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Uni\2\Quera\9\phase2\spotify\src\main\java" />
@@ -159,5 +108,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="interfaces" />
   </component>
 </project>
