@@ -2,6 +2,10 @@ package controller;
 
 import model.Database;
 import model.audio.Genre;
+import model.exceptions.InvalidFormatException;
+import model.exceptions.failedLogin.FailedLoginException;
+import model.exceptions.failedLogin.type.UserNotFoundException;
+import model.exceptions.failedLogin.type.WrongPasswordException;
 import model.user.UserAccountModel;
 
 import java.time.LocalDate;
@@ -12,17 +16,17 @@ import java.util.regex.Pattern;
 abstract public class UserAccountController {
 
     //ثبت نام کاربر
-    public String signup(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate){
+    public String signup(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate) throws InvalidFormatException {
         for(UserAccountModel user : Database.getDatabase().getUserAccounts()){
             if(user.getUserName().equals(userName))
                 return "username already exists";
         }
 
         if(!checkRegex("^[0][9]\\d{9}$",phoneNumber))
-            return "phone number is not valid";
+            throw new InvalidFormatException("Invalid Phone Number");
 
         if(!checkRegex("^[\\w\\-\\.]+@([\\w-]+\\.)[\\w-]{2,}$" , email))
-            return "email is not valid";
+            throw new InvalidFormatException("Invalid Email");
 
         return "making new Account Completed Successfully. The security of your password is: " + checkPassword(password)+"/5";
     }
@@ -50,7 +54,7 @@ abstract public class UserAccountController {
         return matcher.find();
     }
     //ورود به حساب کاربری
-    public String login(String username, String password){
+    public String login(String username, String password) throws FailedLoginException {
         UserAccountModel userAccount = null;
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(username.equals(user.getUserName())) {
@@ -58,11 +62,11 @@ abstract public class UserAccountController {
                 break;
             }
         if(userAccount == null)
-            return "username not found";
-        if(userAccount.getPassword().equals(password))
-            return userAccount.getClass().toString();
-        else
-            return "password is not correct";
+            throw new UserNotFoundException();
+        if(!userAccount.getPassword().equals(password))
+            throw new WrongPasswordException();
+
+        return userAccount.getClass().toString();
     }
     //genre
     public boolean isGenre(String genreName){

@@ -49,7 +49,7 @@ public class AdminController {
             stringBuilder.append(sorted.get(i).getAudioName() + "\n");
 
         if(stringBuilder.isEmpty())
-            stringBuilder.append("there is no Audio");
+            throw new NullPointerException("there is no Audio");
         return stringBuilder;
     }
     //مشاهده اطلاعات
@@ -60,7 +60,7 @@ public class AdminController {
                 stringBuilder.append("Artist username: " + user.getUserName() + "\n");
 
         if(stringBuilder.isEmpty())
-            stringBuilder.append("there is no Artist");
+            throw new NullPointerException("there is no Artist");
 
         return stringBuilder;
     }
@@ -68,7 +68,7 @@ public class AdminController {
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if((user instanceof SingerModel || user instanceof PodcasterModel) && username.equals(user.getUserName()))
                 return user.toString();
-        return "There is no artist with this username";
+        throw new NullPointerException("There is no artist with this username");
     }
     ///////////////////
     public StringBuilder audiosInfo(){
@@ -78,14 +78,14 @@ public class AdminController {
             stringBuilder.append(++counter + ". name: " + audio.getAudioName() + "\tID: " + audio.getID() + "\n");
 
         if (stringBuilder.isEmpty())
-            stringBuilder.append("there is no Audio");
+            throw new NullPointerException("there is no Audio");
         return stringBuilder;
     }
     public String audioInfo(long ID){
         for (AudioModel audio : Database.getDatabase().getAudios())
             if(ID == audio.getID())
                 return audio.toString();
-        return "There is no audio with this ID";
+        throw new NullPointerException("There is no audio with this ID");
     }
     //گزارش
     public StringBuilder reportInfo(){
@@ -94,7 +94,7 @@ public class AdminController {
             stringBuilder.append(report.toString() + "\n");
 
         if(stringBuilder.isEmpty())
-            stringBuilder.append("There is no report");
+            throw new NullPointerException("There is no report");
 
         return stringBuilder;
     }

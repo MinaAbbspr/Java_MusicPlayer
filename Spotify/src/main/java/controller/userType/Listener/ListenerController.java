@@ -10,6 +10,8 @@ import model.audio.Genre;
 import model.audio.PlaylistModel;
 import model.audio.type.MusicModel;
 import model.audio.type.PodcastModel;
+import model.exceptions.FreeAccountLimitException;
+import model.exceptions.NotEnoughBalanceException;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;
@@ -64,8 +66,8 @@ public class ListenerController extends UserAccountController {
     public void loginListener(String username){}
 
     //ایجاد پلی لیست و افزودن فایل صوتی
-    public String makePlaylist(String playlistName){return "Polymorphism method";}
-    public String addAudioToPlaylist(String playlistName, long ID){return "Polymorphism method";}
+    public String makePlaylist(String playlistName) throws FreeAccountLimitException {return "Polymorphism method";}
+    public String addAudioToPlaylist(String playlistName, long ID) throws FreeAccountLimitException {return "Polymorphism method";}
 
     //پخش فایل صوتی
     public String playAudio(long ID){
@@ -80,7 +82,7 @@ public class ListenerController extends UserAccountController {
                 audio.setNumberOfPlays(audio.getNumberOfPlays()+1);
                 return "Audio played successfully\n" + audio;
             }
-        return "audio was not found with this ID";
+        throw new NullPointerException("audio was not found with this ID");
     }
 
     //لایک فایل صوتی
@@ -95,7 +97,7 @@ public class ListenerController extends UserAccountController {
                 audio.setNumberOfLikes(likes);
                 return "audio liked successfully";
             }
-        return "audio was not found with this ID";
+        throw new NullPointerException("audio was not found with this ID");
     }
     //مشاهده متن آهنگ
     public String showLyric(long ID){
@@ -105,9 +107,9 @@ public class ListenerController extends UserAccountController {
                     return music.getLyric();
                 }
                 else
-                    return "This is not an ID for a music";
+                    throw new NullPointerException("This is not an ID for a music");
             }
-        return "audio was not found with this ID";
+        throw new NullPointerException("audio was not found with this ID");
     }
 
     //جست و جو
@@ -125,7 +127,7 @@ public class ListenerController extends UserAccountController {
             stringBuilder.append("audio name: " + audio.getAudioName() + "\tID: " + audio.getID()).append("\n");
 
         if(stringBuilder.isEmpty())
-            stringBuilder.append("Nothing found!");
+            throw new NullPointerException("Nothing found!");
 
         return stringBuilder;
     }
@@ -140,7 +142,7 @@ public class ListenerController extends UserAccountController {
             stringBuilder.append("Audio name: " + sorted.get(i).getAudioName() + "\tID: " + sorted.get(i).getID() + "\n");
 
         if(stringBuilder.isEmpty())
-            stringBuilder.append("there is no audio");
+            throw new NullPointerException("there is no audio");
 
         return stringBuilder;
     }
@@ -155,7 +157,7 @@ public class ListenerController extends UserAccountController {
             stringBuilder.append("name: " + audio.getAudioName() + "\tID: " + audio.getID() + "\n");
 
         if(stringBuilder.isEmpty())
-            stringBuilder.append("this artist has NO audio");
+            throw new NullPointerException("this artist has NO audio");
         return stringBuilder;
     }
     public StringBuilder genreFilter(String filter){
@@ -168,10 +170,10 @@ public class ListenerController extends UserAccountController {
                 stringBuilder.append("name: " + audio.getAudioName() + "\tID: " + audio.getID() + "\n");
 
             if(stringBuilder.isEmpty())
-                stringBuilder.append("this Genre has NO audio");
+                throw new NullPointerException("this Genre has NO audio");
         }
         else
-            stringBuilder.append("your entry is not valid");
+            throw new NullPointerException("your entry is not valid");
 
         return stringBuilder;
     }
@@ -386,7 +388,7 @@ public class ListenerController extends UserAccountController {
         return "operation was completed";
     }
     //خرید یا تمدید اشتراک
-    public String getPremium (String pack){ return  "Polymorphism method";}
+    public String getPremium (String pack) throws NotEnoughBalanceException { return  "Polymorphism method";}
     public boolean isPackage(String pack){
         return pack.equals("30") || pack.equals("60") || pack.equals("180");
     }
