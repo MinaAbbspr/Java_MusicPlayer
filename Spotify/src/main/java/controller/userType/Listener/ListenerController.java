@@ -4,10 +4,13 @@ import controller.UserAccountController;
 import model.Database;
 import model.Report;
 import model.Subscription;
-import model.audio.*;
+import model.audio.AlbumModel;
+import model.audio.AudioModel;
+import model.audio.Genre;
+import model.audio.PlaylistModel;
 import model.audio.type.MusicModel;
 import model.audio.type.PodcastModel;
-import model.user.*;
+import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;
 import model.user.type.artist.type.SingerModel;
@@ -128,22 +131,9 @@ public class ListenerController extends UserAccountController {
     }
 
     //مرتب سازی
-    public StringBuilder likeSort(){
-        Comparator <AudioModel> byLike = Comparator.comparingInt(AudioModel::getNumberOfLikes);
-        List <AudioModel> sorted = Database.getDatabase().getAudios().stream().sorted(byLike).toList();
-
-        StringBuilder stringBuilder = new StringBuilder();
-        for(int i= sorted.size()-1; i>=0; i--)
-            stringBuilder.append("Audio name: " + sorted.get(i).getAudioName() + "\tID: " + sorted.get(i).getID() + "\n");
-
-        if(stringBuilder.isEmpty())
-            stringBuilder.append("there is no audio");
-
-        return stringBuilder;
-    }
-    public StringBuilder playSort(){
-        Comparator <AudioModel> byPlay = Comparator.comparingInt(AudioModel::getNumberOfPlays);
-        List <AudioModel> sorted = Database.getDatabase().getAudios().stream().sorted(byPlay).toList();
+    public StringBuilder sort(){
+        List <AudioModel> sorted = Database.getDatabase().getAudios();
+        Arrays.sort(sorted.toArray());
 
         StringBuilder stringBuilder = new StringBuilder();
         for(int i= sorted.size()-1; i>=0; i--)

@@ -1,8 +1,10 @@
 package model.audio;
 
+import model.audio.type.MusicModel;
+
 import java.time.LocalDate;
 
-abstract public class AudioModel {
+abstract public class AudioModel implements Comparable<AudioModel>{
     private static int code = 0;
     private final long ID;
     private String audioName;
@@ -87,5 +89,21 @@ abstract public class AudioModel {
         return "audio name: " + audioName + "\tartist name: " + artistName + "\tID: " + ID + "\tgenre: " + genre +
                 "\n\tlink: " + link + "\tcover: " + cover + "\tnumber of plays: " + numberOfPlays +
                 "\n\tnumber of likes: " + numberOfLikes + "\tdate of release: " + dateOfRelease;
+    }
+
+    @Override
+    public int compareTo(AudioModel o){
+        if(this.audioName.compareTo(o.audioName) == 0){
+            if(this.getNumberOfLikes() - o.getNumberOfLikes() == 0){
+                if(this.getClass().isInstance(o)){
+                    return this.getNumberOfPlays() - o.getNumberOfPlays();
+                }
+                if(o instanceof MusicModel)
+                    return -1;
+                return 1;
+            }
+            return this.getNumberOfLikes() - o.getNumberOfLikes();
+        }
+        return this.audioName.compareTo(o.audioName);
     }
 }

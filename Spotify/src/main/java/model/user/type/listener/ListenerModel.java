@@ -1,7 +1,7 @@
 package model.user.type.listener;
 
-import model.audio.PlaylistModel;
 import model.audio.Genre;
+import model.audio.PlaylistModel;
 import model.user.UserAccountModel;
 
 import java.time.LocalDate;

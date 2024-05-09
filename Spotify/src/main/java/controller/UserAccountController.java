@@ -1,7 +1,6 @@
 package controller;
 
 import model.Database;
-import model.Subscription;
 import model.audio.Genre;
 import model.user.UserAccountModel;
 

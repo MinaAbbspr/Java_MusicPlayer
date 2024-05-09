@@ -1,11 +1,14 @@
 package model.audio;
 
 import java.util.ArrayList;
-public class PlaylistModel {
+import java.util.Iterator;
+
+public class PlaylistModel implements Iterable<AudioModel> {
     private static int code = 0;
     private final int ID;
     private String playlistName;
     private String user_Name;
+    private int index;
     private ArrayList <AudioModel> audioList;
 
     public PlaylistModel(String playlistName, String user_Name) {
@@ -13,6 +16,7 @@ public class PlaylistModel {
         this.user_Name = user_Name;
         ID = getCode();
         audioList = new ArrayList<>();
+        index = 0;
     }
     //Getter
     private int getCode(){
@@ -51,5 +55,23 @@ public class PlaylistModel {
                 stringBuilder.append(audio.getAudioName() + "   ");
         }
         return String.valueOf(stringBuilder);
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new Iterator() {
+            @Override
+            public boolean hasNext() {
+                if(index < audioList.size())
+                    return true;
+                index = 0;
+                return false;
+            }
+
+            @Override
+            public AudioModel next() {
+                return audioList.get(index++);
+            }
+        };
     }
 }

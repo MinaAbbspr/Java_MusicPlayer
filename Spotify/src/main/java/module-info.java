@@ -1,8 +1,7 @@
-module org.example.spotify {
+module view {
     requires javafx.controls;
     requires javafx.fxml;
 
-
-    opens org.example.spotify to javafx.fxml;
-    exports org.example.spotify;
+    exports view;
+    opens view to javafx.fxml;
 }
