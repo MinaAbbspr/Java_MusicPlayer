@@ -20,13 +20,14 @@ public class Playbar implements Initializable {
     private AnchorPane root;
 
     @FXML
-    private Circle crl_next;
-
-    @FXML
     private Circle crl_play_pause;
 
     @FXML
-    private Circle crl_previos;
+    private ImageView img_next;
+
+    @FXML
+    private ImageView img_previus;
+
 
     @FXML
     private ImageView img_cover;
@@ -46,10 +47,10 @@ public class Playbar implements Initializable {
     @FXML
     private Slider slider;
 
-    private ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("music/play.png").toExternalForm()));
-    private ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("music/pause.png").toExternalForm()));
-    private ImagePattern next = new ImagePattern(new Image(HelloApplication.class.getResource("music/next01.png").toExternalForm()));
-    private ImagePattern back = new ImagePattern(new Image(HelloApplication.class.getResource("music/back01.png").toExternalForm()));
+    private ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
+    private ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
+    private Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
+    private Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
     private boolean is_play;
 
 
@@ -89,8 +90,8 @@ public class Playbar implements Initializable {
         slider.setMax(0);
         ///
         crl_play_pause.setFill(play);
-        crl_previos.setFill(back);
-        crl_next.setFill(next);
+        img_previus.setImage(back);
+        img_next.setImage(next);
         ///
         is_play = true;
     }

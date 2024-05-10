@@ -11,7 +11,6 @@
    <children>
       <Slider fx:id="slider" layoutX="87.0" layoutY="79.0" onMouseDragged="#changeTime" prefHeight="14.0" prefWidth="625.0" />
       <ImageView fx:id="img_cover" fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Circle fx:id="crl_previos" fill="#1f93ff00" layoutX="637.0" layoutY="39.0" onMouseClicked="#previous" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Circle fx:id="crl_play_pause" fill="#1f93ff00" layoutX="693.0" layoutY="39.0" onMouseClicked="#play_pause" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="lbl_audioName" layoutX="87.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0">
          <font>
@@ -20,7 +19,8 @@
       </Label>
       <Label fx:id="lbl_currentTime" layoutX="31.0" layoutY="77.0" />
       <Label fx:id="lbl_duration" layoutX="746.0" layoutY="77.0" />
-      <Circle fx:id="crl_next" fill="#1f93ff00" layoutX="746.0" layoutY="39.0" onMouseClicked="#next" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Label fx:id="lbl_artistName" layoutX="87.0" layoutY="37.0" prefHeight="25.0" prefWidth="200.0" />
+      <ImageView fx:id="img_previus" fitHeight="30.0" fitWidth="30.0" layoutX="627.0" layoutY="25.0" onMouseClicked="#previous" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img_next" fitHeight="30.0" fitWidth="30.0" layoutX="731.0" layoutY="25.0" onMouseClicked="#next" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -5,8 +5,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -73,10 +75,10 @@ public class Sidebar implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        img_home = new ImageView(new Image(HelloApplication.class.getResource("img/sidebar/home.png").toExternalForm()));
-        img_search = new ImageView(new Image(HelloApplication.class.getResource("img/sidebar/search.png").toExternalForm()));
-        img_library = new ImageView(new Image(HelloApplication.class.getResource("img/sidebar/library.png").toExternalForm()));
-        img_artist = new ImageView(new Image(HelloApplication.class.getResource("img/sidebar/artist.png").toExternalForm()));
-        img_audio = new ImageView(new Image(HelloApplication.class.getResource("img/sidebar/audio.png").toExternalForm()));
+        img_home.setImage(new Image(HelloApplication.class.getResource("img/sidebar/home.png").toExternalForm()));
+        img_search.setImage(new Image(HelloApplication.class.getResource("img/sidebar/search.png").toExternalForm()));
+        img_library.setImage(new Image(HelloApplication.class.getResource("img/sidebar/library.png").toExternalForm()));
+        img_artist.setImage(new Image(HelloApplication.class.getResource("img/sidebar/artist.png").toExternalForm()));
+        img_audio.setImage(new Image(HelloApplication.class.getResource("img/sidebar/audio.png").toExternalForm()));
     }
 }
