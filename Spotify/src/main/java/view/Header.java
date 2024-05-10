@@ -20,7 +20,7 @@ public class Header implements Initializable {
     @FXML
     private AnchorPane root;
 
-    private static boolean isLogin;
+    private static boolean isLogin = false;
 
     public static boolean isIsLogin() {
         return isLogin;
