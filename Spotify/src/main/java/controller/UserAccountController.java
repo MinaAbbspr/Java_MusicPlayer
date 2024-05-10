@@ -16,10 +16,13 @@ import java.util.regex.Pattern;
 abstract public class UserAccountController {
 
     //ثبت نام کاربر
-    public String signup(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate) throws InvalidFormatException {
+    public String signup(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate, String bio) throws Exception {
+        if(userName.isEmpty() || name.isEmpty() || email.isEmpty() || phoneNumber.isEmpty() || birthDate==null || bio.isEmpty())
+            throw new NullPointerException("fill all text field!");
+
         for(UserAccountModel user : Database.getDatabase().getUserAccounts()){
             if(user.getUserName().equals(userName))
-                return "username already exists";
+                throw new Exception("username already exists");
         }
 
         if(!checkRegex("^[0][9]\\d{9}$",phoneNumber))
@@ -28,7 +31,7 @@ abstract public class UserAccountController {
         if(!checkRegex("^[\\w\\-\\.]+@([\\w-]+\\.)[\\w-]{2,}$" , email))
             throw new InvalidFormatException("Invalid Email");
 
-        return "making new Account Completed Successfully. The security of your password is: " + checkPassword(password)+"/5";
+        return "making new Account Completed Successfully\nThe security of your password is: " + checkPassword(password)+"/5";
     }
     private int checkPassword(String password){
         int score = 0;
@@ -55,6 +58,8 @@ abstract public class UserAccountController {
     }
     //ورود به حساب کاربری
     public String login(String username, String password) throws FailedLoginException {
+        if(username.isEmpty() || password.isEmpty())
+            throw new NullPointerException("fill text Box!");
         UserAccountModel userAccount = null;
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(username.equals(user.getUserName())) {
