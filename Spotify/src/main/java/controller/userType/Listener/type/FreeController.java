@@ -6,6 +6,8 @@ import model.Report;
 import model.Subscription;
 import model.audio.AudioModel;
 import model.audio.PlaylistModel;
+import model.exceptions.FreeAccountLimitException;
+import model.exceptions.NotEnoughBalanceException;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;
@@ -47,9 +49,9 @@ public class FreeController extends ListenerController {
             }
     }
     @Override
-    public String makePlaylist(String playlistName){
+    public String makePlaylist(String playlistName) throws FreeAccountLimitException {
         if(getFree().getPlaylists().size() == FreeModel.getNumberOfPlaylist())
-            return "you can not make new playlist";
+            throw new FreeAccountLimitException("you can not make new playlist");
 
         for(PlaylistModel playlist : getFree().getPlaylists())
             if(playlistName.equals(playlist.getPlaylistName()))
@@ -60,14 +62,14 @@ public class FreeController extends ListenerController {
         return playlistName + " playlist created successfully";
     }
     @Override
-    public String addAudioToPlaylist(String playlistName, long ID){
+    public String addAudioToPlaylist(String playlistName, long ID) throws FreeAccountLimitException {
         PlaylistModel playlistModel = null;
         for(PlaylistModel playlist : getFree().getPlaylists())
             if(playlistName.equals(playlist.getPlaylistName()))
                 playlistModel = playlist;
 
         if(playlistModel == null)
-            return "There is no playlist with this name";
+            throw new NullPointerException("There is no playlist with this name");
 
         AudioModel audioModel = null;
         for(AudioModel audio : Database.getDatabase().getAudios())
@@ -75,24 +77,24 @@ public class FreeController extends ListenerController {
                 audioModel = audio;
 
         if(audioModel == null)
-            return "There is no Audio with this ID";
+            throw new NullPointerException("There is no Audio with this ID");
 
         if(playlistModel.getAudioList().contains(audioModel))
             return "you have already added this Audio to playlist";
 
         if(playlistModel.getAudioList().size() == FreeModel.getNumberOfMusic())
-            return "you can not add new audio to this playlist";
+            throw new FreeAccountLimitException("you can not add new audio to this playlist");
 
         playlistModel.getAudioList().add(audioModel);
         return "Audio added to playlist successfully";
     }
     @Override
-    public  String getPremium (String pack){
+    public  String getPremium (String pack) throws NotEnoughBalanceException {
         if(isPackage(pack)) {
             Subscription subscription = makePackage(pack);
 
             if(getFree().getCredit()-subscription.getFee() < 0)
-                return "your account balance is not enough";
+                throw new NotEnoughBalanceException();
 
             getFree().setCredit(getFree().getCredit() - subscription.getFee());
             makePremium(subscription.getDays());

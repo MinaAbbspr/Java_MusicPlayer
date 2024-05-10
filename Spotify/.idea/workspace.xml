@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="exceptions">
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="throw exceptions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/Playbar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/artist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/audio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/library.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/playbar.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/FreeAccountLimitException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/exceptions/FreeAccountLimitException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Sidebar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -55,7 +64,10 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;phase2&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Uni/2/Quera/9/phase2/spotify/src/main/java&quot;
+    &quot;last_opened_file_path&quot;: &quot;E:/Uni/2/Quera/9/phase2/spotify/src/main/java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -64,6 +76,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Uni\2\Quera\9\phase2\spotify\src\main\resources\view" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -90,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715246314431</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="throw exceptions">
+      <option name="closed" value="true" />
+      <created>1715255083238</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715255083239</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +142,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="interfaces" />
     <MESSAGE value="exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="exceptions" />
+    <MESSAGE value="throw exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="throw exceptions" />
   </component>
 </project>

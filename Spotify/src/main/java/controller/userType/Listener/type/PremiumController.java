@@ -6,6 +6,7 @@ import model.Report;
 import model.Subscription;
 import model.audio.AudioModel;
 import model.audio.PlaylistModel;
+import model.exceptions.NotEnoughBalanceException;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;
@@ -82,13 +83,13 @@ public class PremiumController extends ListenerController {
         return "Audio added to playlist successfully";
     }
     @Override
-    public  String getPremium (String pack){
+    public  String getPremium (String pack) throws NotEnoughBalanceException {
         if(! isPackage(pack))
             return "your entry is not valid";
 
         Subscription subscription = makePackage(pack);
         if(getPremium().getCredit()-subscription.getFee() < 0)
-            return "your account balance is not enough";
+            throw new NotEnoughBalanceException();
 
         getPremium().setCredit(getPremium().getCredit() - subscription.getFee());
         getPremium().setSubscriptionExpirationDate(getPremium().getSubscriptionExpirationDate().plusDays(subscription.getDays()));
