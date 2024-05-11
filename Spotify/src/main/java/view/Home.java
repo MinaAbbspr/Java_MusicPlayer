@@ -18,8 +18,8 @@ public class Home implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if(Header.isIsLogin()){
-
+        if(View.getView().isListener()){
+            //suggestion
         }
         else{
             LogoutController.getLogoutController().setSorted();

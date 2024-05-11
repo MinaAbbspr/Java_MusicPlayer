@@ -5,12 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Page implements Initializable {
+    private static String scrollFxml;
 
     @FXML
     private AnchorPane header;
@@ -27,6 +29,10 @@ public class Page implements Initializable {
     @FXML
     private ScrollPane scrollPane;
 
+
+    public static void setScrollFxml(String scrollFxml) {
+        Page.scrollFxml = scrollFxml;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,7 +52,7 @@ public class Page implements Initializable {
             throw new RuntimeException(e);
         }
         try {
-            scrollPane.setContent(new FXMLLoader(HelloApplication.class.getResource("home.fxml")).load());
+            scrollPane.setContent(new FXMLLoader(HelloApplication.class.getResource(scrollFxml)).load());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

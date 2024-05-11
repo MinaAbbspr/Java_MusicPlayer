@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -59,12 +60,12 @@ public class Sidebar implements Initializable {
     }
 
     @FXML
-    void showHome(MouseEvent event) {
-
+    void showHome(MouseEvent event) throws IOException {
+        View.getView().showMainPage("home.fxml");
     }
 
     @FXML
-    void showLibrrary(MouseEvent event) {
+    void showLibrary(MouseEvent event) {
 
     }
 

@@ -50,17 +50,11 @@ public class ListenerController extends UserAccountController {
         FreeModel freeModel = new FreeModel(userName, password, name, email, phoneNumber, birthDate);
         setListener(freeModel);
     }
-    public String addGenre(String genre){
-        if(isGenre(genre)){
+    public void addGenre(ArrayList<String> genres){
+        for(String genre : genres) {
             Genre genre1 = Genre.valueOf(genre);
-            if(getListener().getGenres().size() < ListenerModel.getMaxIndexGenre()) {
-                getListener().getGenres().add(genre1);
-                return genre + " added successfully";
-            }
-            else
-                return "another genre cannot be added";
+            getListener().getGenres().add(genre1);
         }
-        return genre + " is not valid as genre";
     }
     //ورود به حساب کاربری
     public void loginListener(String username){}

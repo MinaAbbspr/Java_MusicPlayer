@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import model.exceptions.failedLogin.FailedLoginException;
 
 import java.net.URL;
@@ -33,6 +34,12 @@ public class Login implements Initializable {
 
     @FXML
     private TextField txt_userName;
+
+    private static Stage stage;
+
+    public static void setStage(Stage stage) {
+        Login.stage = stage;
+    }
 
     @FXML
     void login(MouseEvent event) {
@@ -59,6 +66,8 @@ public class Login implements Initializable {
     }
 
     private void findClass(String name, String username){
+        View.getView().setLogin(true);
+        stage.close();
         switch (name) {
             case "class model.user.type.artist.type.PodcasterModel" -> {
                 PodcasterController.getPodcasterController().loginArtist(username);
@@ -70,7 +79,7 @@ public class Login implements Initializable {
             }
             case "class model.user.type.listener.type.FreeModel" -> {
                 FreeController.getFreeController().loginListener(username);
-                //
+
             }
             case "class model.user.type.listener.type.PremiumModel" -> {
                 PremiumController.getPremiumController().loginListener(username);

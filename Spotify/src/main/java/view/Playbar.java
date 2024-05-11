@@ -51,7 +51,7 @@ public class Playbar implements Initializable {
     private ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
     private Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
     private Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
-    private boolean is_play;
+    private static boolean is_play = false;
 
 
     @FXML
@@ -85,14 +85,17 @@ public class Playbar implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lbl_audioName.setText("");
-        lbl_artistName.setText("");
-        slider.setMax(0);
-        ///
-        crl_play_pause.setFill(play);
         img_previus.setImage(back);
         img_next.setImage(next);
-        ///
-        is_play = true;
+        if(is_play){
+            lbl_audioName.setText("");
+            lbl_artistName.setText("");
+            slider.setMax(0);
+            ///
+            crl_play_pause.setFill(play);
+            img_previus.setImage(back);
+            img_next.setImage(next);
+            ///
+        }
     }
 }

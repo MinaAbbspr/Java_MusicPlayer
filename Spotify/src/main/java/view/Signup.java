@@ -1,7 +1,6 @@
 package view;
 
 import controller.userType.Artist.type.PodcasterController;
-import controller.userType.Listener.ListenerController;
 import controller.userType.Listener.type.FreeController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import model.exceptions.InvalidFormatException;
 
 import java.net.URL;
@@ -86,26 +86,33 @@ public class Signup implements Initializable {
     @FXML
     private TextField txt_Susername;
 
+    private static Stage stage;
+
+    public static void setStage(Stage stage) {
+        Signup.stage = stage;
+    }
+
     @FXML
     void listenerSignup(MouseEvent event) {
         try {
             String answer = FreeController.getFreeController().signup(txt_Lusername.getText(), txt_Lpassword.getText(), txt_Lname.getText(),
                     txt_Lemail.getText(), txt_LphoneNumber.getText(), LDatePicker.getValue(), "null");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("successful Signup");
+            alert.setHeaderText("successful Signup");
             alert.setContentText(answer);
             alert.showAndWait();
-            ListenerController.getListenerController().signupListener(txt_Lusername.getText(), txt_Lpassword.getText(), txt_Lname.getText(),
-                    txt_Lemail.getText(), txt_LphoneNumber.getText(), LDatePicker.getValue());
-            ///////////////////////////////////////
+            stage.close();
+            FreeController.getFreeController().signupListener(txt_Lusername.getText(), txt_Lpassword.getText(),
+                    txt_Lname.getText(), txt_Lemail.getText(), txt_LphoneNumber.getText(), LDatePicker.getValue());
+            View.getView().showGenrePage();
         } catch (InvalidFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Failed Signup");
+            alert.setHeaderText("Failed Signup");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         } catch (NullPointerException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("empty filed");
+            alert.setHeaderText("empty filed");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }catch (Exception e) {
@@ -121,20 +128,21 @@ public class Signup implements Initializable {
             String answer = FreeController.getFreeController().signup(txt_Pusername.getText(), txt_Ppassword.getText(), txt_Pname.getText(),
                     txt_Pemail.getText(), txt_PphoneNumber.getText(), PDatePicker.getValue(), txt_Pbio.getText());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("successful Signup");
+            alert.setHeaderText("successful Signup");
             alert.setContentText(answer);
             alert.showAndWait();
+            stage.close();
             PodcasterController.getPodcasterController().signupArtist(txt_Pusername.getText(), txt_Ppassword.getText(), txt_Pname.getText(),
                     txt_Pemail.getText(), txt_PphoneNumber.getText(), PDatePicker.getValue(), txt_Pbio.getText());
             ///////////////////////////////////////
         } catch (InvalidFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Failed Signup");
+            alert.setHeaderText("Failed Signup");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         } catch (NullPointerException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("empty filed");
+            alert.setHeaderText("empty filed");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }catch (Exception e) {
@@ -153,17 +161,18 @@ public class Signup implements Initializable {
             alert.setTitle("successful Signup");
             alert.setContentText(answer);
             alert.showAndWait();
+            stage.close();
             PodcasterController.getPodcasterController().signupArtist(txt_Susername.getText(), txt_Spassword.getText(), txt_Sname.getText(),
                     txt_Semail.getText(), txt_SphoneNumber.getText(), SDatePicker.getValue(), txt_Sbio.getText());
-            ///////////////////////////////////////
+            ///////////////////////////////////////panel
         } catch (InvalidFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Failed Signup");
+            alert.setHeaderText("Failed Signup");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         } catch (NullPointerException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("empty filed");
+            alert.setHeaderText("empty filed");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }catch (Exception e) {
