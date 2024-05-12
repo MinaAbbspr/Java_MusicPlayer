@@ -4,21 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="signup page">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/View.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/genre.fxml" afterDir="false" />
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="genre Page">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/PlayMusic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/VBoxAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/like.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/redLike01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/playMusic.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Playbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Playbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Sidebar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/VBoxHome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vBoxHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vBoxHome.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +31,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -166,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715359338841</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="genre Page">
+      <option name="closed" value="true" />
+      <created>1715448763049</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715448763049</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +211,7 @@
     <MESSAGE value="header &amp; mainPage" />
     <MESSAGE value="Home &amp; Login pages" />
     <MESSAGE value="signup page" />
-    <option name="LAST_COMMIT_MESSAGE" value="signup page" />
+    <MESSAGE value="genre Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="genre Page" />
   </component>
 </project>

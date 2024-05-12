@@ -1,41 +1,53 @@
 package view;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.*;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import model.Database;
 import model.audio.PlaylistModel;
+import model.audio.type.MusicModel;
+import model.audio.type.PodcastModel;
 import model.user.type.listener.ListenerModel;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Playbar implements Initializable {
-
-    @FXML
-    private AnchorPane root;
+public class PlayMusic implements Initializable {
 
     @FXML
     private Circle crl_play_pause;
+
+    @FXML
+    private AnchorPane header;
+
+    @FXML
+    private AnchorPane sidebar;
+
+    @FXML
+    private ImageView img_add;
+
+    @FXML
+    private ImageView img_cover;
+
+    @FXML
+    private ImageView img_like;
 
     @FXML
     private ImageView img_next;
 
     @FXML
     private ImageView img_previous;
-
-
-    @FXML
-    private ImageView img_cover;
 
     @FXML
     private Label lbl_artistName;
@@ -47,7 +59,16 @@ public class Playbar implements Initializable {
     private Label lbl_currentTime;
 
     @FXML
+    private Label lbl_date;
+
+    @FXML
     private Label lbl_duration;
+
+    @FXML
+    private Label lbl_genre;
+
+    @FXML
+    private Label lbl_lyrics;
 
     @FXML
     private Slider slider;
@@ -56,11 +77,51 @@ public class Playbar implements Initializable {
     private ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
     private Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
     private Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
+    private Image like = new Image(HelloApplication.class.getResource("img/music/like.png").toExternalForm());
+    private Image redLike = new Image(HelloApplication.class.getResource("img/music/redLike01.png").toExternalForm());
+    private Image add = new Image(HelloApplication.class.getResource("img/music/add.png").toExternalForm());
+    private boolean isLike;
 
+
+    @FXML
+    void add(MouseEvent event) {
+        if(View.getView().isListener() && View.getView().isLogin()){
+            ListenerModel listener = (ListenerModel) View.getView().getUserAccount();
+            ///////////////new stage
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("you can't add audio to playlist");
+            alert.setContentText("please Login first");
+            alert.showAndWait();
+        }
+    }
 
     @FXML
     void changeTime(MouseEvent event) {
         View.getView().getMediaPlayer().seek(Duration.seconds(slider.getValue()));
+    }
+
+    @FXML
+    void like(MouseEvent event) {
+        if(View.getView().isListener() && View.getView().isLogin()){
+            ListenerModel listener = (ListenerModel) View.getView().getUserAccount();
+            if(isLike){
+                listener.getAudiosLiked().remove(View.getView().getAudioModel().getID());
+                img_like.setImage(like);
+            }
+            else {
+                listener.getAudiosLiked().add(View.getView().getAudioModel().getID());
+                img_like.setImage(redLike);
+            }
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("you can't like");
+            alert.setContentText("please Login first");
+            alert.showAndWait();
+        }
+
     }
 
     @FXML
@@ -86,21 +147,18 @@ public class Playbar implements Initializable {
             View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
         }
         playAnotherAudio();
-        crl_play_pause.setFill(pause);
-        View.getView().setPlay(true);
-        View.getView().getMediaPlayer().play();
     }
 
     @FXML
-    void play_pause(MouseEvent event) {
+    void playOrPause(MouseEvent event) {
         if(View.getView().isPlay()){
-            View.getView().getMediaPlayer().pause();
-            crl_play_pause.setFill(play);
+            View.getView().getMediaPlayer().play();
+            crl_play_pause.setFill(pause);
             View.getView().setPlay(false);
         }
         else {
-            View.getView().getMediaPlayer().play();
-            crl_play_pause.setFill(pause);
+            View.getView().getMediaPlayer().pause();
+            crl_play_pause.setFill(play);
             View.getView().setPlay(true);
         }
     }
@@ -128,26 +186,51 @@ public class Playbar implements Initializable {
             View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
         }
         playAnotherAudio();
-        crl_play_pause.setFill(pause);
-        View.getView().setPlay(true);
-        View.getView().getMediaPlayer().play();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        img_previous.setImage(back);
-        img_next.setImage(next);
-
-        if(View.getView().isPlay()){
-            crl_play_pause.setFill(pause);
-
-        }else {
-            crl_play_pause.setFill(play);
+        try {
+            header.getChildren().add(new FXMLLoader(HelloApplication.class.getResource("header.fxml")).load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+        try {
+            sidebar.getChildren().add(new FXMLLoader(HelloApplication.class.getResource("sidebar.fxml")).load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        crl_play_pause.setFill(pause);
+        img_add.setImage(add);
+        img_next.setImage(next);
+        img_previous.setImage(back);
 
         playAnotherAudio();
     }
 
+    private void isLikeCheck(){
+        if(View.getView().isLogin() && View.getView().isListener()){
+            ListenerModel listenerModel = (ListenerModel) View.getView().getUserAccount();
+            for(long ID :listenerModel.getAudiosLiked())
+                if(ID == View.getView().getAudioModel().getID()){
+                    isLike = true;
+                    img_like.setImage(redLike);
+                    return;
+                }
+        }
+        isLike = false;
+        img_like.setImage(like);
+    }
+    private void lyricsOrCaption(){
+        if(View.getView().getAudioModel() instanceof MusicModel musicModel){
+            lbl_lyrics.setText(musicModel.getLyric());
+        }
+        else {
+            PodcastModel podcastModel = (PodcastModel) View.getView().getAudioModel();
+            lbl_lyrics.setText(podcastModel.getCaption());
+        }
+    }
     private void setTime(){
         Duration currentTime = View.getView().getMediaPlayer().getCurrentTime();
         int minutes = (int) currentTime.toMinutes();
@@ -159,13 +242,23 @@ public class Playbar implements Initializable {
         slider.setMax(View.getView().getMediaPlayer().getTotalDuration().toSeconds());
         slider.setValue(View.getView().getMediaPlayer().getCurrentTime().toSeconds());
     }
-    private void playAnotherAudio() {
+    private void playAnotherAudio(){
+        View.getView().setPlay(true);
+        crl_play_pause.setFill(pause);
+        isLikeCheck();
+
+        lyricsOrCaption();
         img_cover.setImage(new Image(View.getView().getAudioModel().getCover()));
         lbl_audioName.setText(View.getView().getAudioModel().getAudioName());
         lbl_artistName.setText(View.getView().getAudioModel().getArtistName());
+        lbl_genre.setText("genre: " + View.getView().getAudioModel().getGenre());
+        lbl_date.setText("date of release: " + View.getView().getAudioModel().getDateOfRelease());
+
         slider.setMax(View.getView().getMediaPlayer().getMedia().getDuration().toSeconds());
         View.getView().getMediaPlayer().currentTimeProperty().addListener( (observable, oldValue, newValue) ->{
             setTime();
         });
+
+        View.getView().getMediaPlayer().play();
     }
 }

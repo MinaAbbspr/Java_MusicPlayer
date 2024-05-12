@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Login">
    <children>
       <Label layoutX="130.0" layoutY="34.0" text="Login" textFill="#474f7a">
@@ -18,6 +17,6 @@
       <Label layoutX="42.0" layoutY="182.0" text="password: " textFill="#474f7a" />
       <TextField fx:id="txt_userName" layoutX="130.0" layoutY="130.0" />
       <TextField fx:id="txt_password" layoutX="130.0" layoutY="178.0" />
-      <Button fx:id="btn_Login" layoutX="44.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#login" text="Login" />
+      <Button fx:id="btn_Login" layoutX="224.0" layoutY="241.0" mnemonicParsing="false" onMouseClicked="#login" text="Login" />
    </children>
 </AnchorPane>

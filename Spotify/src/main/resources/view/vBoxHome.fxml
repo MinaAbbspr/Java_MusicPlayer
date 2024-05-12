@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox fx:id="vBox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#playAudio" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VBoxHome">
+<VBox fx:id="vBox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#playAudio" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VBoxAudio">
    <children>
       <ImageView fx:id="img_cover" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>

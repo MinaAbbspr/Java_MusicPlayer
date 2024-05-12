@@ -2,9 +2,13 @@ package view;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.Database;
+import model.audio.AudioModel;
 import model.user.UserAccountModel;
 
 import java.io.IOException;
@@ -15,9 +19,15 @@ public class View {
     private boolean isLogin;
     private UserAccountModel userAccount;
     private boolean isListener;
+    private MediaPlayer mediaPlayer;
+    private AudioModel audioModel;
+    private boolean isPlay;
 
     private View() {
         isLogin = false;
+        isPlay = false;
+        this.audioModel = Database.getDatabase().getAudios().getFirst();
+        mediaPlayer = new MediaPlayer(new Media(audioModel.getLink()));
     }
 
     public static View getView() {
@@ -42,6 +52,24 @@ public class View {
     }
     public boolean isListener() {
         return isListener;
+    }
+    public MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
+    }
+    public void setMediaPlayer(AudioModel audioModel) {
+        this.audioModel = audioModel;
+        mediaPlayer.pause();
+        mediaPlayer = new MediaPlayer(new Media(audioModel.getLink()));
+    }
+    public AudioModel getAudioModel() {
+        return audioModel;
+    }
+    public boolean isPlay() {
+        return isPlay;
+    }
+
+    public void setPlay(boolean play) {
+        isPlay = play;
     }
 
     public void showMainPage(String fxml) throws IOException {
@@ -94,5 +122,11 @@ public class View {
         stage.setScene(scene);
         Genre.setStage(stage);
         stage.show();
+    }
+    public void showPlayMusic() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("playMusic.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Media Player");
+        stage.setScene(scene);
     }
 }

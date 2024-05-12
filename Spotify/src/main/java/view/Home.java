@@ -1,5 +1,6 @@
 package view;
 
+import controller.AudioController;
 import controller.LogoutController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,7 @@ public class Home implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if(View.getView().isListener()){
+        if(View.getView().isListener() && View.getView().isLogin()){
             //suggestion
         }
         else{
@@ -30,7 +31,7 @@ public class Home implements Initializable {
     private void setVBox(List<AudioModel> list){
         int counter = 0;
         for(AudioModel audio : list){
-            VBoxHome.setAudio(audio);
+            AudioController.getAudioController().setAudio(audio);
             try {
                 gridPane.add(new FXMLLoader(HelloApplication.class.getResource("vBoxHome.fxml")).load(),counter%4, counter++/4);
             } catch (IOException e) {
