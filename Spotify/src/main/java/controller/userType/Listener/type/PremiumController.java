@@ -49,14 +49,13 @@ public class PremiumController extends ListenerController {
             }
     }
     @Override
-    public String makePlaylist(String playlistName){
+    public void makePlaylist(String playlistName) throws Exception {
         for(PlaylistModel playlist : getPremium().getPlaylists())
             if(playlistName.equals(playlist.getPlaylistName()))
-                return "playlist with this name has already been created";
+                throw new Exception("playlist with this name has already been created");
 
         PlaylistModel playlist = new PlaylistModel(playlistName, getPremium().getUserName());
         getPremium().getPlaylists().add(playlist);
-        return playlistName + " playlist created successfully";
     }
     @Override
     public String addAudioToPlaylist(String playlistName, long ID){

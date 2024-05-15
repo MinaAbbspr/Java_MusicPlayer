@@ -1,5 +1,6 @@
 package view;
 
+import controller.userType.Listener.ListenerController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.media.Media;
@@ -9,19 +10,24 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Database;
 import model.audio.AudioModel;
+import model.audio.PlaylistModel;
 import model.user.UserAccountModel;
+import model.user.type.artist.ArtistModel;
 
 import java.io.IOException;
 
 public class View {
     private static View view;
     private Stage stage;
-    private boolean isLogin;
     private UserAccountModel userAccount;
-    private boolean isListener;
     private MediaPlayer mediaPlayer;
     private AudioModel audioModel;
+    private ArtistModel artistModel;
+    private boolean isLogin;
+    private boolean isListener;
+    private boolean isArtist;
     private boolean isPlay;
+    private PlaylistModel playlist;
 
     private View() {
         isLogin = false;
@@ -50,8 +56,14 @@ public class View {
     public UserAccountModel getUserAccount() {
         return userAccount;
     }
+    public void setUserAccount(UserAccountModel userAccount) {
+        this.userAccount = userAccount;
+    }
     public boolean isListener() {
         return isListener;
+    }
+    public void setListener(boolean listener) {
+        isListener = listener;
     }
     public MediaPlayer getMediaPlayer() {
         return mediaPlayer;
@@ -60,6 +72,10 @@ public class View {
         this.audioModel = audioModel;
         mediaPlayer.pause();
         mediaPlayer = new MediaPlayer(new Media(audioModel.getLink()));
+        if(isLogin && isListener){
+            ListenerController.getListenerController().playAudio(audioModel.getID());
+        }
+        audioModel.setNumberOfPlays(audioModel.getNumberOfPlays()+1);
     }
     public AudioModel getAudioModel() {
         return audioModel;
@@ -67,9 +83,26 @@ public class View {
     public boolean isPlay() {
         return isPlay;
     }
-
     public void setPlay(boolean play) {
         isPlay = play;
+    }
+    public PlaylistModel getPlaylist() {
+        return playlist;
+    }
+    public void setPlaylist(PlaylistModel playlist) {
+        this.playlist = playlist;
+    }
+    public boolean isArtist() {
+        return isArtist;
+    }
+    public void setArtist(boolean artist) {
+        isArtist = artist;
+    }
+    public ArtistModel getArtistModel() {
+        return artistModel;
+    }
+    public void setArtistModel(ArtistModel artistModel) {
+        this.artistModel = artistModel;
     }
 
     public void showMainPage(String fxml) throws IOException {
@@ -81,7 +114,6 @@ public class View {
         stage.setResizable(false);
         stage.show();
     }
-
     public void showLoginPage() throws IOException {
         Stage stage = new Stage();
         stage.initOwner(this.stage);
@@ -95,7 +127,6 @@ public class View {
         Login.setStage(stage);
         stage.show();
     }
-
     public void showSignupPage() throws IOException {
         Stage stage = new Stage();
         stage.initOwner(this.stage);
@@ -109,7 +140,6 @@ public class View {
         Signup.setStage(stage);
         stage.show();
     }
-
     public void showGenrePage() throws IOException {
         Stage stage = new Stage();
         stage.initOwner(this.stage);
@@ -129,4 +159,18 @@ public class View {
         stage.setTitle("Media Player");
         stage.setScene(scene);
     }
+    public void showAddPlaylist() throws IOException {
+        Stage stage = new Stage();
+        stage.initOwner(this.stage);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setResizable(false);
+        stage.setTitle("playlist");
+
+        Scene scene = new Scene(new FXMLLoader(HelloApplication.class.getResource("addPlaylist.fxml")).load());
+        stage.setScene(scene);
+        AddPlaylist.setStage(stage);
+        stage.show();
+    }
+
 }

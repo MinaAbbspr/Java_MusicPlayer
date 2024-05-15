@@ -9,6 +9,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -52,7 +53,7 @@ public class Genre implements Initializable {
     }
 
     @FXML
-    void submitGenres(MouseEvent event) {
+    void submitGenres(MouseEvent event) throws IOException {
         ArrayList<String> genres = new ArrayList<>();
         if(checkB_rock.isSelected()){
             genres.add("Rock");
@@ -96,7 +97,6 @@ public class Genre implements Initializable {
         alert.setContentText("Genres saved successfully");
         alert.showAndWait();
         stage.close();
-        /////////////listener Panel
     }
 
     @Override

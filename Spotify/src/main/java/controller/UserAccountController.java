@@ -57,7 +57,7 @@ abstract public class UserAccountController {
         return matcher.find();
     }
     //ورود به حساب کاربری
-    public String login(String username, String password) throws FailedLoginException {
+    public UserAccountModel login(String username, String password) throws FailedLoginException {
         if(username.isEmpty() || password.isEmpty())
             throw new NullPointerException("fill text Box!");
         UserAccountModel userAccount = null;
@@ -71,40 +71,14 @@ abstract public class UserAccountController {
         if(!userAccount.getPassword().equals(password))
             throw new WrongPasswordException();
 
-        return userAccount.getClass().toString();
-    }
-    //genre
-    public boolean isGenre(String genreName){
-        ArrayList<String> genres = new ArrayList<>();
-        genres.add(Genre.TrueCrime.toString());
-        genres.add(Genre.Rock.toString());
-        genres.add(Genre.Pop.toString());
-        genres.add(Genre.Jazz.toString());
-        genres.add(Genre.HipHop.toString());
-        genres.add(Genre.Country.toString());
-        genres.add(Genre.Society.toString());
-        genres.add(Genre.InterView.toString());
-        genres.add(Genre.History.toString());
-
-        return genres.contains(genreName);
+        return Database.getDatabase().getUserAccounts().get(findUser(username));
     }
 
-    public StringBuilder getGenre(){
-        ArrayList<String> genres = new ArrayList<>();
-        genres.add(Genre.TrueCrime.toString());
-        genres.add(Genre.Rock.toString());
-        genres.add(Genre.Pop.toString());
-        genres.add(Genre.Jazz.toString());
-        genres.add(Genre.HipHop.toString());
-        genres.add(Genre.Country.toString());
-        genres.add(Genre.Society.toString());
-        genres.add(Genre.InterView.toString());
-        genres.add(Genre.History.toString());
+    private int findUser(String username){
+        for(UserAccountModel userAccount : Database.getDatabase().getUserAccounts())
+            if(userAccount.getUserName().equals(username))
+                return Database.getDatabase().getUserAccounts().indexOf(userAccount);
 
-        StringBuilder stringBuilder = new StringBuilder("Genres: ");
-        for(String genre : genres)
-            stringBuilder.append(genre + "  ");
-
-        return stringBuilder;
+        return 0;
     }
 }

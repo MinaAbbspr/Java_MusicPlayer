@@ -5,9 +5,11 @@ import model.Report;
 import model.audio.AudioModel;
 import model.user.UserAccountModel;
 import model.user.type.AdminModel;
+import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;
 import model.user.type.artist.type.SingerModel;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -53,16 +55,11 @@ public class AdminController {
         return stringBuilder;
     }
     //مشاهده اطلاعات
-    public StringBuilder artistsInfo(){
-        StringBuilder stringBuilder = new StringBuilder();
+    public void artistsInfo(){
+        List<ArtistModel> artists = new ArrayList<>();
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(user instanceof SingerModel || user instanceof PodcasterModel)
-                stringBuilder.append("Artist username: " + user.getUserName() + "\n");
-
-        if(stringBuilder.isEmpty())
-            throw new NullPointerException("there is no Artist");
-
-        return stringBuilder;
+                artists.add((ArtistModel) user);
     }
     public String artistInfo(String username){
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())

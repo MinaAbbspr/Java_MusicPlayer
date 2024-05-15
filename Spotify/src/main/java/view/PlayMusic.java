@@ -78,7 +78,7 @@ public class PlayMusic implements Initializable {
     private Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
     private Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
     private Image like = new Image(HelloApplication.class.getResource("img/music/like.png").toExternalForm());
-    private Image redLike = new Image(HelloApplication.class.getResource("img/music/redLike01.png").toExternalForm());
+    private Image redLike = new Image(HelloApplication.class.getResource("img/music/redLike02.png").toExternalForm());
     private Image add = new Image(HelloApplication.class.getResource("img/music/add.png").toExternalForm());
     private boolean isLike;
 
@@ -109,10 +109,16 @@ public class PlayMusic implements Initializable {
             if(isLike){
                 listener.getAudiosLiked().remove(View.getView().getAudioModel().getID());
                 img_like.setImage(like);
+                isLike = false;
+                int likes = View.getView().getAudioModel().getNumberOfLikes()-1;
+                View.getView().getAudioModel().setNumberOfLikes(likes);
             }
             else {
                 listener.getAudiosLiked().add(View.getView().getAudioModel().getID());
                 img_like.setImage(redLike);
+                isLike = true;
+                int likes = View.getView().getAudioModel().getNumberOfLikes()+1;
+                View.getView().getAudioModel().setNumberOfLikes(likes);
             }
         }
         else {
@@ -136,16 +142,16 @@ public class PlayMusic implements Initializable {
                     if(index == playlistModel.getAudioList().size())
                         index = 0;
                     View.getView().setMediaPlayer(playlistModel.getAudioList().get(index));
-                    break;
+                    playAnotherAudio();
+                    return;
                 }
         }
-        else {
-            index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
-            index++;
-            if(index == Database.getDatabase().getAudios().size())
-                index = 0;
-            View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
-        }
+        index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
+        index++;
+        if(index == Database.getDatabase().getAudios().size())
+            index = 0;
+        View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
+
         playAnotherAudio();
     }
 
@@ -175,16 +181,17 @@ public class PlayMusic implements Initializable {
                     if(index < 0)
                         index = playlistModel.getAudioList().size() -1;
                     View.getView().setMediaPlayer(playlistModel.getAudioList().get(index));
-                    break;
+                    playAnotherAudio();
+                    return;
                 }
         }
-        else {
-            index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
-            index--;
-            if(index < 0)
-                index = Database.getDatabase().getAudios().size() -1;
-            View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
-        }
+
+        index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
+        index--;
+        if(index < 0)
+            index = Database.getDatabase().getAudios().size() -1;
+        View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
+
         playAnotherAudio();
     }
 

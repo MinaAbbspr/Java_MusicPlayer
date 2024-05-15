@@ -72,12 +72,9 @@ public class SingerController extends ArtistController {
     @Override
     //انتشار آهنگ
     public String publishing(String audioName, String genre, String lyric, String link, String cover, String ID){
-        if(! isGenre(genre))
-            return "genre is not valid";
-
         for(AlbumModel album : getSinger().getAlbumList())
             if(ID.equals(album.getID())){
-                MusicModel music = new MusicModel(audioName,getSinger().getName(),genre,link,cover,lyric,ID);
+                MusicModel music = new MusicModel(audioName,getSinger().getUserName(),genre,link,cover,lyric,ID);
                 album.getMusicList().add(music);
                 return "music published successfully";
             }

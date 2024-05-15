@@ -60,11 +60,11 @@ public class ListenerController extends UserAccountController {
     public void loginListener(String username){}
 
     //ایجاد پلی لیست و افزودن فایل صوتی
-    public String makePlaylist(String playlistName) throws FreeAccountLimitException {return "Polymorphism method";}
+    public void makePlaylist(String playlistName) throws Exception {}
     public String addAudioToPlaylist(String playlistName, long ID) throws FreeAccountLimitException {return "Polymorphism method";}
 
     //پخش فایل صوتی
-    public String playAudio(long ID){
+    public void playAudio(long ID){
         for(AudioModel audio : Database.getDatabase().getAudios())
             if(ID == audio.getID()) {
                 if(getListener().getAudiosPlayed().containsKey(ID)){
@@ -73,37 +73,7 @@ public class ListenerController extends UserAccountController {
                 }
                 else
                     getListener().getAudiosPlayed().put(ID,1);
-                audio.setNumberOfPlays(audio.getNumberOfPlays()+1);
-                return "Audio played successfully\n" + audio;
             }
-        throw new NullPointerException("audio was not found with this ID");
-    }
-
-    //لایک فایل صوتی
-    public String likeAudio(long ID){
-        for(AudioModel audio : Database.getDatabase().getAudios())
-            if(ID == audio.getID()) {
-                if(getListener().getAudiosLiked().contains(ID))
-                    return "you already liked this audio";
-
-                getListener().getAudiosLiked().add(ID);
-                int likes = audio.getNumberOfLikes()+1;
-                audio.setNumberOfLikes(likes);
-                return "audio liked successfully";
-            }
-        throw new NullPointerException("audio was not found with this ID");
-    }
-    //مشاهده متن آهنگ
-    public String showLyric(long ID){
-        for(AudioModel audio : Database.getDatabase().getAudios())
-            if(ID == audio.getID()) {
-                if(audio instanceof MusicModel music){
-                    return music.getLyric();
-                }
-                else
-                    throw new NullPointerException("This is not an ID for a music");
-            }
-        throw new NullPointerException("audio was not found with this ID");
     }
 
     //جست و جو
@@ -156,18 +126,14 @@ public class ListenerController extends UserAccountController {
     }
     public StringBuilder genreFilter(String filter){
         StringBuilder stringBuilder = new StringBuilder();
-        if(isGenre(filter)){
-            List <AudioModel> filtered = Database.getDatabase().getAudios()
-                    .stream().filter(a -> a.getGenre().toString().equals(filter)).toList();
+        List <AudioModel> filtered = Database.getDatabase().getAudios()
+                .stream().filter(a -> a.getGenre().toString().equals(filter)).toList();
 
-            for(AudioModel audio : filtered)
-                stringBuilder.append("name: " + audio.getAudioName() + "\tID: " + audio.getID() + "\n");
+        for(AudioModel audio : filtered)
+            stringBuilder.append("name: " + audio.getAudioName() + "\tID: " + audio.getID() + "\n");
 
-            if(stringBuilder.isEmpty())
-                throw new NullPointerException("this Genre has NO audio");
-        }
-        else
-            throw new NullPointerException("your entry is not valid");
+        if(stringBuilder.isEmpty())
+            throw new NullPointerException("this Genre has NO audio");
 
         return stringBuilder;
     }
@@ -315,7 +281,7 @@ public class ListenerController extends UserAccountController {
     }
 
     //پیشنهاد فایل صوتی
-    public StringBuilder getSuggestion(int number){
+    public List<AudioModel> getSuggestion(){
         Map<AudioModel , Integer> suggest = new HashMap<>();
         for(AudioModel audio : Database.getDatabase().getAudios()) {
             //play 1 score
@@ -338,24 +304,11 @@ public class ListenerController extends UserAccountController {
                 }
         }
         Map.Entry<AudioModel,Integer>[] sorted = sortMapByValue(suggest);
-        boolean enough = true;
-        if(sorted.length < number) {
-            number = sorted.length;
-            enough = false;
+        ArrayList<AudioModel> answer = new ArrayList<>();
+        for(Map.Entry<AudioModel,Integer> s : sorted){
+            answer.add(s.getKey());
         }
-
-        StringBuilder stringBuilder = new StringBuilder();
-        for(Map.Entry<AudioModel,Integer> max : sorted){
-            stringBuilder.append("Audio name: " + max.getKey().getAudioName() + "\n");
-            number--;
-            if(number == 0)
-                break;
-        }
-
-        if(!enough)
-            stringBuilder.append("there are no other Audios to suggest");
-
-        return stringBuilder;
+        return answer;
     }
     private Map.Entry<AudioModel,Integer>[] sortMapByValue(Map<AudioModel , Integer> suggest){
         Map.Entry<AudioModel,Integer>[] sort = suggest.entrySet().toArray(new Map.Entry[suggest.size()]);

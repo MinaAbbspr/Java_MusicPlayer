@@ -63,10 +63,7 @@ public class PodcasterController extends ArtistController {
     @Override
     //انتشار پادکست
     public String publishing(String audioName, String genre, String caption, String link, String cover, String ID){
-        if(! isGenre(genre))
-            return "genre is not valid";
-
-        PodcastModel podcast = new PodcastModel(audioName,getPodcaster().getName(),genre,link,cover,caption);
+        PodcastModel podcast = new PodcastModel(audioName,getPodcaster().getUserName(),genre,link,cover,caption);
         getPodcaster().getPodcastList().add(podcast);
         return "podcast published successfully";
     }

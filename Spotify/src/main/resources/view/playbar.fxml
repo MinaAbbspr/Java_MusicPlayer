@@ -20,7 +20,7 @@
       <Label fx:id="lbl_currentTime" layoutX="31.0" layoutY="77.0" />
       <Label fx:id="lbl_duration" layoutX="746.0" layoutY="77.0" />
       <Label fx:id="lbl_artistName" layoutX="87.0" layoutY="37.0" prefHeight="25.0" prefWidth="200.0" />
-      <ImageView fx:id="img_previus" fitHeight="30.0" fitWidth="30.0" layoutX="627.0" layoutY="25.0" onMouseClicked="#previous" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img_previous" fitHeight="30.0" fitWidth="30.0" layoutX="627.0" layoutY="25.0" onMouseClicked="#previous" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="img_next" fitHeight="30.0" fitWidth="30.0" layoutX="731.0" layoutY="25.0" onMouseClicked="#next" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

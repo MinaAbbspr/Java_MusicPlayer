@@ -2,6 +2,7 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -9,6 +10,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import model.user.type.AdminModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,13 +52,15 @@ public class Sidebar implements Initializable {
     private VBox vBox_search;
 
     @FXML
-    void showAllArtist(MouseEvent event) {
-
+    void showAllArtist(MouseEvent event) throws IOException {
+        View.getView().setArtist(true);
+        View.getView().showMainPage("allArtist_Audio.fxml");
     }
 
     @FXML
-    void showAllAudios(MouseEvent event) {
-
+    void showAllAudios(MouseEvent event) throws IOException {
+        View.getView().setArtist(false);
+        View.getView().showMainPage("allArtist_Audio.fxml");
     }
 
     @FXML
@@ -65,13 +69,30 @@ public class Sidebar implements Initializable {
     }
 
     @FXML
-    void showLibrary(MouseEvent event) {
+    void showLibrary(MouseEvent event) throws IOException {
+        if(View.getView().isLogin()){
+            String fxml;
+            if(View.getView().isListener())
+                fxml = "listenerPanel.fxml";
+            else if(View.getView().getUserAccount() instanceof AdminModel){
+                fxml = "";
+            }
+            else
+                fxml = "";
 
+            View.getView().showMainPage(fxml);
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("please Login first");
+            alert.setHeaderText("library can't open");
+            alert.showAndWait();
+        }
     }
 
     @FXML
-    void showSearch(MouseEvent event) {
-
+    void showSearch(MouseEvent event) throws IOException {
+        View.getView().showMainPage("search.fxml");
     }
 
     @Override

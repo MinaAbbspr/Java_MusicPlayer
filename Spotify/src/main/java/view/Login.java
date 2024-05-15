@@ -17,7 +17,13 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.exceptions.failedLogin.FailedLoginException;
+import model.user.UserAccountModel;
+import model.user.type.artist.type.PodcasterModel;
+import model.user.type.artist.type.SingerModel;
+import model.user.type.listener.ListenerModel;
+import model.user.type.listener.type.PremiumModel;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -42,10 +48,12 @@ public class Login implements Initializable {
     }
 
     @FXML
-    void login(MouseEvent event) {
+    void login(MouseEvent event) throws IOException {
         try {
-            String className = ListenerController.getListenerController().login(txt_userName.getText(), txt_password.getText());
-            findClass(className, txt_userName.getText());
+            UserAccountModel userAccount = ListenerController.getListenerController().login(txt_userName.getText(), txt_password.getText());
+            View.getView().setLogin(true);
+            View.getView().setUserAccount(userAccount);
+            findClass(userAccount, txt_userName.getText());
         } catch (FailedLoginException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Failed Login");
@@ -65,30 +73,30 @@ public class Login implements Initializable {
         root.setBackground(Background.fill(Color.rgb(225, 247, 245)));
     }
 
-    private void findClass(String name, String username){
+    private void findClass(UserAccountModel user, String username) throws IOException {
         View.getView().setLogin(true);
         stage.close();
-        switch (name) {
-            case "class model.user.type.artist.type.PodcasterModel" -> {
-                PodcasterController.getPodcasterController().loginArtist(username);
-                //
-            }
-            case "class model.user.type.artist.type.SingerModel" -> {
-                SingerController.getSingerController().loginArtist(username);
-                //
-            }
-            case "class model.user.type.listener.type.FreeModel" -> {
-                FreeController.getFreeController().loginListener(username);
-
-            }
-            case "class model.user.type.listener.type.PremiumModel" -> {
-                PremiumController.getPremiumController().loginListener(username);
-                //
-            }
-            case "class model.user.type.AdminModel" -> {
-                AdminController.getAdminController().loginAdmin(username);
-                //
-            }
+        if(user instanceof PodcasterModel){
+            PodcasterController.getPodcasterController().loginArtist(username);
+            //
+        }
+        else if(user instanceof SingerModel){
+            SingerController.getSingerController().loginArtist(username);
+            //
+        }
+        else if(user instanceof PremiumModel){
+            PremiumController.getPremiumController().loginListener(username);
+            View.getView().setListener(true);
+            View.getView().showMainPage("listenerPanel.fxml");
+        }
+        else if(user instanceof ListenerModel){
+            FreeController.getFreeController().loginListener(username);
+            View.getView().setListener(true);
+            View.getView().showMainPage("listenerPanel.fxml");
+        }
+        else {
+            AdminController.getAdminController().loginAdmin(username);
+            //
         }
     }
 }

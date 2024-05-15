@@ -75,16 +75,19 @@ public class Playbar implements Initializable {
                     if(index == playlistModel.getAudioList().size())
                         index = 0;
                     View.getView().setMediaPlayer(playlistModel.getAudioList().get(index));
-                    break;
+                    playAnotherAudio();
+                    crl_play_pause.setFill(pause);
+                    View.getView().setPlay(true);
+                    View.getView().getMediaPlayer().play();
+                    return;
                 }
         }
-        else {
-            index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
-            index++;
-            if(index == Database.getDatabase().getAudios().size())
-                index = 0;
-            View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
-        }
+        index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
+        index++;
+        if(index == Database.getDatabase().getAudios().size())
+            index = 0;
+        View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
+
         playAnotherAudio();
         crl_play_pause.setFill(pause);
         View.getView().setPlay(true);
@@ -117,16 +120,20 @@ public class Playbar implements Initializable {
                     if(index < 0)
                         index = playlistModel.getAudioList().size() -1;
                     View.getView().setMediaPlayer(playlistModel.getAudioList().get(index));
-                    break;
+                    playAnotherAudio();
+                    crl_play_pause.setFill(pause);
+                    View.getView().setPlay(true);
+                    View.getView().getMediaPlayer().play();
+                    return;
                 }
         }
-        else {
-            index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
-            index--;
-            if(index < 0)
-                index = Database.getDatabase().getAudios().size() -1;
-            View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
-        }
+
+        index = Database.getDatabase().getAudios().indexOf(View.getView().getAudioModel());
+        index--;
+        if(index < 0)
+            index = Database.getDatabase().getAudios().size() -1;
+        View.getView().setMediaPlayer(Database.getDatabase().getAudios().get(index));
+
         playAnotherAudio();
         crl_play_pause.setFill(pause);
         View.getView().setPlay(true);

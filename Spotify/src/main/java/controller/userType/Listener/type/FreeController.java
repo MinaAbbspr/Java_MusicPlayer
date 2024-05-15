@@ -49,17 +49,16 @@ public class FreeController extends ListenerController {
             }
     }
     @Override
-    public String makePlaylist(String playlistName) throws FreeAccountLimitException {
+    public void makePlaylist(String playlistName) throws Exception {
         if(getFree().getPlaylists().size() == FreeModel.getNumberOfPlaylist())
             throw new FreeAccountLimitException("you can not make new playlist");
 
         for(PlaylistModel playlist : getFree().getPlaylists())
             if(playlistName.equals(playlist.getPlaylistName()))
-                return "playlist with this name has already been created";
+                throw new Exception("playlist with this name has already been created");
 
         PlaylistModel playlist = new PlaylistModel(playlistName, getFree().getUserName());
         getFree().getPlaylists().add(playlist);
-        return playlistName + " playlist created successfully";
     }
     @Override
     public String addAudioToPlaylist(String playlistName, long ID) throws FreeAccountLimitException {
