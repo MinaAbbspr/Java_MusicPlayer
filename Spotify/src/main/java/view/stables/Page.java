@@ -1,11 +1,11 @@
-package view;
+package view.stables;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+import view.HelloApplication;
 
 import java.io.IOException;
 import java.net.URL;

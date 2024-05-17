@@ -1,4 +1,4 @@
-package view;
+package view.stables.audio;
 
 import controller.AudioController;
 import javafx.fxml.FXML;
@@ -8,9 +8,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import model.audio.AudioModel;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;

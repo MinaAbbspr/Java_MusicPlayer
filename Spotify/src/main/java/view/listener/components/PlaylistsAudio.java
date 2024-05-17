@@ -1,18 +1,17 @@
-package view;
+package view.listener.components;
 
 import controller.AudioController;
-import controller.LogoutController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import model.audio.AudioModel;
-import model.audio.PlaylistModel;
+import view.HelloApplication;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class PlaylistsAudio implements Initializable {

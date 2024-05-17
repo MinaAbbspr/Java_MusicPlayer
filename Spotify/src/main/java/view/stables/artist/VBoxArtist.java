@@ -1,4 +1,4 @@
-package view;
+package view.stables.artist;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,7 +8,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import model.user.type.artist.ArtistModel;
+import view.HelloApplication;
+import view.View;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,9 +31,9 @@ public class VBoxArtist implements Initializable {
     private ArtistModel artistModel;
 
     @FXML
-    void showArtist(MouseEvent event) {
+    void showArtist(MouseEvent event) throws IOException {
         View.getView().setArtistModel(artistModel);
-        ///view artist info
+        View.getView().showMainPage("artistInfo.fxml");
     }
 
     @Override

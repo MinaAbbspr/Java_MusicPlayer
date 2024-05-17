@@ -4,46 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="music player pannel">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AddPlaylist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AllArtist_Audio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ArtistInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/PlaylistsAudio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/Search.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/VBoxArtist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/addPlaylist.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/allArtist_Audio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/artistInfo.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/account/Account.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/header/design1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/header/design2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/redLike02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/listenerPanel.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/playlistsAudio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/search.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/vBoxArtist.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/vBoxAudio.fxml" afterDir="false" />
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="listener Panel">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/StableController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/listener/ListenerPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/AddPlaylist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/Following.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/GetPremium.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/PlaylistsAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/GeneralOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/artist/ArtistInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/artist/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/artist/VBoxArtist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/audio/PlayMusic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/audio/Playbar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/audio/VBoxAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/Header.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/Sidebar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/AllArtist_Audio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Home.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/following.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/getPremium.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/cover/Charlie_Puth_-_Dangerously.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/cover/We_Don't_Talk_Anymore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/cover/hello.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/cover/just pretend.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/cover/the death of peace of mind.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/header/back2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/report.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LogoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LogoutController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AddPlaylist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AllArtist_Audio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ArtistInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/GeneralOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Genre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Header.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ListenerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ListenerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/PlayMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PlayMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Playbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Playbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Sidebar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ListenerPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Page.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PlayMusic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Playbar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PlaylistsAudio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Sidebar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Signup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/VBoxArtist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/VBoxAudio.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/addPlaylist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/addPlaylist.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/allArtist_Audio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/allArtist_Audio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/artistInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/artistInfo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/genre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/genre.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/header.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/header.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/listenerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/listenerPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/playMusic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/playMusic.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/playbar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/playbar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vBoxHome.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/playlistsAudio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/playlistsAudio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vBoxArtist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vBoxArtist.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vBoxAudio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vBoxAudio.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +153,7 @@
       <module name="spotify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="view.stables.sidebar.components.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -212,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715523504710</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="listener Panel">
+      <option name="closed" value="true" />
+      <created>1715799752553</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715799752553</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,6 +291,7 @@
     <MESSAGE value="signup page" />
     <MESSAGE value="genre Page" />
     <MESSAGE value="music player pannel" />
-    <option name="LAST_COMMIT_MESSAGE" value="music player pannel" />
+    <MESSAGE value="listener Panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="listener Panel" />
   </component>
 </project>

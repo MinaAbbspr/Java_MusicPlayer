@@ -1,5 +1,6 @@
-package view;
+package view.listener;
 
+import controller.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -10,6 +11,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import model.audio.PlaylistModel;
 import model.user.type.listener.ListenerModel;
+import model.user.type.listener.type.PremiumModel;
+import view.HelloApplication;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;
@@ -48,6 +52,9 @@ public class ListenerPanel implements Initializable {
     private Label lbl_phoneNumber;
 
     @FXML
+    private Label lbl_numberOfDays;
+
+    @FXML
     private Label lbl_username;
 
     @FXML
@@ -63,23 +70,19 @@ public class ListenerPanel implements Initializable {
     @FXML
     void openPlaylist(MouseEvent event) throws IOException {
         String playlistName = listView.getSelectionModel().getSelectedItem();
-        if(playlistName.equals("+ create new playlist...")) {
+        if(playlistName == null){}
+        else if(playlistName.equals("+ create new playlist...")) {
             View.getView().showAddPlaylist();
         }
         else{
-            for(PlaylistModel playlist : listener.getPlaylists()){
-                if(playlist.getPlaylistName().equals(playlistName)){
-                    View.getView().setPlaylist(playlist);
-                    View.getView().showMainPage("playlistsAudio.fxml");
-                    break;
-                }
-            }
+            View.getView().setPlaylist(ListenerController.getListenerController().selectPlaylist(playlistName));
+            View.getView().showMainPage("playlistsAudio.fxml");
         }
     }
 
     @FXML
-    void showFollowing(MouseEvent event) {
-
+    void showFollowing(MouseEvent event) throws IOException {
+        View.getView().showMainPage("following.fxml");
     }
 
     @Override
@@ -100,5 +103,9 @@ public class ListenerPanel implements Initializable {
             listView.getItems().add(playlist.getPlaylistName());
         }
         listView.getItems().add("+ create new playlist...");
+
+        if(listener instanceof PremiumModel premiumModel){
+            lbl_numberOfDays.setText("number of days left: " + premiumModel.getNumberOfDaysLeft());
+        }
     }
 }

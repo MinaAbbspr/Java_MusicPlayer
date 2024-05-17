@@ -82,18 +82,13 @@ public class PremiumController extends ListenerController {
         return "Audio added to playlist successfully";
     }
     @Override
-    public  String getPremium (String pack) throws NotEnoughBalanceException {
-        if(! isPackage(pack))
-            return "your entry is not valid";
-
-        Subscription subscription = makePackage(pack);
+    public  void getPremium (Subscription subscription) throws NotEnoughBalanceException {
         if(getPremium().getCredit()-subscription.getFee() < 0)
             throw new NotEnoughBalanceException();
 
         getPremium().setCredit(getPremium().getCredit() - subscription.getFee());
         getPremium().setSubscriptionExpirationDate(getPremium().getSubscriptionExpirationDate().plusDays(subscription.getDays()));
         getPremium().setNumberOfDaysLeft(getPremium().getNumberOfDaysLeft() + subscription.getDays());
-        return "Operation was completed. You have become a premium user.";
     }
 
     public void reductionOfSubscriptionDays(){

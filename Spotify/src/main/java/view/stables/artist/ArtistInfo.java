@@ -1,7 +1,7 @@
-package view;
+package view.stables.artist;
 
 import controller.AudioController;
-import controller.LogoutController;
+import controller.StableController;
 import controller.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +15,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import model.audio.AudioModel;
 import model.user.type.artist.ArtistModel;
+import view.HelloApplication;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,8 +46,10 @@ public class ArtistInfo implements Initializable {
     @FXML
     private ScrollPane scrollPane;
 
+    private ArtistModel artistModel;
+
     @FXML
-    void follow(MouseEvent event) {
+    void Follow(MouseEvent event) {
         if(View.getView().isLogin() && View.getView().isListener()){
             ListenerController.getListenerController().followArtist(artistModel.getUserName());
         }
@@ -58,21 +62,28 @@ public class ArtistInfo implements Initializable {
     }
 
     @FXML
-    void report(MouseEvent event) {
-
+    void report(MouseEvent event) throws IOException {
+        if(View.getView().isLogin() && View.getView().isListener()){
+            View.getView().showReport();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("please Login as Listener");
+            alert.setHeaderText("you can't report artist");
+            alert.showAndWait();
+        }
     }
-
-    private ArtistModel artistModel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         artistModel = View.getView().getArtistModel();
         lbl_bio.setText(View.getView().getArtistModel().getBio());
         lbl_username.setText(View.getView().getArtistModel().getUserName());
+        hBoxFiller();
     }
 
     private void hBoxFiller(){
-        List<AudioModel> audios = LogoutController.getLogoutController().artistList(artistModel);
+        List<AudioModel> audios = StableController.getStableController().artistList(artistModel);
         for(AudioModel audioModel :audios){
             AudioController.getAudioController().setAudio(audioModel);
             try {

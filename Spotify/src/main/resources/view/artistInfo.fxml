@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="470.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ArtistInfo">
+<AnchorPane prefHeight="470.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.artist.ArtistInfo">
    <children>
       <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutY="254.0" minViewportHeight="200.0" minViewportWidth="800.0" prefHeight="215.0" prefViewportHeight="200.0" prefViewportWidth="800.0" prefWidth="801.0" vbarPolicy="NEVER">
          <content>
@@ -19,7 +18,7 @@
          </content>
       </ScrollPane>
       <Button fx:id="btn_follow" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#Follow" text="Follow" />
-      <Button fx:id="btn_report" layoutX="106.0" layoutY="192.0" mnemonicParsing="false" text="Report" />
+      <Button fx:id="btn_report" layoutX="106.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#report" text="Report" />
       <VBox layoutX="14.0" layoutY="41.0" prefHeight="142.0" prefWidth="252.0" spacing="20.0">
          <children>
             <Label fx:id="lbl_username" text="artist name">

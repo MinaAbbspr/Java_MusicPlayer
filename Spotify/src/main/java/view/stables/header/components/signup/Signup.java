@@ -1,4 +1,4 @@
-package view;
+package view.stables.header.components.signup;
 
 import controller.userType.Artist.type.PodcasterController;
 import controller.userType.Listener.type.FreeController;
@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.exceptions.InvalidFormatException;
+import view.View;
 
 import java.net.URL;
 import java.util.ResourceBundle;

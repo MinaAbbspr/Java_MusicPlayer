@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="309.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.listener.components.GetPremium">
+   <children>
+      <MenuButton fx:id="packageMenu" layoutX="39.0" layoutY="90.0" mnemonicParsing="false" text="packages">
+        <items>
+          <MenuItem fx:id="itm_30days" mnemonicParsing="false" onAction="#fix30" text="30 days" />
+          <MenuItem fx:id="itm_60days" mnemonicParsing="false" onAction="#fix60" text="60 days" />
+            <MenuItem fx:id="itm_180days" mnemonicParsing="false" onAction="#fix180" text="180 days" />
+        </items>
+      </MenuButton>
+      <Label layoutX="119.0" layoutY="37.0" text="Get Premium">
+         <font>
+            <Font name="Lucida Bright Demibold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_days" layoutX="39.0" layoutY="144.0" />
+      <Label fx:id="lbl_price" layoutX="41.0" layoutY="182.0" />
+      <Button layoutX="211.0" layoutY="239.0" mnemonicParsing="false" onMouseClicked="#buy" prefWidth="70.0" text="Buy" />
+   </children>
+</AnchorPane>

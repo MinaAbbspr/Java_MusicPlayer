@@ -1,4 +1,4 @@
-package view;
+package view.stables.sidebar;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import model.user.type.AdminModel;
+import view.HelloApplication;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;

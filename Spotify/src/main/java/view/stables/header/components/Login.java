@@ -1,4 +1,4 @@
-package view;
+package view.stables.header.components;
 
 import controller.userType.AdminController;
 import controller.userType.Artist.type.PodcasterController;
@@ -22,6 +22,7 @@ import model.user.type.artist.type.PodcasterModel;
 import model.user.type.artist.type.SingerModel;
 import model.user.type.listener.ListenerModel;
 import model.user.type.listener.type.PremiumModel;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;

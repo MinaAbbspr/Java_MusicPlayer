@@ -4,10 +4,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Header">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.header.Header">
    <children>
       <Label fx:id="lbl_signup" layoutX="721.0" layoutY="17.0" onMouseClicked="#signup" text="Sign up" />
       <Label fx:id="lbl_loginOrLogout" layoutX="586.0" layoutY="17.0" onMouseClicked="#login_logout" text="Login/Logout" />
-      <Circle fill="#07f20700" layoutX="29.0" layoutY="26.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="crl_back" fill="#07f20700" layoutX="29.0" layoutY="26.0" onMouseClicked="#backTo" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

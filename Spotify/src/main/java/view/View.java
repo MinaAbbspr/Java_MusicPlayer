@@ -13,8 +13,15 @@ import model.audio.AudioModel;
 import model.audio.PlaylistModel;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
+import view.listener.components.AddPlaylist;
+import view.stables.Page;
+import view.stables.artist.Report;
+import view.stables.header.components.Login;
+import view.stables.header.components.signup.Genre;
+import view.stables.header.components.signup.Signup;
 
 import java.io.IOException;
+import java.util.Stack;
 
 public class View {
     private static View view;
@@ -27,23 +34,26 @@ public class View {
     private boolean isListener;
     private boolean isArtist;
     private boolean isPlay;
+    private boolean isMainPage;
     private PlaylistModel playlist;
+    private Stack<String> back;
 
+    //singleton
     private View() {
         isLogin = false;
         isPlay = false;
+        isMainPage = true;
         this.audioModel = Database.getDatabase().getAudios().getFirst();
         mediaPlayer = new MediaPlayer(new Media(audioModel.getLink()));
+        back = new Stack<>();
     }
-
     public static View getView() {
         if(view == null)
             view = new View();
         return view;
     }
-    public Stage getStage() {
-        return stage;
-    }
+
+    //getter & setter
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -58,12 +68,6 @@ public class View {
     }
     public void setUserAccount(UserAccountModel userAccount) {
         this.userAccount = userAccount;
-    }
-    public boolean isListener() {
-        return isListener;
-    }
-    public void setListener(boolean listener) {
-        isListener = listener;
     }
     public MediaPlayer getMediaPlayer() {
         return mediaPlayer;
@@ -80,11 +84,11 @@ public class View {
     public AudioModel getAudioModel() {
         return audioModel;
     }
-    public boolean isPlay() {
-        return isPlay;
+    public ArtistModel getArtistModel() {
+        return artistModel;
     }
-    public void setPlay(boolean play) {
-        isPlay = play;
+    public void setArtistModel(ArtistModel artistModel) {
+        this.artistModel = artistModel;
     }
     public PlaylistModel getPlaylist() {
         return playlist;
@@ -98,14 +102,23 @@ public class View {
     public void setArtist(boolean artist) {
         isArtist = artist;
     }
-    public ArtistModel getArtistModel() {
-        return artistModel;
+    public boolean isListener() {
+        return isListener;
     }
-    public void setArtistModel(ArtistModel artistModel) {
-        this.artistModel = artistModel;
+    public void setListener(boolean listener) {
+        isListener = listener;
+    }
+    public void setPlay(boolean play) {
+        isPlay = play;
+    }
+    public boolean isPlay() {
+        return isPlay;
     }
 
+    //show
     public void showMainPage(String fxml) throws IOException {
+        isMainPage = true;
+        back.push(fxml);
         Page.setScrollFxml(fxml);
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -154,6 +167,7 @@ public class View {
         stage.show();
     }
     public void showPlayMusic() throws IOException {
+        isMainPage = false;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("playMusic.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Media Player");
@@ -171,6 +185,28 @@ public class View {
         stage.setScene(scene);
         AddPlaylist.setStage(stage);
         stage.show();
+    }
+    public void showReport() throws IOException {
+        Stage stage = new Stage();
+        stage.initOwner(this.stage);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setResizable(false);
+        stage.setTitle("Report");
+
+        Scene scene = new Scene(new FXMLLoader(HelloApplication.class.getResource("report.fxml")).load());
+        stage.setScene(scene);
+        Report.setStage(stage);
+        stage.show();
+    }
+    public void stepBack() throws IOException {
+        if(!back.isEmpty() && !isMainPage) {
+            showMainPage(back.pop());
+        }
+        else if(back.size() > 1){
+            back.pop();
+            showMainPage(back.pop());
+        }
     }
 
 }

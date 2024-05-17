@@ -10,10 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="470.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ListenerPanel">
+<AnchorPane prefHeight="470.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.listener.ListenerPanel">
    <children>
-      <VBox layoutX="37.0" layoutY="212.0" prefHeight="225.0" prefWidth="256.0" spacing="20.0">
+      <VBox layoutX="37.0" layoutY="212.0" prefHeight="225.0" prefWidth="256.0" spacing="15.0">
          <children>
             <Label fx:id="lbl_name" text="name">
                <font>
@@ -44,6 +43,11 @@
                </font>
             </Label>
             <Label fx:id="lbl_birthDate" text="birthdate">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_numberOfDays">
                <font>
                   <Font name="Lucida Bright Regular" size="14.0" />
                </font>

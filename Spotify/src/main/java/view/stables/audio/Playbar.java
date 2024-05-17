@@ -1,4 +1,4 @@
-package view;
+package view.stables.audio;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +15,8 @@ import javafx.util.Duration;
 import model.Database;
 import model.audio.PlaylistModel;
 import model.user.type.listener.ListenerModel;
+import view.HelloApplication;
+import view.View;
 
 import java.net.URL;
 import java.util.ResourceBundle;

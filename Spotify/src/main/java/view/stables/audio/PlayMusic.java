@@ -1,4 +1,4 @@
-package view;
+package view.stables.audio;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +18,8 @@ import model.audio.PlaylistModel;
 import model.audio.type.MusicModel;
 import model.audio.type.PodcastModel;
 import model.user.type.listener.ListenerModel;
+import view.HelloApplication;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;

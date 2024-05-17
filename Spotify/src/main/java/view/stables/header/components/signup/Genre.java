@@ -1,4 +1,4 @@
-package view;
+package view.stables.header.components.signup;
 
 import controller.userType.Listener.type.FreeController;
 import javafx.fxml.FXML;

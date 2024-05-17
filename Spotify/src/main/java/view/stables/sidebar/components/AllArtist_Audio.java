@@ -1,7 +1,7 @@
-package view;
+package view.stables.sidebar.components;
 
 import controller.AudioController;
-import controller.LogoutController;
+import controller.StableController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,6 +9,8 @@ import javafx.scene.layout.GridPane;
 import model.Database;
 import model.audio.AudioModel;
 import model.user.type.artist.ArtistModel;
+import view.HelloApplication;
+import view.View;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +24,7 @@ public class AllArtist_Audio implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(View.getView().isArtist()){
-            setVBoxArtist(LogoutController.getLogoutController().artistsInfo());
+            setVBoxArtist(StableController.getStableController().artistsInfo());
         }
         else{
             setVBoxAudio(Database.getDatabase().getAudios());
