@@ -54,10 +54,10 @@ public class Playbar implements Initializable {
     @FXML
     private Slider slider;
 
-    private ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
-    private ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
-    private Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
-    private Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
+    private final ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
+    private final ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
+    private final Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
+    private final Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
 
 
     @FXML
@@ -155,6 +155,7 @@ public class Playbar implements Initializable {
         }
 
         playAnotherAudio();
+        root.setBackground(Background.fill(Color.rgb(238, 247, 255)));
     }
 
     private void setTime(){
@@ -173,8 +174,6 @@ public class Playbar implements Initializable {
         lbl_audioName.setText(View.getView().getAudioModel().getAudioName());
         lbl_artistName.setText(View.getView().getAudioModel().getArtistName());
         slider.setMax(View.getView().getMediaPlayer().getMedia().getDuration().toSeconds());
-        View.getView().getMediaPlayer().currentTimeProperty().addListener( (observable, oldValue, newValue) ->{
-            setTime();
-        });
+        View.getView().getMediaPlayer().currentTimeProperty().addListener( (observable, oldValue, newValue) -> setTime());
     }
 }

@@ -4,20 +4,15 @@ import controller.userType.Listener.type.FreeController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Genre implements Initializable {
-
-    @FXML
-    private Button btn_submit;
 
     @FXML
     private CheckBox checkB_country;
@@ -53,7 +48,7 @@ public class Genre implements Initializable {
     }
 
     @FXML
-    void submitGenres(MouseEvent event) throws IOException {
+    void submitGenres(MouseEvent event)  {
         ArrayList<String> genres = new ArrayList<>();
         if(checkB_rock.isSelected()){
             genres.add("Rock");
@@ -92,7 +87,7 @@ public class Genre implements Initializable {
         }
 
         FreeController.getFreeController().addGenre(genres);
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("successful Submit");
         alert.setContentText("Genres saved successfully");
         alert.showAndWait();

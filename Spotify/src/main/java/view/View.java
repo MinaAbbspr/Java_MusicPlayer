@@ -13,7 +13,9 @@ import model.audio.AudioModel;
 import model.audio.PlaylistModel;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
+import view.listener.components.AddAudioToPlaylist;
 import view.listener.components.AddPlaylist;
+import view.listener.components.GetPremium;
 import view.stables.Page;
 import view.stables.artist.Report;
 import view.stables.header.components.Login;
@@ -184,6 +186,32 @@ public class View {
         Scene scene = new Scene(new FXMLLoader(HelloApplication.class.getResource("addPlaylist.fxml")).load());
         stage.setScene(scene);
         AddPlaylist.setStage(stage);
+        stage.show();
+    }
+    public void showAddAudioToPlaylist() throws IOException {
+        Stage stage = new Stage();
+        stage.initOwner(this.stage);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setResizable(false);
+        stage.setTitle("playlist");
+
+        Scene scene = new Scene(new FXMLLoader(HelloApplication.class.getResource("addAudioToPlaylist.fxml")).load());
+        stage.setScene(scene);
+        AddAudioToPlaylist.setStage(stage);
+        stage.show();
+    }
+    public void showGetPremium() throws IOException {
+        Stage stage = new Stage();
+        stage.initOwner(this.stage);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setResizable(false);
+        stage.setTitle("Get Premium");
+
+        Scene scene = new Scene(new FXMLLoader(HelloApplication.class.getResource("getPremium.fxml")).load());
+        stage.setScene(scene);
+        GetPremium.setStage(stage);
         stage.show();
     }
     public void showReport() throws IOException {

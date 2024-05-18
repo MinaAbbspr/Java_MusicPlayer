@@ -3,14 +3,12 @@ package view.listener;
 import controller.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import model.audio.PlaylistModel;
-import model.user.type.listener.ListenerModel;
 import model.user.type.listener.type.PremiumModel;
 import view.HelloApplication;
 import view.View;
@@ -20,12 +18,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ListenerPanel implements Initializable {
-
-    @FXML
-    private Button btn_following;
-
-    @FXML
-    private Button btn_premium;
 
     @FXML
     private ImageView img_between;
@@ -60,17 +52,15 @@ public class ListenerPanel implements Initializable {
     @FXML
     private ListView<String> listView;
 
-    private ListenerModel listener;
-
     @FXML
-    void getPremium(MouseEvent event) {
-
+    void getPremium(MouseEvent event) throws IOException {
+        View.getView().showGetPremium();
     }
 
     @FXML
     void openPlaylist(MouseEvent event) throws IOException {
         String playlistName = listView.getSelectionModel().getSelectedItem();
-        if(playlistName == null){}
+        if(playlistName.isEmpty()){}
         else if(playlistName.equals("+ create new playlist...")) {
             View.getView().showAddPlaylist();
         }
@@ -87,24 +77,24 @@ public class ListenerPanel implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ListenerController.getListenerController().loginListener(View.getView().getUserAccount().getUserName());
         img_right.setImage(new Image(HelloApplication.class.getResource("img/header/design1.jpg").toExternalForm()));
         img_left.setImage(new Image(HelloApplication.class.getResource("img/header/design1.jpg").toExternalForm()));
         img_between.setImage(new Image(HelloApplication.class.getResource("img/header/design2.jpg").toExternalForm()));
 
-        listener = (ListenerModel) View.getView().getUserAccount();
-        lbl_name.setText("name: " + listener.getName());
-        lbl_username.setText("username: " + listener.getUserName());
-        lbl_credit.setText("credit: " + listener.getCredit());
-        lbl_email.setText("email: " + listener.getEmail());
-        lbl_phoneNumber.setText("phone number: " + listener.getPhoneNumber());
-        lbl_birthDate.setText("birth date: " + listener.getBirthDate());
+        lbl_name.setText("name: " + ListenerController.getListenerController().getListener().getName());
+        lbl_username.setText("username: " + ListenerController.getListenerController().getListener().getUserName());
+        lbl_credit.setText("credit: " + ListenerController.getListenerController().getListener().getCredit());
+        lbl_email.setText("email: " + ListenerController.getListenerController().getListener().getEmail());
+        lbl_phoneNumber.setText("phone number: " + ListenerController.getListenerController().getListener().getPhoneNumber());
+        lbl_birthDate.setText("birth date: " + ListenerController.getListenerController().getListener().getBirthDate());
 
-        for(PlaylistModel playlist : listener.getPlaylists()) {
+        for(PlaylistModel playlist : ListenerController.getListenerController().getListener().getPlaylists()) {
             listView.getItems().add(playlist.getPlaylistName());
         }
         listView.getItems().add("+ create new playlist...");
 
-        if(listener instanceof PremiumModel premiumModel){
+        if(ListenerController.getListenerController().getListener() instanceof PremiumModel premiumModel){
             lbl_numberOfDays.setText("number of days left: " + premiumModel.getNumberOfDaysLeft());
         }
     }

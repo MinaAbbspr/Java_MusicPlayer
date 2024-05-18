@@ -61,7 +61,7 @@ public class ListenerController extends UserAccountController {
 
     //ایجاد پلی لیست و افزودن فایل صوتی
     public void makePlaylist(String playlistName) throws Exception {}
-    public String addAudioToPlaylist(String playlistName, long ID) throws FreeAccountLimitException {return "Polymorphism method";}
+    public String addAudioToPlaylist(String playlistName, AudioModel audioModel) throws Exception {return "Polymorphism method";}
 
     //پخش فایل صوتی
     public void playAudio(long ID){
@@ -94,45 +94,6 @@ public class ListenerController extends UserAccountController {
         Report report = new Report(getListener(),artist,explanation);
     }
 
-    //مشاهده لیست آرتیست ها
-    public StringBuilder showArtists(){
-        StringBuilder stringBuilder = new StringBuilder();
-        for(UserAccountModel user : Database.getDatabase().getUserAccounts()){
-            if(user instanceof SingerModel singer) {
-                stringBuilder.append("singer username: " + singer.getUserName() + "\n");
-            }
-            else if(user instanceof PodcasterModel podcaster){
-                stringBuilder.append("podcaster username: " + podcaster.getUserName() + "\n");
-            }
-        }
-        if(stringBuilder.isEmpty())
-            stringBuilder.append("There is no artist");
-        return stringBuilder;
-    }
-    public StringBuilder showArtistInfo(String username){
-        StringBuilder stringBuilder = new StringBuilder();
-        for(UserAccountModel user : Database.getDatabase().getUserAccounts()){
-            if(user instanceof SingerModel singer && username.equals(user.getUserName())) {
-                stringBuilder.append(singer + "\n");
-                for(AlbumModel album : singer.getAlbumList()){
-                    stringBuilder.append("album:" + album.getAlbumName()+"\n");
-                    for(MusicModel music : album.getMusicList())
-                        stringBuilder.append("\tmusic :" + music.getAudioName()+"\n");
-                }
-                break;
-            }
-            else if(user instanceof PodcasterModel podcaster && username.equals(user.getUserName())){
-                stringBuilder.append(podcaster + "\n");
-                for(PodcastModel podcast : podcaster.getPodcastList())
-                    stringBuilder.append("podcast: " + podcast.getAudioName() + "\n");
-                break;
-            }
-        }
-        if(stringBuilder.isEmpty())
-            stringBuilder.append("There is no artist with this username");
-        return stringBuilder;
-    }
-
     //دنبال کردن آرتیست
     public String followArtist(String username){
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
@@ -148,6 +109,7 @@ public class ListenerController extends UserAccountController {
         return "artist was not found with this username";
     }
 
+    //انتخاب پلی لیست
     public PlaylistModel selectPlaylist(String playlistName){
         for(PlaylistModel playlist : getListener().getPlaylists())
             if(playlistName.equals(playlist.getPlaylistName())) {
@@ -201,5 +163,5 @@ public class ListenerController extends UserAccountController {
 
 
     //خرید یا تمدید اشتراک
-    public void getPremium (Subscription subscription) throws NotEnoughBalanceException {}
+    public ListenerModel getPremium (Subscription subscription) throws NotEnoughBalanceException {return null;}
 }

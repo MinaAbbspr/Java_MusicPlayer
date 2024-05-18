@@ -35,7 +35,7 @@
             <Insets top="5.0" />
          </HBox.margin>
       </VBox>
-      <VBox fx:id="vBox_search" alignment="TOP_CENTER" onMouseClicked="#showSearch" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+      <VBox fx:id="vBox_search" alignment="TOP_CENTER" onMouseClicked="#search" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
          <children>
             <ImageView fx:id="img_search" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
             <Label text="Search" />

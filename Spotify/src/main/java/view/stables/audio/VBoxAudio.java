@@ -7,7 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import model.audio.AudioModel;
 import view.View;
 
@@ -26,8 +25,6 @@ public class VBoxAudio implements Initializable {
     @FXML
     private Label lbl_audioName;
 
-    @FXML
-    private VBox vBox;
     private AudioModel audioModel;
 
     @FXML

@@ -6,13 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import model.audio.AudioModel;
 import view.HelloApplication;
 
@@ -23,6 +24,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class Search implements Initializable {
+
+    @FXML
+    private ImageView img_search;
 
     @FXML
     private MenuButton btn_filter;
@@ -38,6 +42,9 @@ public class Search implements Initializable {
 
     @FXML
     private TextField txt_filter;
+
+    @FXML
+    private AnchorPane root;
 
     private String filter;
     private String sort;
@@ -196,5 +203,8 @@ public class Search implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sort = "none";
         filter = "none";
+        img_search.setImage(new Image(HelloApplication.class.getResource("img/header/search.png").toExternalForm()));
+        root.setBackground(Background.fill(Color.WHITE));
+        gridPane.setBackground(Background.fill(Color.WHITE));
     }
 }

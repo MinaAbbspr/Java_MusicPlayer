@@ -7,12 +7,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import model.audio.AudioModel;
 import model.user.type.artist.ArtistModel;
 import view.HelloApplication;
@@ -24,12 +26,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ArtistInfo implements Initializable {
-
-    @FXML
-    private Button btn_follow;
-
-    @FXML
-    private Button btn_report;
 
     @FXML
     private HBox hBox;
@@ -44,7 +40,8 @@ public class ArtistInfo implements Initializable {
     private Label lbl_username;
 
     @FXML
-    private ScrollPane scrollPane;
+    private AnchorPane root;
+
 
     private ArtistModel artistModel;
 
@@ -79,6 +76,9 @@ public class ArtistInfo implements Initializable {
         artistModel = View.getView().getArtistModel();
         lbl_bio.setText(View.getView().getArtistModel().getBio());
         lbl_username.setText(View.getView().getArtistModel().getUserName());
+        img.setImage(new Image(HelloApplication.class.getResource("img/account/Account.png").toExternalForm()));
+        root.setBackground(Background.fill(Color.WHITE));
+        hBox.setBackground(Background.fill(Color.WHITE));
         hBoxFiller();
     }
 

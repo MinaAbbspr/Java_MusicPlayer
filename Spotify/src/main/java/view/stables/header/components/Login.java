@@ -9,7 +9,6 @@ import controller.userType.Listener.type.PremiumController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -20,7 +19,7 @@ import model.exceptions.failedLogin.FailedLoginException;
 import model.user.UserAccountModel;
 import model.user.type.artist.type.PodcasterModel;
 import model.user.type.artist.type.SingerModel;
-import model.user.type.listener.ListenerModel;
+import model.user.type.listener.type.FreeModel;
 import model.user.type.listener.type.PremiumModel;
 import view.View;
 
@@ -29,9 +28,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Login implements Initializable {
-
-    @FXML
-    private Button btn_Login;
 
     @FXML
     private AnchorPane root;
@@ -52,7 +48,6 @@ public class Login implements Initializable {
     void login(MouseEvent event) throws IOException {
         try {
             UserAccountModel userAccount = ListenerController.getListenerController().login(txt_userName.getText(), txt_password.getText());
-            View.getView().setLogin(true);
             View.getView().setUserAccount(userAccount);
             findClass(userAccount, txt_userName.getText());
         } catch (FailedLoginException e) {
@@ -90,7 +85,7 @@ public class Login implements Initializable {
             View.getView().setListener(true);
             View.getView().showMainPage("listenerPanel.fxml");
         }
-        else if(user instanceof ListenerModel){
+        else if(user instanceof FreeModel){
             FreeController.getFreeController().loginListener(username);
             View.getView().setListener(true);
             View.getView().showMainPage("listenerPanel.fxml");

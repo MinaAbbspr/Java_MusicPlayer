@@ -6,7 +6,9 @@ import controller.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import model.Database;
 import model.audio.AudioModel;
 import view.HelloApplication;
@@ -29,6 +31,7 @@ public class Home implements Initializable {
         else{
             setVBox(StableController.getStableController().likeSort(Database.getDatabase().getAudios()));
         }
+        gridPane.setBackground(Background.fill(Color.WHITE));
     }
 
     private void setVBox(List<AudioModel> list){

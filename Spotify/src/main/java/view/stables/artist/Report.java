@@ -60,15 +60,15 @@ public class Report {
             alert.showAndWait();
             return;
         }
-        if(txt_explanation.getText() == null){
+        if(txt_explanation.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Empty Title");
+            alert.setHeaderText("Empty text field");
             alert.setContentText("please Write Explanation for your Report");
             alert.showAndWait();
             return;
         }
         ListenerController.getListenerController().reportArtist(View.getView().getArtistModel(), title + "\n" + txt_explanation.getText());
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("making Report Completed Successfully");
         alert.showAndWait();
         stage.close();

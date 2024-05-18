@@ -5,7 +5,6 @@ import controller.userType.Listener.type.FreeController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -26,15 +25,6 @@ public class Signup implements Initializable {
 
     @FXML
     private DatePicker SDatePicker;
-
-    @FXML
-    private Button btn_listener;
-
-    @FXML
-    private Button btn_podcaster;
-
-    @FXML
-    private Button btn_singer;
 
     @FXML
     private TextField txt_Lemail;

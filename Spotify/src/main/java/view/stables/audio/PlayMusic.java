@@ -75,21 +75,20 @@ public class PlayMusic implements Initializable {
     @FXML
     private Slider slider;
 
-    private ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
-    private ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
-    private Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
-    private Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
-    private Image like = new Image(HelloApplication.class.getResource("img/music/like.png").toExternalForm());
-    private Image redLike = new Image(HelloApplication.class.getResource("img/music/redLike02.png").toExternalForm());
-    private Image add = new Image(HelloApplication.class.getResource("img/music/add.png").toExternalForm());
+    private final ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
+    private final ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
+    private final Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
+    private final Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
+    private final Image like = new Image(HelloApplication.class.getResource("img/music/like.png").toExternalForm());
+    private final Image redLike = new Image(HelloApplication.class.getResource("img/music/redLike02.png").toExternalForm());
+    private final Image add = new Image(HelloApplication.class.getResource("img/music/add.png").toExternalForm());
     private boolean isLike;
 
 
     @FXML
-    void add(MouseEvent event) {
+    void add(MouseEvent event) throws IOException {
         if(View.getView().isListener() && View.getView().isLogin()){
-            ListenerModel listener = (ListenerModel) View.getView().getUserAccount();
-            ///////////////new stage
+            View.getView().showAddAudioToPlaylist();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -160,13 +159,13 @@ public class PlayMusic implements Initializable {
     @FXML
     void playOrPause(MouseEvent event) {
         if(View.getView().isPlay()){
-            View.getView().getMediaPlayer().play();
-            crl_play_pause.setFill(pause);
+            View.getView().getMediaPlayer().pause();
+            crl_play_pause.setFill(play);
             View.getView().setPlay(false);
         }
         else {
-            View.getView().getMediaPlayer().pause();
-            crl_play_pause.setFill(play);
+            View.getView().getMediaPlayer().play();
+            crl_play_pause.setFill(pause);
             View.getView().setPlay(true);
         }
     }
@@ -214,7 +213,6 @@ public class PlayMusic implements Initializable {
         img_add.setImage(add);
         img_next.setImage(next);
         img_previous.setImage(back);
-
         playAnotherAudio();
     }
 
@@ -264,9 +262,7 @@ public class PlayMusic implements Initializable {
         lbl_date.setText("date of release: " + View.getView().getAudioModel().getDateOfRelease());
 
         slider.setMax(View.getView().getMediaPlayer().getMedia().getDuration().toSeconds());
-        View.getView().getMediaPlayer().currentTimeProperty().addListener( (observable, oldValue, newValue) ->{
-            setTime();
-        });
+        View.getView().getMediaPlayer().currentTimeProperty().addListener( (observable, oldValue, newValue) -> setTime());
 
         View.getView().getMediaPlayer().play();
     }

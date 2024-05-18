@@ -5,26 +5,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.Subscription;
 import model.exceptions.NotEnoughBalanceException;
+import model.user.type.listener.ListenerModel;
 import view.View;
 
 import java.io.IOException;
 
 public class GetPremium {
 
-    @FXML
-    private MenuItem itm_30days;
-
-    @FXML
-    private MenuItem itm_60days;
-
-    @FXML
-    private MenuItem itm_180days;
 
     @FXML
     private Label lbl_days;
@@ -32,8 +23,6 @@ public class GetPremium {
     @FXML
     private Label lbl_price;
 
-    @FXML
-    private MenuButton packageMenu;
 
     private Subscription subscription = null;
     private static Stage stage;
@@ -52,7 +41,8 @@ public class GetPremium {
             return;
         }
         try {
-            ListenerController.getListenerController().getPremium(subscription);
+            ListenerModel listenerModel = ListenerController.getListenerController().getPremium(subscription);
+            View.getView().setUserAccount(listenerModel);
         } catch (NotEnoughBalanceException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
@@ -65,16 +55,19 @@ public class GetPremium {
     @FXML
     void fix30(ActionEvent event) {
         subscription = Subscription.Package30Days;
+        setLabel();
     }
 
     @FXML
     void fix60(ActionEvent event) {
         subscription = Subscription.Package60Days;
+        setLabel();
     }
 
     @FXML
     void fix180(ActionEvent event) {
         subscription = Subscription.Package180Days;
+        setLabel();
     }
 
     private void setLabel(){

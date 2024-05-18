@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.artist.Report">
    <children>
-      <MenuButton layoutX="27.0" layoutY="87.0" mnemonicParsing="false" onMouseClicked="#report" prefWidth="120.0" text="Title">
+      <MenuButton layoutX="27.0" layoutY="87.0" mnemonicParsing="false" prefWidth="120.0" text="Title">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#spam" text="Spam" />
           <MenuItem mnemonicParsing="false" onAction="#fakeAccount" text="Fake Account" />
@@ -27,6 +27,6 @@
          </font>
       </Label>
       <TextArea fx:id="txt_explanation" layoutX="25.0" layoutY="141.0" prefHeight="150.0" prefWidth="250.0" promptText="Explanation ..." />
-      <Button layoutX="204.0" layoutY="310.0" mnemonicParsing="false" prefWidth="70.0" text="report" />
+      <Button layoutX="204.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#report" prefWidth="70.0" text="report" />
    </children>
 </AnchorPane>

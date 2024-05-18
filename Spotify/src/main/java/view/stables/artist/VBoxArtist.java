@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import model.user.type.artist.ArtistModel;
 import view.HelloApplication;
 import view.View;
@@ -26,8 +25,6 @@ public class VBoxArtist implements Initializable {
     @FXML
     private Label lbl_bio;
 
-    @FXML
-    private VBox vBox;
     private ArtistModel artistModel;
 
     @FXML

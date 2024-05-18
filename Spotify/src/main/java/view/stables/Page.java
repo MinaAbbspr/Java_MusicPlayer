@@ -21,9 +21,6 @@ public class Page implements Initializable {
     private AnchorPane playbar;
 
     @FXML
-    private AnchorPane root;
-
-    @FXML
     private AnchorPane sidebar;
 
     @FXML
@@ -56,6 +53,5 @@ public class Page implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

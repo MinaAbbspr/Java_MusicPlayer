@@ -14,6 +14,7 @@ import model.user.type.artist.type.SingerModel;
 import model.user.type.listener.ListenerModel;
 import model.user.type.listener.type.FreeModel;
 import model.user.type.listener.type.PremiumModel;
+import view.View;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,6 +24,7 @@ public class PremiumController extends ListenerController {
     private static PremiumController premiumController;
 
     private PremiumController() {
+        ListenerController.getListenerController().getListener();
         reductionOfSubscriptionDays();
     }
 
@@ -42,8 +44,8 @@ public class PremiumController extends ListenerController {
     public void loginListener(String username){
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(username.equals(user.getUserName())) {
-                ListenerController.getListenerController().setListener((ListenerModel) user);
                 setPremium((PremiumModel) user);
+                ListenerController.getListenerController().setListener(premium);
                 setListenerController(this);
                 break;
             }
@@ -58,37 +60,27 @@ public class PremiumController extends ListenerController {
         getPremium().getPlaylists().add(playlist);
     }
     @Override
-    public String addAudioToPlaylist(String playlistName, long ID){
+    public String addAudioToPlaylist(String playlistName, AudioModel audioModel) throws Exception {
         PlaylistModel playlistModel = null;
         for(PlaylistModel playlist : getPremium().getPlaylists())
             if(playlistName.equals(playlist.getPlaylistName()))
                 playlistModel = playlist;
 
-        if(playlistModel == null)
-            return "There is no playlist with this name";
-
-        AudioModel audioModel = null;
-        for(AudioModel audio : Database.getDatabase().getAudios())
-            if(ID == audio.getID())
-                audioModel = audio;
-
-        if(audioModel == null)
-            return "There is no Audio with this ID";
-
         if(playlistModel.getAudioList().contains(audioModel))
-            return "you have already added this Audio to playlist";
+            throw new Exception("you have already added this Audio to playlist");
 
         playlistModel.getAudioList().add(audioModel);
         return "Audio added to playlist successfully";
     }
     @Override
-    public  void getPremium (Subscription subscription) throws NotEnoughBalanceException {
+    public  ListenerModel getPremium (Subscription subscription) throws NotEnoughBalanceException {
         if(getPremium().getCredit()-subscription.getFee() < 0)
             throw new NotEnoughBalanceException();
 
         getPremium().setCredit(getPremium().getCredit() - subscription.getFee());
         getPremium().setSubscriptionExpirationDate(getPremium().getSubscriptionExpirationDate().plusDays(subscription.getDays()));
         getPremium().setNumberOfDaysLeft(getPremium().getNumberOfDaysLeft() + subscription.getDays());
+        return getPremium();
     }
 
     public void reductionOfSubscriptionDays(){
@@ -101,8 +93,8 @@ public class PremiumController extends ListenerController {
             }
         };
         Timer timer = new Timer("timer");
-        long delay = 1000L * 60L * 60L * 24L;
-        long period = 1000L * 60L * 60L * 24L;
+        long delay = 1000L /** 60L * 60L * 24L*/;
+        long period = 1000L /** 60L * 60L * 24L*/;
         timer.schedule(task, delay, period);
 
     }
@@ -139,5 +131,6 @@ public class PremiumController extends ListenerController {
 
         Database.getDatabase().getUserAccounts().remove(getPremium());
         FreeController.getFreeController().loginListener(getPremium().getUserName());
+        View.getView().setUserAccount(free);
     }
 }

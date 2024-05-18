@@ -5,7 +5,9 @@ import controller.StableController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import model.Database;
 import model.audio.AudioModel;
 import model.user.type.artist.ArtistModel;
@@ -29,6 +31,7 @@ public class AllArtist_Audio implements Initializable {
         else{
             setVBoxAudio(Database.getDatabase().getAudios());
         }
+        gridPane.setBackground(Background.fill(Color.WHITE));
     }
 
     private void setVBoxAudio(List<AudioModel> list){

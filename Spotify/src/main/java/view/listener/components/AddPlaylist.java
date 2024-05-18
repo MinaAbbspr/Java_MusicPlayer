@@ -3,7 +3,6 @@ package view.listener.components;
 import controller.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -11,9 +10,6 @@ import model.exceptions.FreeAccountLimitException;
 import view.View;
 
 public class AddPlaylist {
-
-    @FXML
-    private Button btn_add;
 
     @FXML
     private TextField txt_name;

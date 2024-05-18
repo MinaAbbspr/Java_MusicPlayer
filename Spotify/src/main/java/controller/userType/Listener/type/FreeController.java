@@ -23,7 +23,7 @@ public class FreeController extends ListenerController {
     private static FreeController freeController;
 
     private FreeController() {
-        super();
+        ListenerController.getListenerController().getListener();
     }
 
     public FreeModel getFree() {
@@ -42,8 +42,8 @@ public class FreeController extends ListenerController {
     public void loginListener(String username){
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(username.equals(user.getUserName())) {
-                ListenerController.getListenerController().setListener((ListenerModel) user);
                 setFree((FreeModel) user);
+                ListenerController.getListenerController().setListener(free);
                 setListenerController(this);
                 break;
             }
@@ -61,25 +61,14 @@ public class FreeController extends ListenerController {
         getFree().getPlaylists().add(playlist);
     }
     @Override
-    public String addAudioToPlaylist(String playlistName, long ID) throws FreeAccountLimitException {
+    public String addAudioToPlaylist(String playlistName, AudioModel audioModel) throws Exception {
         PlaylistModel playlistModel = null;
         for(PlaylistModel playlist : getFree().getPlaylists())
             if(playlistName.equals(playlist.getPlaylistName()))
                 playlistModel = playlist;
 
-        if(playlistModel == null)
-            throw new NullPointerException("There is no playlist with this name");
-
-        AudioModel audioModel = null;
-        for(AudioModel audio : Database.getDatabase().getAudios())
-            if(ID == audio.getID())
-                audioModel = audio;
-
-        if(audioModel == null)
-            throw new NullPointerException("There is no Audio with this ID");
-
         if(playlistModel.getAudioList().contains(audioModel))
-            return "you have already added this Audio to playlist";
+            throw new Exception("you have already added this Audio to playlist");
 
         if(playlistModel.getAudioList().size() == FreeModel.getNumberOfMusic())
             throw new FreeAccountLimitException("you can not add new audio to this playlist");
@@ -88,14 +77,14 @@ public class FreeController extends ListenerController {
         return "Audio added to playlist successfully";
     }
     @Override
-    public  void getPremium (Subscription subscription) throws NotEnoughBalanceException {
+    public  ListenerModel getPremium (Subscription subscription) throws NotEnoughBalanceException {
         if(getFree().getCredit()-subscription.getFee() < 0)
             throw new NotEnoughBalanceException();
 
         getFree().setCredit(getFree().getCredit() - subscription.getFee());
-        makePremium(subscription.getDays());
+        return makePremium(subscription.getDays());
     }
-    private void makePremium(int days){
+    private ListenerModel makePremium(int days){
         PremiumModel premium = new PremiumModel(getFree().getUserName(),getFree().getPassword(),getFree().getName(),
                 getFree().getEmail(),getFree().getPhoneNumber(),getFree().getBirthDate(),days,getFree().getCredit());
         premium.setAudiosLiked(getFree().getAudiosLiked());
@@ -119,5 +108,6 @@ public class FreeController extends ListenerController {
 
         Database.getDatabase().getUserAccounts().remove(getFree());
         PremiumController.getPremiumController().loginListener(getFree().getUserName());
+        return premium;
     }
 }

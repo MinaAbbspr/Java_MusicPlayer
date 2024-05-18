@@ -13,12 +13,13 @@ import javafx.scene.paint.Color;
 import model.user.type.AdminModel;
 import view.HelloApplication;
 import view.View;
+import view.stables.GeneralOperationSidebar;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Sidebar implements Initializable {
+public class Sidebar implements Initializable, GeneralOperationSidebar {
 
     @FXML
     private ImageView img_artist;
@@ -37,21 +38,6 @@ public class Sidebar implements Initializable {
 
     @FXML
     private HBox root;
-
-    @FXML
-    private VBox vBox_artist;
-
-    @FXML
-    private VBox vBox_audio;
-
-    @FXML
-    private VBox vBox_home;
-
-    @FXML
-    private VBox vBox_library;
-
-    @FXML
-    private VBox vBox_search;
 
     @FXML
     void showAllArtist(MouseEvent event) throws IOException {
@@ -93,7 +79,8 @@ public class Sidebar implements Initializable {
     }
 
     @FXML
-    void showSearch(MouseEvent event) throws IOException {
+    @Override
+    public void search(MouseEvent event) throws IOException {
         View.getView().showMainPage("search.fxml");
     }
 
@@ -104,5 +91,6 @@ public class Sidebar implements Initializable {
         img_library.setImage(new Image(HelloApplication.class.getResource("img/sidebar/library.png").toExternalForm()));
         img_artist.setImage(new Image(HelloApplication.class.getResource("img/sidebar/artist.png").toExternalForm()));
         img_audio.setImage(new Image(HelloApplication.class.getResource("img/sidebar/audio.png").toExternalForm()));
+        root.setBackground(Background.fill(Color.rgb(238, 247, 255)));
     }
 }
