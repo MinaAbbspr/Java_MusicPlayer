@@ -56,8 +56,8 @@ public class Playbar implements Initializable {
 
     private final ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
     private final ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
-    private final Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
-    private final Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
+    private final Image next = new Image(HelloApplication.class.getResource("img/music/next-track.png").toExternalForm());
+    private final Image back = new Image(HelloApplication.class.getResource("img/music/previous.png").toExternalForm());
 
 
     @FXML
@@ -155,7 +155,7 @@ public class Playbar implements Initializable {
         }
 
         playAnotherAudio();
-        root.setBackground(Background.fill(Color.rgb(238, 247, 255)));
+        root.setBackground(Background.fill(Color.rgb(202, 244, 255)));
     }
 
     private void setTime(){

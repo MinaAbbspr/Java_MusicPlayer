@@ -51,7 +51,7 @@ public class Header implements Initializable, GeneralOperationsHeader {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        crl_back.setFill(new ImagePattern(new Image(HelloApplication.class.getResource("img/header/back2.png").toExternalForm())));
-        root.setBackground(Background.fill(Color.rgb(238, 247, 255)));
+        crl_back.setFill(new ImagePattern(new Image(HelloApplication.class.getResource("img/header/left-arrow.png").toExternalForm())));
+        root.setBackground(Background.fill(Color.rgb(7, 25, 82)));
     }
 }

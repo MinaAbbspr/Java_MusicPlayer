@@ -5,11 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
@@ -75,13 +78,19 @@ public class PlayMusic implements Initializable {
     @FXML
     private Slider slider;
 
+    @FXML
+    private ScrollPane scrollPane;
+
+    @FXML
+    private AnchorPane main;
+
     private final ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
     private final ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
-    private final Image next = new Image(HelloApplication.class.getResource("img/music/next01.png").toExternalForm());
-    private final Image back = new Image(HelloApplication.class.getResource("img/music/back01.png").toExternalForm());
+    private final Image next = new Image(HelloApplication.class.getResource("img/music/next-track.png").toExternalForm());
+    private final Image back = new Image(HelloApplication.class.getResource("img/music/previous.png").toExternalForm());
     private final Image like = new Image(HelloApplication.class.getResource("img/music/like.png").toExternalForm());
     private final Image redLike = new Image(HelloApplication.class.getResource("img/music/redLike02.png").toExternalForm());
-    private final Image add = new Image(HelloApplication.class.getResource("img/music/add.png").toExternalForm());
+    private final Image add = new Image(HelloApplication.class.getResource("img/music/plus.png").toExternalForm());
     private boolean isLike;
 
 
@@ -214,6 +223,10 @@ public class PlayMusic implements Initializable {
         img_next.setImage(next);
         img_previous.setImage(back);
         playAnotherAudio();
+
+        main.setBackground(Background.fill(Color.WHITE));
+        scrollPane.setBackground(Background.fill(Color.WHITE));
+        lbl_lyrics.setBackground(Background.fill(Color.WHITE));
     }
 
     private void isLikeCheck(){

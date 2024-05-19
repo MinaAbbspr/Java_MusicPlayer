@@ -87,10 +87,10 @@ public class Sidebar implements Initializable, GeneralOperationSidebar {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         img_home.setImage(new Image(HelloApplication.class.getResource("img/sidebar/home.png").toExternalForm()));
-        img_search.setImage(new Image(HelloApplication.class.getResource("img/sidebar/search.png").toExternalForm()));
-        img_library.setImage(new Image(HelloApplication.class.getResource("img/sidebar/library.png").toExternalForm()));
-        img_artist.setImage(new Image(HelloApplication.class.getResource("img/sidebar/artist.png").toExternalForm()));
-        img_audio.setImage(new Image(HelloApplication.class.getResource("img/sidebar/audio.png").toExternalForm()));
-        root.setBackground(Background.fill(Color.rgb(238, 247, 255)));
+        img_search.setImage(new Image(HelloApplication.class.getResource("img/sidebar/loupe.png").toExternalForm()));
+        img_library.setImage(new Image(HelloApplication.class.getResource("img/sidebar/books.png").toExternalForm()));
+        img_artist.setImage(new Image(HelloApplication.class.getResource("img/sidebar/microphone.png").toExternalForm()));
+        img_audio.setImage(new Image(HelloApplication.class.getResource("img/sidebar/music (1).png").toExternalForm()));
+        root.setBackground(Background.fill(Color.rgb(7, 25, 82)));
     }
 }

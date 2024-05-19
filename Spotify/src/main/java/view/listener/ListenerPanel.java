@@ -8,6 +8,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import model.audio.PlaylistModel;
 import model.user.type.listener.type.PremiumModel;
 import view.HelloApplication;
@@ -51,6 +54,9 @@ public class ListenerPanel implements Initializable {
 
     @FXML
     private ListView<String> listView;
+
+    @FXML
+    private AnchorPane root;
 
     @FXML
     void getPremium(MouseEvent event) throws IOException {
@@ -97,5 +103,7 @@ public class ListenerPanel implements Initializable {
         if(ListenerController.getListenerController().getListener() instanceof PremiumModel premiumModel){
             lbl_numberOfDays.setText("number of days left: " + premiumModel.getNumberOfDaysLeft());
         }
+
+        root.setBackground(Background.fill(Color.WHITE));
     }
 }

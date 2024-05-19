@@ -229,12 +229,19 @@ public class View {
     }
     public void stepBack() throws IOException {
         if(!back.isEmpty() && !isMainPage) {
+            checkBack();
             showMainPage(back.pop());
         }
         else if(back.size() > 1){
             back.pop();
+            checkBack();
             showMainPage(back.pop());
         }
+    }
+
+    private void checkBack(){
+        while ((!back.isEmpty() )&& (back.peek().equals("followers.fxml") || back.peek().equals("publish.fxml") || back.peek().equals("statistics.fxml") || back.peek().equals("reportPanel.fxml")))
+            back.pop();
     }
 
 }
