@@ -20,7 +20,6 @@ public class AlbumModel {
     //Getter
     private String getCode() {
         StringBuilder stringBuilder = new StringBuilder(this.singerName);
-        stringBuilder.append(this.albumName);
         stringBuilder.append(code++);
         return String.valueOf(stringBuilder);
     }

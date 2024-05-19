@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
@@ -28,7 +29,7 @@
                   <VBox layoutX="183.0" layoutY="51.0" prefHeight="200.0" prefWidth="176.0" spacing="30.0">
                      <children>
                         <TextField fx:id="txt_Lusername" />
-                        <TextField fx:id="txt_Lpassword" />
+                        <PasswordField fx:id="txt_Lpassword" />
                         <TextField fx:id="txt_Lname" />
                         <TextField fx:id="txt_Lemail" />
                         <TextField fx:id="txt_LphoneNumber" />
@@ -57,7 +58,7 @@
                   <VBox layoutX="183.0" layoutY="27.0" prefHeight="200.0" prefWidth="176.0" spacing="30.0">
                      <children>
                         <TextField fx:id="txt_Susername" />
-                        <TextField fx:id="txt_Spassword" />
+                        <PasswordField fx:id="txt_Spassword" />
                         <TextField fx:id="txt_Sname" />
                         <TextField fx:id="txt_Semail" />
                         <TextField fx:id="txt_SphoneNumber" />
@@ -87,7 +88,7 @@
                   <VBox layoutX="183.0" layoutY="27.0" prefHeight="200.0" prefWidth="176.0" spacing="30.0">
                      <children>
                         <TextField fx:id="txt_Pusername" />
-                        <TextField fx:id="txt_Ppassword" />
+                        <PasswordField fx:id="txt_Ppassword" />
                         <TextField fx:id="txt_Pname" />
                         <TextField fx:id="txt_Pemail" />
                         <TextField fx:id="txt_PphoneNumber" />

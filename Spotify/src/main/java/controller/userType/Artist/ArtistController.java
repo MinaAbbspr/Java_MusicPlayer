@@ -1,10 +1,14 @@
 package controller.userType.Artist;
 
 import controller.UserAccountController;
+import model.audio.AudioModel;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArtistController extends UserAccountController {
     private ArtistModel artist;
     private static ArtistController artistController;
@@ -33,16 +37,17 @@ public class ArtistController extends UserAccountController {
     //ورود به حساب کاربری
     public void loginArtist(String username){}
     //مشاهده دنبال کننده ها
-    public StringBuilder showFollowers(){
-        StringBuilder stringBuilder = new StringBuilder();
+    public List<String> showFollowers(){
+        List<String> list = new ArrayList<>();
         for (UserAccountModel user : getArtist().getFollowers())
-            stringBuilder.append("listener username: ").append(user.getUserName()).append("\n");
+            list.add(user.getUserName());
 
-        if(stringBuilder.isEmpty())
-            stringBuilder.append("you have no followers");
+        if(list.isEmpty())
+            throw new NullPointerException("you have no followers!");
 
-        return stringBuilder;
+        return list;
     }
+    public List<AudioModel> getAudios(){return null;}
     //پلی شدن آثار
     public int showNumberOfPlayed(){return 0;}
     //محاسبه درآمد
@@ -51,5 +56,5 @@ public class ArtistController extends UserAccountController {
         return getArtist().toString();
     }
     public String newAlbum(String name){ return "Polymorphism method";}
-    public String publishing(String audioName, String genre, String lyric, String link, String cover, String ID){ return "Polymorphism method";}
+    public String publishing(String audioName, String genre, String lyric, String link, String cover){ return "Polymorphism method";}
 }

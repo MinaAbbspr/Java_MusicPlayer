@@ -63,10 +63,10 @@ public class Sidebar implements Initializable, GeneralOperationSidebar {
             if(View.getView().isListener())
                 fxml = "listenerPanel.fxml";
             else if(View.getView().getUserAccount() instanceof AdminModel){
-                fxml = "";
+                fxml = "adminPanel.fxml";
             }
             else
-                fxml = "";
+                fxml = "artistPanel.fxml";
 
             View.getView().showMainPage(fxml);
         }

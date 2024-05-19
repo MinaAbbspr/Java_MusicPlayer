@@ -93,8 +93,8 @@ public class PremiumController extends ListenerController {
             }
         };
         Timer timer = new Timer("timer");
-        long delay = 1000L /** 60L * 60L * 24L*/;
-        long period = 1000L /** 60L * 60L * 24L*/;
+        long delay = 1000L * 60L * 60L * 24L;
+        long period = 1000L * 60L * 60L * 24L;
         timer.schedule(task, delay, period);
 
     }

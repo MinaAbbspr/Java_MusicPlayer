@@ -5,6 +5,8 @@ module view {
 
     exports view;
     opens view to javafx.fxml;
+    exports view.admin;
+    opens view.admin to javafx.fxml;
     exports view.stables;
     opens view.stables to javafx.fxml;
     exports view.stables.header.components;
@@ -25,4 +27,10 @@ module view {
     opens view.stables.artist to javafx.fxml;
     exports view.stables.audio;
     opens view.stables.audio to javafx.fxml;
+    exports view.admin.components;
+    opens view.admin.components to javafx.fxml;
+    exports view.artist;
+    opens view.artist to javafx.fxml;
+    exports view.artist.components;
+    opens view.artist.components to javafx.fxml;
 }

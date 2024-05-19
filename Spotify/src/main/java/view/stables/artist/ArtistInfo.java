@@ -49,6 +49,9 @@ public class ArtistInfo implements Initializable {
     void Follow(MouseEvent event) {
         if(View.getView().isLogin() && View.getView().isListener()){
             ListenerController.getListenerController().followArtist(artistModel.getUserName());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("you Follow " + artistModel.getUserName());
+            alert.showAndWait();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

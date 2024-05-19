@@ -35,6 +35,6 @@ public class Report {
     }
     @Override
     public String toString(){
-        return "listener's username: " + listenr.getUserName() + "\tartist's username: " + artist.getUserName() + "\texplanation: " + explanation;
+        return "listener's username: " + listenr.getUserName() + "\nartist's username: " + artist.getUserName() + "\nexplanation: " + explanation;
     }
 }

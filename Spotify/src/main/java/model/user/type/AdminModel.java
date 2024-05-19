@@ -15,7 +15,7 @@ public class AdminModel extends UserAccountModel {
     public static AdminModel getAdmin() {
         if(admin == null) {
             LocalDate birthDate = LocalDate.of(1995,4,23);
-            admin = new AdminModel("Admin", "Ahssn#45", "Ali Karimi", "Ali.Karimi@gmail.com", "09132581397", birthDate);
+            admin = new AdminModel("Admin", "A#45", "Ali Karimi", "Ali.Karimi@gmail.com", "09132581397", birthDate);
         }
         return admin;
     }

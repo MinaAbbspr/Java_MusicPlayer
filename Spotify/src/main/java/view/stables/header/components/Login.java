@@ -74,11 +74,13 @@ public class Login implements Initializable {
         stage.close();
         if(user instanceof PodcasterModel){
             PodcasterController.getPodcasterController().loginArtist(username);
-            //
+            View.getView().setListener(false);
+            View.getView().showMainPage("artistPanel.fxml");
         }
         else if(user instanceof SingerModel){
             SingerController.getSingerController().loginArtist(username);
-            //
+            View.getView().setListener(false);
+            View.getView().showMainPage("artistPanel.fxml");
         }
         else if(user instanceof PremiumModel){
             PremiumController.getPremiumController().loginListener(username);
@@ -92,7 +94,8 @@ public class Login implements Initializable {
         }
         else {
             AdminController.getAdminController().loginAdmin(username);
-            //
+            View.getView().setListener(false);
+            View.getView().showMainPage("adminPanel.fxml");
         }
     }
 }

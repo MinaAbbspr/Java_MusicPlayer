@@ -2,12 +2,17 @@ package controller.userType.Artist.type;
 
 import controller.userType.Artist.ArtistController;
 import model.Database;
+import model.audio.AlbumModel;
+import model.audio.AudioModel;
+import model.audio.type.MusicModel;
 import model.audio.type.PodcastModel;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PodcasterController extends ArtistController {
     private PodcasterModel podcaster;
@@ -62,9 +67,18 @@ public class PodcasterController extends ArtistController {
     }
     @Override
     //انتشار پادکست
-    public String publishing(String audioName, String genre, String caption, String link, String cover, String ID){
+    public String publishing(String audioName, String genre, String caption, String link, String cover){
         PodcastModel podcast = new PodcastModel(audioName,getPodcaster().getUserName(),genre,link,cover,caption);
         getPodcaster().getPodcastList().add(podcast);
         return "podcast published successfully";
+    }
+
+    @Override
+    public List<AudioModel> getAudios(){
+        List<AudioModel> list = new ArrayList<>();
+        for(AudioModel audioModel : getPodcaster().getPodcastList())
+            list.add(audioModel);
+
+        return list;
     }
 }

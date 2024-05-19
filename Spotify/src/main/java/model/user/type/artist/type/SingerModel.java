@@ -13,6 +13,7 @@ public class SingerModel extends ArtistModel {
     public SingerModel(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate, String bio) {
         super(userName, password, name, email, phoneNumber, birthDate, bio);
         albumList = new ArrayList<>();
+        albumList.add(new AlbumModel("",name));
         Database.getDatabase().getUserAccounts().add(this);
     }
 

@@ -2,17 +2,14 @@ package view.stables.header.components.signup;
 
 import controller.userType.Listener.type.FreeController;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-public class Genre implements Initializable {
+public class Genre {
 
     @FXML
     private CheckBox checkB_country;
@@ -92,10 +89,5 @@ public class Genre implements Initializable {
         alert.setContentText("Genres saved successfully");
         alert.showAndWait();
         stage.close();
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

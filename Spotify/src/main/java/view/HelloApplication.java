@@ -4,6 +4,7 @@ import controller.userType.Artist.type.SingerController;
 import controller.userType.Listener.type.FreeController;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import model.user.type.AdminModel;
 import model.user.type.artist.type.PodcasterModel;
 import model.user.type.artist.type.SingerModel;
 
@@ -18,6 +19,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        AdminModel.getAdmin();
         SingerModel singerModel1 = new SingerModel("Adele", "Ad88", "Adele Adkins", "Adele.Adkins@gmail.com", "09945632105", LocalDate.of(1988,5,5) ,"adele.com");
         SingerModel singerModel2 = new SingerModel("bad omens", "12345fGGG@", "bad omens band", "bad_omens@gmail.com", "09911039121", LocalDate.of(2004,10,12) ,"here");
         SingerModel singerModel3 = new SingerModel("Charlie Puth", "1224fGGG@", "Charles Otto Puth", "Charles_Puth@gmail.com", "09910039122", LocalDate.of(1991,12,2) ,"hello");
@@ -25,7 +27,6 @@ public class HelloApplication extends Application {
         PodcasterModel podcasterModel = new PodcasterModel("sarahBrown", "S@r@h1234", "Sarah Brown", "sarah.brown@example.com", "09456789012", LocalDate.of(1992,3,20),"Coffee lover ☕");
 
         SingerController.getSingerController().loginArtist("Adele");
-        SingerController.getSingerController().newAlbum("25");
         SingerController.getSingerController().publishing("Hello", "Jazz", """
                         Hello, it's me
                         I was wondering if after all these years you'd like to meet
@@ -46,7 +47,7 @@ public class HelloApplication extends Application {
                         To tell you I'm sorry for breaking your heart
                         But it don't matter, it clearly doesn't tear you apart anymore""",
                 "https://ts1.tarafdari.com/contents/user360611/content-sound/adele_-_hello_mytextmusic.com_.mp3",
-                HelloApplication.class.getResource("img/cover/hello.png").toExternalForm(), "Adele Adkins251");
+                HelloApplication.class.getResource("img/cover/hello.png").toExternalForm());
         SingerController.getSingerController().publishing("When we were young", "Pop",
                 """
                         Everybody loves the things you do
@@ -76,7 +77,7 @@ public class HelloApplication extends Application {
                         And I'd swear you moved overseas
                         That's what you said, when you left me""",
                 "https://ts15.tarafdari.com/contents/user687779/content-sound/when_we_were_young.mp3",
-                HelloApplication.class.getResource("img/cover/when we were young.jpg").toExternalForm(),"Adele Adkins251");
+                HelloApplication.class.getResource("img/cover/when we were young.jpg").toExternalForm());
         SingerController.getSingerController().publishing("Send My Love", "Jazz",
                 """
                         This was all you, none of it me
@@ -102,8 +103,7 @@ public class HelloApplication extends Application {
                         You couldn't keep up, you were falling down (down), mmm
                         There's only one way down""",
                 "https://ts2.tarafdari.com/contents/user6984/content-sound/04_-_send_my_love_to_your_new_lover.mp3",
-                HelloApplication.class.getResource("img/cover/send my love.jpg").toExternalForm(), "Adele Adkins251");
-        SingerController.getSingerController().newAlbum("30");
+                HelloApplication.class.getResource("img/cover/send my love.jpg").toExternalForm());
         SingerController.getSingerController().publishing("Easy on ME", "Pop", """
                         There ain't no gold in this river
                         That I've been washin' my hands in forever
@@ -131,10 +131,9 @@ public class HelloApplication extends Application {
                         What I chose to do
                         So go easy on me""",
                 "https://ts10.tarafdari.com/contents/user493647/content-sound/easy_on_me_-_adele_320.mp3",
-                HelloApplication.class.getResource("img/cover/easy on me.jpg").toExternalForm(), "Adele Adkins302");
+                HelloApplication.class.getResource("img/cover/easy on me.jpg").toExternalForm());
 
         SingerController.getSingerController().loginArtist("bad omens");
-        SingerController.getSingerController().newAlbum("The Death of Peace of Mind");
         SingerController.getSingerController().publishing("Just Pretend", "Rock",
                 """
                         I'm not afraid of the war you've come to wage against my sins
@@ -147,7 +146,7 @@ public class HelloApplication extends Application {
                         I can stay away if you want me to
                         I can wait for years if I gotta
                         Heaven knows I ain't getting over you""", "https://ts13.tarafdari.com/contents/user742612/content-sound/bad_omens_-_just_pretend.mp3",
-                HelloApplication.class.getResource("img/cover/just pretend.jpg").toExternalForm(), "bad omens bandThe Death of Peace of Mind3");
+                HelloApplication.class.getResource("img/cover/just pretend.jpg").toExternalForm());
         SingerController.getSingerController().publishing("The Death of Peace of Mind", "Rock",
                 """
                         Thought I could make it out
@@ -166,7 +165,7 @@ public class HelloApplication extends Application {
                         For granted, in vain, I took everything
                         I ever cared about"""
                 , "https://ts13.tarafdari.com/contents/user823957/content-sound/bad-omens-the-death-of-peace-of-mind.mp3",
-                HelloApplication.class.getResource("img/cover/the death of peace of mind.jpg").toExternalForm(), "bad omens bandThe Death of Peace of Mind3");
+                HelloApplication.class.getResource("img/cover/the death of peace of mind.jpg").toExternalForm());
         SingerController.getSingerController().publishing("Take My First", "Rock",
                 """
                         Oh God, I tried but I don't know how
@@ -185,10 +184,9 @@ public class HelloApplication extends Application {
                         I'd trade in the blame, you can take it
                         If I doesn't take me first
                         If I doesn't take me first""","https://ts15.tarafdari.com/contents/user810598/content-sound/13_-_take_me_first_-_bad_omens_128.mp3",
-                HelloApplication.class.getResource("img/cover/take my first.jpg").toExternalForm(), "bad omens bandThe Death of Peace of Mind3");
+                HelloApplication.class.getResource("img/cover/take my first.jpg").toExternalForm());
 
         SingerController.getSingerController().loginArtist("Charlie Puth");
-        SingerController.getSingerController().newAlbum("Nine Track Mind");
         SingerController.getSingerController().publishing("I love U dangerously", "Pop",
                 """
                         This is gonna hurt, but I blame myself first
@@ -220,7 +218,7 @@ public class HelloApplication extends Application {
                         Didn't care if the explosion ruined me (me, me)
                         Baby, I loved you dangerously""",
                 "https://ts2.tarafdari.com/contents/user478021/content-sound/dangerously_-_charlie_puth.mp3",
-                HelloApplication.class.getResource("img/cover/Charlie_Puth_-_Dangerously.jpg").toExternalForm(), "Charles Otto PuthNine Track Mind4");
+                HelloApplication.class.getResource("img/cover/Charlie_Puth_-_Dangerously.jpg").toExternalForm());
         SingerController.getSingerController().publishing("We don't talk anymore ", "Pop", """
                         We don't talk anymore
                         We don't talk anymore
@@ -245,7 +243,7 @@ public class HelloApplication extends Application {
                         Now I can't get you out of my brain
                         Oh, it's such a shame"""
                 ,"https://ts9.tarafdari.com/contents/user678699/content-sound/charlie_puth_-_we_dont_talk_anymore_lyrics_feat._selena_gomez.mp3",
-                HelloApplication.class.getResource("img/cover/We_Don't_Talk_Anymore.png").toExternalForm(), "Charles Otto PuthNine Track Mind4");
+                HelloApplication.class.getResource("img/cover/We_Don't_Talk_Anymore.png").toExternalForm());
 
         FreeController.getFreeController().signupListener("Mina","mnbbspr","Mina Abbaspour", "Mina@gmail.com","09133138555",LocalDate.of(2005,1,2));
 

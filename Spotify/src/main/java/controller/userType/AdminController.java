@@ -41,59 +41,16 @@ public class AdminController {
             }
     }
 
-    //محبوب ترین فایل ها
-    public StringBuilder showFavoriteAudios(){
-        Comparator <AudioModel> byLike = Comparator.comparingInt(AudioModel::getNumberOfLikes);
-        List <AudioModel> sorted = Database.getDatabase().getAudios().stream().sorted(byLike).toList();
-
-        StringBuilder stringBuilder = new StringBuilder();
-        for(int i= sorted.size()-1; i>=0; i--)
-            stringBuilder.append(sorted.get(i).getAudioName() + "\n");
-
-        if(stringBuilder.isEmpty())
-            throw new NullPointerException("there is no Audio");
-        return stringBuilder;
-    }
-    //مشاهده اطلاعات
-    public void artistsInfo(){
-        List<ArtistModel> artists = new ArrayList<>();
-        for(UserAccountModel user : Database.getDatabase().getUserAccounts())
-            if(user instanceof SingerModel || user instanceof PodcasterModel)
-                artists.add((ArtistModel) user);
-    }
-    public String artistInfo(String username){
-        for(UserAccountModel user : Database.getDatabase().getUserAccounts())
-            if((user instanceof SingerModel || user instanceof PodcasterModel) && username.equals(user.getUserName()))
-                return user.toString();
-        throw new NullPointerException("There is no artist with this username");
-    }
-    ///////////////////
-    public StringBuilder audiosInfo(){
-        StringBuilder stringBuilder = new StringBuilder();
-        int counter = 0;
-        for(AudioModel audio : Database.getDatabase().getAudios())
-            stringBuilder.append(++counter + ". name: " + audio.getAudioName() + "\tID: " + audio.getID() + "\n");
-
-        if (stringBuilder.isEmpty())
-            throw new NullPointerException("there is no Audio");
-        return stringBuilder;
-    }
-    public String audioInfo(long ID){
-        for (AudioModel audio : Database.getDatabase().getAudios())
-            if(ID == audio.getID())
-                return audio.toString();
-        throw new NullPointerException("There is no audio with this ID");
-    }
     //گزارش
-    public StringBuilder reportInfo(){
-        StringBuilder stringBuilder = new StringBuilder();
+    public List<String> reportInfo(){
+        List<String> list = new ArrayList<>();
         for(Report report : Database.getDatabase().getReports())
-            stringBuilder.append(report.toString() + "\n");
+            list.add(report.toString());
 
-        if(stringBuilder.isEmpty())
+        if(list.isEmpty())
             throw new NullPointerException("There is no report");
 
-        return stringBuilder;
+        return list;
     }
     //اطلاعات
     public String showInfo(){

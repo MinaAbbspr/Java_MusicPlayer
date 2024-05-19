@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.artist.ArtistPanel">
+   <children>
+      <VBox layoutX="37.0" layoutY="38.0" prefHeight="225.0" prefWidth="256.0" spacing="15.0">
+         <children>
+            <Label fx:id="lbl_name" text="name">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_username" text="username">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_credit" text="income">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_email" text="email">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lbl_phoneNumber" text="phone number">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_birthDate" text="birthdate">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_bio" text="bio">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="37.0" layoutY="309.0" prefHeight="146.0" prefWidth="256.0" spacing="15.0">
+         <children>
+            <Label fx:id="lbl_followers" onMouseClicked="#followers" text="Followers">
+               <font>
+                  <Font name="Lucida Bright Demibold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_statistics" onMouseClicked="#statistics" text="Views Statistics">
+               <font>
+                  <Font name="Lucida Bright Demibold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_publish" onMouseClicked="#publish" text="Publish">
+               <font>
+                  <Font name="Lucida Bright Demibold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="409.0" layoutY="38.0" prefHeight="420.0" prefWidth="360.0">
+         <content>
+            <ListView fx:id="listView" prefHeight="420.0" prefWidth="350.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

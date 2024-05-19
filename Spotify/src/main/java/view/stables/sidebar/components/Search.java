@@ -108,7 +108,7 @@ public class Search implements Initializable {
     @FXML
     void search(MouseEvent event) {
         gridPane.getChildren().clear();
-        if(txtField.getText() == null){
+        if(txtField.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Enter Artist name OR Audio's title in text field");
             alert.setHeaderText("Empty text field");
@@ -148,7 +148,6 @@ public class Search implements Initializable {
         }
         list = sort(list);
         setVBox(list);
-
     }
     private List<AudioModel> sort(List<AudioModel> list) {
         List<AudioModel> sorted = list;

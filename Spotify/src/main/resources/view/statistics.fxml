@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="470.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.artist.components.Statistics">
+   <children>
+      <BarChart fx:id="barChart" layoutX="67.0" layoutY="35.0" prefHeight="400.0" prefWidth="665.0">
+        <xAxis>
+          <CategoryAxis label="audios" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="number of play" side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

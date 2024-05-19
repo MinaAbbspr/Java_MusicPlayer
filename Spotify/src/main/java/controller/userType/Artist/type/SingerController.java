@@ -10,6 +10,8 @@ import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.SingerModel;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SingerController extends ArtistController {
     private SingerModel singer;
@@ -71,13 +73,18 @@ public class SingerController extends ArtistController {
     }
     @Override
     //انتشار آهنگ
-    public String publishing(String audioName, String genre, String lyric, String link, String cover, String ID){
-        for(AlbumModel album : getSinger().getAlbumList())
-            if(ID.equals(album.getID())){
-                MusicModel music = new MusicModel(audioName,getSinger().getUserName(),genre,link,cover,lyric,ID);
-                album.getMusicList().add(music);
-                return "music published successfully";
-            }
-        return "Album ID is not valid";
+    public String publishing(String audioName, String genre, String lyric, String link, String cover){
+        MusicModel music = new MusicModel(audioName,getSinger().getUserName(),genre,link,cover,lyric,SingerController.getSingerController().getSinger().getAlbumList().getFirst().getID());
+        SingerController.getSingerController().getSinger().getAlbumList().getFirst().getMusicList().add(music);
+        return "music published successfully";
+    }
+    @Override
+    public List<AudioModel> getAudios(){
+        List<AudioModel> list = new ArrayList<>();
+        for(AlbumModel albumModel : getSinger().getAlbumList())
+            for(MusicModel music : albumModel.getMusicList())
+                list.add(music);
+
+        return list;
     }
 }
