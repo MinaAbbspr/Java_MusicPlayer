@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import model.audio.AudioModel;
 import view.HelloApplication;
 import view.View;
@@ -22,10 +25,14 @@ public class PlaylistsAudio implements Initializable {
     @FXML
     private Label lbl_playListName;
 
+    @FXML
+    private AnchorPane root;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lbl_playListName.setText(View.getView().getPlaylist().getPlaylistName());
         setVBox();
+        root.setBackground(Background.fill(Color.WHITE));
     }
 
     private void setVBox(){

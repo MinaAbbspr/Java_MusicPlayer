@@ -4,10 +4,10 @@ import controller.userType.Artist.type.PodcasterController;
 import controller.userType.Listener.type.FreeController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.exceptions.InvalidFormatException;
 import view.View;
@@ -77,6 +77,9 @@ public class Signup implements Initializable {
     @FXML
     private TextField txt_Susername;
 
+    @FXML
+    private TabPane root;
+
     private static Stage stage;
 
     public static void setStage(Stage stage) {
@@ -125,7 +128,7 @@ public class Signup implements Initializable {
             stage.close();
             PodcasterController.getPodcasterController().signupArtist(txt_Pusername.getText(), txt_Ppassword.getText(), txt_Pname.getText(),
                     txt_Pemail.getText(), txt_PphoneNumber.getText(), PDatePicker.getValue(), txt_Pbio.getText());
-            ///////////////////////////////////////
+            View.getView().showMainPage("home.fxml");
         } catch (InvalidFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Failed Signup");
@@ -155,7 +158,7 @@ public class Signup implements Initializable {
             stage.close();
             PodcasterController.getPodcasterController().signupArtist(txt_Susername.getText(), txt_Spassword.getText(), txt_Sname.getText(),
                     txt_Semail.getText(), txt_SphoneNumber.getText(), SDatePicker.getValue(), txt_Sbio.getText());
-            ///////////////////////////////////////panel
+            View.getView().showMainPage("home.fxml");
         } catch (InvalidFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Failed Signup");
@@ -174,5 +177,7 @@ public class Signup implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        root.setBackground(Background.fill(Color.rgb(202, 244, 255)));
+    }
 }

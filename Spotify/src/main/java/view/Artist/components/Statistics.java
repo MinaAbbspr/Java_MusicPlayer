@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import model.audio.AudioModel;
 
 import java.net.URL;
@@ -12,6 +15,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class Statistics implements Initializable {
+    @FXML
+    private AnchorPane root;
 
     @FXML
     private BarChart<String, Integer> barChart;
@@ -24,5 +29,6 @@ public class Statistics implements Initializable {
             series.getData().add(new XYChart.Data<>(audioModel.getAudioName(), audioModel.getNumberOfPlays()));
         }
         barChart.getData().add(series);
+        root.setBackground(Background.fill(Color.WHITE));
     }
 }

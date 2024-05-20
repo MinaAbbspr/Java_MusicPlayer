@@ -13,7 +13,7 @@
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.audio.PlayMusic">
    <children>
       <AnchorPane fx:id="header" prefHeight="50.0" prefWidth="800.0" />
-      <AnchorPane prefHeight="590.0" prefWidth="800.0">
+      <AnchorPane fx:id="main" prefHeight="590.0" prefWidth="800.0">
          <children>
             <ImageView fx:id="img_cover" fitHeight="250.0" fitWidth="250.0" layoutX="71.0" layoutY="44.0" pickOnBounds="true" />
             <VBox layoutX="71.0" layoutY="310.0" prefHeight="130.0" prefWidth="630.0" spacing="20.0">
@@ -45,12 +45,12 @@
                <font>
                   <Font size="13.0" />
                </font></Label>
-            <Circle fx:id="crl_play_pause" fill="#1f93ff00" layoutX="400.0" layoutY="493.0" onMouseClicked="#playOrPause" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="crl_play_pause" fill="#1f93ff00" layoutX="400.0" layoutY="493.0" onMouseClicked="#playOrPause" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <ImageView fx:id="img_previous" fitHeight="20.0" fitWidth="20.0" layoutX="336.0" layoutY="483.0" onMouseClicked="#previous" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="img_add" fitHeight="20.0" fitWidth="20.0" layoutX="273.0" layoutY="483.0" onMouseClicked="#add" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="img_next" fitHeight="20.0" fitWidth="20.0" layoutX="444.0" layoutY="483.0" onMouseClicked="#next" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="img_like" fitHeight="20.0" fitWidth="20.0" layoutX="501.0" layoutY="483.0" onMouseClicked="#like" pickOnBounds="true" preserveRatio="true" />
-            <ScrollPane hbarPolicy="NEVER" layoutX="400.0" layoutY="44.0" prefHeight="250.0" prefWidth="363.0">
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="400.0" layoutY="44.0" prefHeight="250.0" prefWidth="363.0">
                <content>
                   <Label fx:id="lbl_lyrics" text="Label">
                      <font>

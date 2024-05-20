@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="100.0" tabMinWidth="80.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.header.components.signup.Signup">
+<TabPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="100.0" tabMinWidth="80.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.header.components.signup.Signup">
   <tabs>
-    <Tab text="Listener">
+    <Tab fx:id="tab_l" text="Listener">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -40,7 +40,7 @@
                </children>
             </AnchorPane>
          </content></Tab>
-    <Tab text="Singer">
+    <Tab fx:id="tab_s" text="Singer">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -70,7 +70,7 @@
                </children>
             </AnchorPane>
          </content></Tab>
-      <Tab text="Podcaster">
+      <Tab fx:id="tab_p" text="Podcaster">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>

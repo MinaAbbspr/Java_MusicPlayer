@@ -7,6 +7,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.audio.PlaylistModel;
 import model.exceptions.FreeAccountLimitException;
@@ -60,5 +62,6 @@ public class AddAudioToPlaylist implements Initializable {
         for(PlaylistModel playlist : listener.getPlaylists()) {
             listView.getItems().add(playlist.getPlaylistName());
         }
+        root.setBackground(Background.fill(Color.rgb(202, 244, 255)));
     }
 }

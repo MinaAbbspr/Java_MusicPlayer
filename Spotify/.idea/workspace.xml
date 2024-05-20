@@ -4,45 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="admin &amp; artist panel">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/header/left-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/next-track.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/previous.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/books.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/loupe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/microphone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/music (1).png" afterDir="false" />
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/ListenerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/ListenerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/audio/PlayMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/audio/PlayMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/audio/Playbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/audio/Playbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/Sidebar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/adminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/adminPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/artistPAnel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/artistPAnel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/followers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/followers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/header.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/header.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/header/back2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/music/add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/music/back01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/music/next01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/music/pause.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/pause.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/music/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/img/music/play.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/music/redLike01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/artist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/audio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/library.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/img/sidebar/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/listenerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/listenerPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/playbar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/playbar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/publish.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/publish.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/reportPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/reportPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/statistics.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/statistics.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/ArtistPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/ArtistPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/components/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/components/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/components/followers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/components/followers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/components/publish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/components/publish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/admin/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/admin/AdminPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/admin/components/ReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/admin/components/ReportPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/AddAudioToPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/AddAudioToPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/AddPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/AddPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/Following.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/Following.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/GetPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/GetPremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/PlaylistsAudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/PlaylistsAudio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/artist/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/artist/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/addPlaylist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/addPlaylist.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/artistInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/artistInfo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/getPremium.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/getPremium.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/playMusic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/playMusic.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/playlistsAudio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/playlistsAudio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/report.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/report.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716131165619</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="design">
+      <option name="closed" value="true" />
+      <created>1716150803033</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716150803033</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,7 +292,8 @@
     <MESSAGE value="search panel" />
     <MESSAGE value="add audio to playlist, get premium" />
     <MESSAGE value="admin &amp; artist panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin &amp; artist panel" />
+    <MESSAGE value="design" />
+    <option name="LAST_COMMIT_MESSAGE" value="design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

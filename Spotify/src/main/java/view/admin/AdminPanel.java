@@ -3,10 +3,14 @@ package view.admin;
 import controller.StableController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import model.Database;
 import model.audio.AudioModel;
 import view.View;
@@ -22,13 +26,7 @@ public class AdminPanel implements Initializable {
     private BarChart<String, Integer> barChart;
 
     @FXML
-    private Label lbl_artists;
-
-    @FXML
-    private Label lbl_audios;
-
-    @FXML
-    private Label lbl_reports;
+    private AnchorPane root;
 
     @FXML
     void artists(MouseEvent event) throws IOException {
@@ -55,5 +53,6 @@ public class AdminPanel implements Initializable {
             series.getData().add(new XYChart.Data<>(audioModel.getAudioName(), audioModel.getNumberOfLikes()));
         }
         barChart.getData().add(series);
+        root.setBackground(Background.fill(Color.WHITE));
     }
 }

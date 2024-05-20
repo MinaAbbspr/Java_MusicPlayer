@@ -3,9 +3,13 @@ package view.listener.components;
 import controller.userType.Listener.ListenerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Subscription;
 import model.exceptions.NotEnoughBalanceException;
@@ -13,9 +17,12 @@ import model.user.type.listener.ListenerModel;
 import view.View;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class GetPremium {
-
+public class GetPremium implements Initializable {
+    @FXML
+    private AnchorPane root;
 
     @FXML
     private Label lbl_days;
@@ -75,4 +82,8 @@ public class GetPremium {
         lbl_price.setText("price: $" + subscription.getFee());
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        root.setBackground(Background.fill(Color.rgb(202, 244, 255)));
+    }
 }

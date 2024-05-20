@@ -6,6 +6,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import model.audio.AudioModel;
 import view.View;
 
@@ -40,6 +43,9 @@ public class ArtistPanel implements Initializable {
     private ListView<String> listView;
 
     @FXML
+    private AnchorPane root;
+
+    @FXML
     void followers(MouseEvent event) throws IOException {
         View.getView().showMainPage("followers.fxml");
     }
@@ -68,5 +74,7 @@ public class ArtistPanel implements Initializable {
         for(AudioModel audio : ArtistController.getArtistController().getAudios()) {
             listView.getItems().add(audio.getAudioName());
         }
+
+        root.setBackground(Background.fill(Color.WHITE));
     }
 }

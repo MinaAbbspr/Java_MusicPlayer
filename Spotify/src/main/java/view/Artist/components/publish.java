@@ -2,13 +2,23 @@ package view.artist.components;
 
 import controller.userType.Artist.ArtistController;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
+import view.HelloApplication;
 
-public class Publish {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Publish implements Initializable {
+    @FXML
+    private AnchorPane root;
 
     @FXML
     private CheckBox checkB_country;
@@ -76,7 +86,8 @@ public class Publish {
             alert.showAndWait();
             return;
         }
-        ArtistController.getArtistController().publishing(txt_name.getText(),genre,txt_lyrics.getText(),txt_link.getText(),txt_cover.getText());
+        ArtistController.getArtistController().publishing(txt_name.getText(),genre,txt_lyrics.getText(),txt_link.getText(),
+                HelloApplication.class.getResource(txt_cover.getText()).toExternalForm());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("Successfully");
         alert.setContentText("Audio Published Successfully");
@@ -128,4 +139,8 @@ public class Publish {
         return counter == 1;
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        root.setBackground(Background.fill(Color.WHITE));
+    }
 }

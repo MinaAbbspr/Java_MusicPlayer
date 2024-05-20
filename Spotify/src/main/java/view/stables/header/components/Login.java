@@ -9,6 +9,7 @@ import controller.userType.Listener.type.PremiumController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -28,6 +29,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Login implements Initializable {
+    @FXML
+    private Button btn_Login;
 
     @FXML
     private AnchorPane root;
@@ -66,7 +69,7 @@ public class Login implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        root.setBackground(Background.fill(Color.rgb(225, 247, 245)));
+        root.setBackground(Background.fill(Color.rgb(202, 244, 255)));
     }
 
     private void findClass(UserAccountModel user, String username) throws IOException {

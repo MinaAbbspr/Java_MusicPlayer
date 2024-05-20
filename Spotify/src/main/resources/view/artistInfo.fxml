@@ -36,6 +36,6 @@
             </Label>
          </children>
       </VBox>
-      <ImageView fx:id="img" fitHeight="220.0" fitWidth="250.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img" fitHeight="220.0" fitWidth="250.0" layoutX="32.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -4,7 +4,9 @@ import controller.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import model.user.type.artist.ArtistModel;
 import view.HelloApplication;
 import view.View;
@@ -21,6 +23,7 @@ public class Following implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setVBoxArtist(ListenerController.getListenerController().showFollowings());
+        gridPane.setBackground(Background.fill(Color.WHITE));
     }
 
     private void setVBoxArtist(List<ArtistModel> list){
