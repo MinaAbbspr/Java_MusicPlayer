@@ -1,6 +1,5 @@
 package controller;
 
-import model.Database;
 import model.audio.AudioModel;
 
 public class AudioController {
@@ -20,11 +19,5 @@ public class AudioController {
 
     public void setAudio(AudioModel audio) {
         this.audio = audio;
-    }
-
-    public void findAudio(long ID){
-        for(AudioModel audio : Database.getDatabase().getAudios())
-            if(audio.getID() == ID)
-                this.audio = audio;
     }
 }

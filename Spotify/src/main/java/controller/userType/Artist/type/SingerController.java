@@ -82,8 +82,7 @@ public class SingerController extends ArtistController {
     public List<AudioModel> getAudios(){
         List<AudioModel> list = new ArrayList<>();
         for(AlbumModel albumModel : getSinger().getAlbumList())
-            for(MusicModel music : albumModel.getMusicList())
-                list.add(music);
+            list.addAll(albumModel.getMusicList());
 
         return list;
     }

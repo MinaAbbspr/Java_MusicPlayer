@@ -4,13 +4,9 @@ import controller.UserAccountController;
 import model.Database;
 import model.Report;
 import model.Subscription;
-import model.audio.AlbumModel;
 import model.audio.AudioModel;
 import model.audio.Genre;
 import model.audio.PlaylistModel;
-import model.audio.type.MusicModel;
-import model.audio.type.PodcastModel;
-import model.exceptions.FreeAccountLimitException;
 import model.exceptions.NotEnoughBalanceException;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
@@ -91,22 +87,18 @@ public class ListenerController extends UserAccountController {
 
     //گزارش آرتیست
     public void reportArtist(ArtistModel artist, String explanation){
-        Report report = new Report(getListener(),artist,explanation);
+        new Report(getListener(), artist, explanation);
     }
 
     //دنبال کردن آرتیست
-    public String followArtist(String username){
+    public void followArtist(String username){
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(username.equals(user.getUserName())){
                 if(user instanceof SingerModel || user instanceof PodcasterModel){
                     ArtistModel artist = (ArtistModel) user;
                     artist.getFollowers().add(getListener());
-                    return "operation was completed";
                 }
-                else
-                    return "username is not for an artist";
             }
-        return "artist was not found with this username";
     }
 
     //انتخاب پلی لیست

@@ -6,8 +6,8 @@ import model.user.type.listener.ListenerModel;
 import java.time.LocalDate;
 
 public class FreeModel extends ListenerModel {
-    private static int numberOfPlaylist = 3;
-    private static int numberOfMusic = 10;
+    private static final int numberOfPlaylist = 3;
+    private static final int numberOfMusic = 10;
 
     public FreeModel(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate) {
         super(userName, password, name, email, phoneNumber, birthDate);
@@ -18,14 +18,8 @@ public class FreeModel extends ListenerModel {
     public static int getNumberOfPlaylist() {
         return numberOfPlaylist;
     }
-    public static void setNumberOfPlaylist(int numberOfPlaylist) {
-        FreeModel.numberOfPlaylist = numberOfPlaylist;
-    }
     public static int getNumberOfMusic() {
         return numberOfMusic;
-    }
-    public static void setNumberOfMusic(int numberOfMusic) {
-        FreeModel.numberOfMusic = numberOfMusic;
     }
     @Override
     public String toString(){

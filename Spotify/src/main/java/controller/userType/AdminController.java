@@ -2,15 +2,10 @@ package controller.userType;
 
 import model.Database;
 import model.Report;
-import model.audio.AudioModel;
 import model.user.UserAccountModel;
 import model.user.type.AdminModel;
-import model.user.type.artist.ArtistModel;
-import model.user.type.artist.type.PodcasterModel;
-import model.user.type.artist.type.SingerModel;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class AdminController {

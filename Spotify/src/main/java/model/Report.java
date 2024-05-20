@@ -27,12 +27,7 @@ public class Report {
     public void setArtist(ArtistModel artist) {
         this.artist = artist;
     }
-    public String getExplanation() {
-        return explanation;
-    }
-    public void setExplanation(String explanation) {
-        this.explanation = explanation;
-    }
+
     @Override
     public String toString(){
         return "listener's username: " + listenr.getUserName() + "\nartist's username: " + artist.getUserName() + "\nexplanation: " + explanation;

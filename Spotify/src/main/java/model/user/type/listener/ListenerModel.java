@@ -16,7 +16,6 @@ public class ListenerModel extends UserAccountModel {
     private ArrayList <Long> AudiosLiked;
     private LocalDate subscriptionExpirationDate;
     private ArrayList <Genre> genres;
-    private static int maxIndexGenre = 4;
 
     public ListenerModel(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate) {
         super(userName, password, name, email, phoneNumber, birthDate);
@@ -56,12 +55,6 @@ public class ListenerModel extends UserAccountModel {
     }
     public void setAudiosLiked(ArrayList<Long> audiosLiked) {
         AudiosLiked = audiosLiked;
-    }
-    public static int getMaxIndexGenre() {
-        return maxIndexGenre;
-    }
-    public static void setMaxIndexGenre(int maxIndexGenre) {
-        ListenerModel.maxIndexGenre = maxIndexGenre;
     }
     public ArrayList<Genre> getGenres() {
         return genres;

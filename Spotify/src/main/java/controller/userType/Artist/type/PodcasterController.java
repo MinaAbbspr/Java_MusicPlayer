@@ -2,9 +2,7 @@ package controller.userType.Artist.type;
 
 import controller.userType.Artist.ArtistController;
 import model.Database;
-import model.audio.AlbumModel;
 import model.audio.AudioModel;
-import model.audio.type.MusicModel;
 import model.audio.type.PodcastModel;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
@@ -75,10 +73,6 @@ public class PodcasterController extends ArtistController {
 
     @Override
     public List<AudioModel> getAudios(){
-        List<AudioModel> list = new ArrayList<>();
-        for(AudioModel audioModel : getPodcaster().getPodcastList())
-            list.add(audioModel);
-
-        return list;
+        return new ArrayList<>(getPodcaster().getPodcastList());
     }
 }

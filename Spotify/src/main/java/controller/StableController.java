@@ -1,6 +1,5 @@
 package controller;
 
-import javafx.scene.control.Control;
 import model.Database;
 import model.audio.AlbumModel;
 import model.audio.AudioModel;
@@ -38,14 +37,11 @@ public class StableController {
         List<AudioModel> audios = new ArrayList<>();
         if(artistModel instanceof SingerModel){
             for (AlbumModel album : ((SingerModel) artistModel).getAlbumList()){
-                for(AudioModel audio : album.getMusicList())
-                    audios.add(audio);
+                audios.addAll(album.getMusicList());
             }
         }
         else {
-            for(AudioModel audio : ((PodcasterModel)artistModel).getPodcastList()){
-                audios.add(audio);
-            }
+            audios.addAll(((PodcasterModel) artistModel).getPodcastList());
         }
         return audios;
     }
@@ -88,16 +84,13 @@ public class StableController {
 
     //فیلتر
     public List<AudioModel> artistFilter (List <AudioModel> audios, String name){
-        List <AudioModel> filtered = audios.stream().filter(a -> a.getArtistName().equals(name)).toList();
-        return filtered;
+        return audios.stream().filter(a -> a.getArtistName().equals(name)).toList();
     }
     public List<AudioModel> genreFilter(List <AudioModel> audios, String filter){
-        List <AudioModel> filtered = audios.stream().filter(a -> a.getGenre().toString().equals(filter)).toList();
-        return filtered;
+        return audios.stream().filter(a -> a.getGenre().toString().equals(filter)).toList();
     }
     public List<AudioModel> dateFilter(List <AudioModel> audios, LocalDate localDate){
-        List <AudioModel> filtered = audios.stream().filter(a -> a.getDateOfRelease().equals(localDate)).toList();
-        return filtered;
+        return audios.stream().filter(a -> a.getDateOfRelease().equals(localDate)).toList();
     }
     public List<AudioModel> twoDateFilter(List <AudioModel> audios, LocalDate firstDate , LocalDate secondDate){
         List<AudioModel> filtered = new ArrayList<>();

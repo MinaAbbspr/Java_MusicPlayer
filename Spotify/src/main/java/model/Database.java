@@ -26,19 +26,10 @@ public class Database {
     public ArrayList<UserAccountModel> getUserAccounts() {
         return userAccounts;
     }
-    public void setUserAccounts(ArrayList<UserAccountModel> userAccounts) {
-        this.userAccounts = userAccounts;
-    }
     public ArrayList<AudioModel> getAudios() {
         return audios;
     }
-    public void setAudios(ArrayList<AudioModel> audios) {
-        this.audios = audios;
-    }
     public ArrayList<Report> getReports() {
         return reports;
-    }
-    public void setReports(ArrayList<Report> reports) {
-        this.reports = reports;
     }
 }

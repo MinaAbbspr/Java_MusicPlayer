@@ -26,9 +26,6 @@ public class ArtistModel extends UserAccountModel {
     public ArrayList<UserAccountModel> getFollowers() {
         return followers;
     }
-    public void setFollowers(ArrayList<UserAccountModel> followers) {
-        this.followers = followers;
-    }
     public String getBio() {
         return bio;
     }

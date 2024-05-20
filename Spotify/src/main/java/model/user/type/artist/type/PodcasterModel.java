@@ -19,9 +19,6 @@ public class PodcasterModel extends ArtistModel {
     public ArrayList<PodcastModel> getPodcastList() {
         return podcastList;
     }
-    public void setPodcastList(ArrayList<PodcastModel> podcastList) {
-        this.podcastList = podcastList;
-    }
     @Override
     public String toString(){
         return super.toString() + "\tnumber of podcast: " + podcastList.size();

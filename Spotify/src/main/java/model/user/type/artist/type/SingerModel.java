@@ -20,9 +20,6 @@ public class SingerModel extends ArtistModel {
     public ArrayList<AlbumModel> getAlbumList() {
         return albumList;
     }
-    public void setAlbumList(ArrayList<AlbumModel> albumList) {
-        this.albumList = albumList;
-    }
     @Override
     public String toString(){
         StringBuilder stringBuilder = new StringBuilder(super.toString() + "\tnumber of album: " + albumList.size());
