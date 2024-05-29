@@ -1,13 +1,11 @@
 package view;
 
 import controller.userType.Artist.ArtistController;
-import controller.userType.Artist.type.PodcasterController;
 import controller.userType.Artist.type.SingerController;
 import controller.userType.Listener.type.FreeController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.user.type.AdminModel;
-import model.user.type.artist.type.PodcasterModel;
 import model.user.type.artist.type.SingerModel;
 
 import java.io.IOException;

@@ -1,6 +1,6 @@
-package model.exceptions.failedLogin.type;
+package exceptions.failedLogin.type;
 
-import model.exceptions.failedLogin.FailedLoginException;
+import exceptions.failedLogin.FailedLoginException;
 
 public class UserNotFoundException extends FailedLoginException {
     public UserNotFoundException(String message) {

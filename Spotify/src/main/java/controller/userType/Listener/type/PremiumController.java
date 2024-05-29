@@ -6,7 +6,7 @@ import model.Report;
 import model.Subscription;
 import model.audio.AudioModel;
 import model.audio.PlaylistModel;
-import model.exceptions.NotEnoughBalanceException;
+import exceptions.NotEnoughBalanceException;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;
@@ -56,7 +56,7 @@ public class PremiumController extends ListenerController {
             if(playlistName.equals(playlist.getPlaylistName()))
                 throw new Exception("playlist with this name has already been created");
 
-        PlaylistModel playlist = new PlaylistModel(playlistName, getPremium().getUserName());
+        PlaylistModel playlist = new PlaylistModel(playlistName);
         getPremium().getPlaylists().add(playlist);
     }
     @Override
@@ -126,8 +126,8 @@ public class PremiumController extends ListenerController {
                 }
             }
         for (Report report : Database.getDatabase().getReports())
-            if(report.getListenr().getUserName().equals(getPremium().getUserName()))
-                report.setListenr(free);
+            if(report.getListener().getUserName().equals(getPremium().getUserName()))
+                report.setListener(free);
 
         Database.getDatabase().getUserAccounts().remove(getPremium());
         FreeController.getFreeController().loginListener(getPremium().getUserName());

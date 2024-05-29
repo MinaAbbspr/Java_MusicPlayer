@@ -15,7 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import model.exceptions.failedLogin.FailedLoginException;
+import exceptions.failedLogin.FailedLoginException;
 import model.user.UserAccountModel;
 import model.user.type.artist.type.PodcasterModel;
 import model.user.type.artist.type.SingerModel;

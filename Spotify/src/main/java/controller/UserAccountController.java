@@ -1,10 +1,10 @@
 package controller;
 
 import model.Database;
-import model.exceptions.InvalidFormatException;
-import model.exceptions.failedLogin.FailedLoginException;
-import model.exceptions.failedLogin.type.UserNotFoundException;
-import model.exceptions.failedLogin.type.WrongPasswordException;
+import exceptions.InvalidFormatException;
+import exceptions.failedLogin.FailedLoginException;
+import exceptions.failedLogin.type.UserNotFoundException;
+import exceptions.failedLogin.type.WrongPasswordException;
 import model.user.UserAccountModel;
 
 import java.time.LocalDate;

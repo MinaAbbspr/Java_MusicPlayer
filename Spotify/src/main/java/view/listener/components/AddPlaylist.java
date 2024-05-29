@@ -10,7 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import model.exceptions.FreeAccountLimitException;
+import exceptions.FreeAccountLimitException;
 import view.View;
 
 import java.net.URL;

@@ -12,7 +12,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Subscription;
-import model.exceptions.NotEnoughBalanceException;
+import exceptions.NotEnoughBalanceException;
 import model.user.type.listener.ListenerModel;
 import view.View;
 

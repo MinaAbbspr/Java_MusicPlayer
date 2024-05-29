@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import model.audio.AudioModel;
 import view.HelloApplication;
+import view.stables.GeneralOperationSidebar;
 
 import java.io.IOException;
 import java.net.URL;

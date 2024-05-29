@@ -1,4 +1,4 @@
-package model.exceptions.failedLogin;
+package exceptions.failedLogin;
 
 public abstract class FailedLoginException extends Exception{
     public FailedLoginException(String message) {

@@ -11,7 +11,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.audio.PlaylistModel;
-import model.exceptions.FreeAccountLimitException;
+import exceptions.FreeAccountLimitException;
 import model.user.type.listener.ListenerModel;
 import view.View;
 

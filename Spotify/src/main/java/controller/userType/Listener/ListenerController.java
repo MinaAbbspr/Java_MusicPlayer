@@ -7,7 +7,7 @@ import model.Subscription;
 import model.audio.AudioModel;
 import model.audio.Genre;
 import model.audio.PlaylistModel;
-import model.exceptions.NotEnoughBalanceException;
+import exceptions.NotEnoughBalanceException;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.PodcasterModel;

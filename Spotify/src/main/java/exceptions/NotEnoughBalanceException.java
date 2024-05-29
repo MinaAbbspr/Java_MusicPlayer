@@ -1,4 +1,4 @@
-package model.exceptions;
+package exceptions;
 
 public class NotEnoughBalanceException extends Exception{
     public NotEnoughBalanceException(String message) {

@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import model.exceptions.InvalidFormatException;
+import exceptions.InvalidFormatException;
 import view.View;
 
 import java.net.URL;
