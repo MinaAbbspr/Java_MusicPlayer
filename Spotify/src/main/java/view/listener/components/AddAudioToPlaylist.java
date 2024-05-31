@@ -1,6 +1,6 @@
 package view.listener.components;
 
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;

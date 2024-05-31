@@ -1,8 +1,8 @@
 package view;
 
-import controller.userType.Artist.ArtistController;
-import controller.userType.Artist.type.SingerController;
-import controller.userType.Listener.type.FreeController;
+import controller.user.userType.Artist.ArtistController;
+import controller.user.userType.Artist.type.SingerController;
+import controller.user.userType.Listener.type.FreeController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.user.type.AdminModel;
@@ -10,6 +10,7 @@ import model.user.type.artist.type.SingerModel;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class HelloApplication extends Application {
     @Override
@@ -19,15 +20,18 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        fillDatabase();
+        launch();
+    }
+
+    public static void fillDatabase() {
         AdminModel.getAdmin();
-        SingerModel singerModel1 = new SingerModel("Adele", "Ad88", "Adele Adkins", "Adele.Adkins@gmail.com", "09945632105", LocalDate.of(1988,5,5) ,"Musician\nadele.com");
-        SingerModel singerModel2 = new SingerModel("bad omens", "12345fGGG@", "bad omens band", "bad_omens@gmail.com", "09911039121", LocalDate.of(2004,10,12) ,"BAD OMENS\nCONCRETE\nbadomensofficial.com");
-        SingerModel singerModel3 = new SingerModel("Charlie Puth", "1224fGGG@", "Charles Otto Puth", "Charles_Puth@gmail.com", "09910039122", LocalDate.of(1991,12,2) ,"charlieputh.lnk.to/Hero");
-        SingerModel singerModel4 = new SingerModel("Sasha Sloan", "slo", "Sasha Alex Sloan", "Sasha_Sloan@gmail.com", "09910039182", LocalDate.of(1995,3,11) ,"voted most creative in\nmy 9th grade yearbook");
+        SingerModel singerModel1 = new SingerModel("Adele", "Ad88", "Adele Adkins", "Adele.Adkins@gmail.com", "09945632105", LocalDate.of(1988, 5, 5), "Musician\nadele.com");
+        SingerModel singerModel2 = new SingerModel("bad omens", "12345fGGG@", "bad omens band", "bad_omens@gmail.com", "09911039121", LocalDate.of(2004, 10, 12), "BAD OMENS\nCONCRETE\nbadomensofficial.com");
+        SingerModel singerModel3 = new SingerModel("Charlie Puth", "1224fGGG@", "Charles Otto Puth", "Charles_Puth@gmail.com", "09910039122", LocalDate.of(1991, 12, 2), "charlieputh.lnk.to/Hero");
+        SingerModel singerModel4 = new SingerModel("Sasha Sloan", "slo", "Sasha Alex Sloan", "Sasha_Sloan@gmail.com", "09910039182", LocalDate.of(1995, 3, 11), "voted most creative in\nmy 9th grade yearbook");
 
-        //PodcasterModel podcasterModel = new PodcasterModel("RokhPodcast", "Rp99", "Amir Sodbakhsh", "RokhPodcast@gmail.com", "09456789012", LocalDate.of(1992,3,20),"History lover ☕");
-
-        SingerController.getSingerController().loginArtist("Adele");
+        SingerController.getSingerController().loginArtist(singerModel1.getUserName());
         SingerController.getSingerController().publishing("Hello", "Jazz", """
                         Hello, it's me
                         I was wondering if after all these years you'd like to meet
@@ -48,7 +52,7 @@ public class HelloApplication extends Application {
                         To tell you I'm sorry for breaking your heart
                         But it don't matter, it clearly doesn't tear you apart anymore""",
                 "https://ts1.tarafdari.com/contents/user360611/content-sound/adele_-_hello_mytextmusic.com_.mp3",
-                HelloApplication.class.getResource("img/cover/hello.png").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/hello.png")).toExternalForm());
         SingerController.getSingerController().publishing("When we were young", "Pop",
                 """
                         Everybody loves the things you do
@@ -78,7 +82,7 @@ public class HelloApplication extends Application {
                         And I'd swear you moved overseas
                         That's what you said, when you left me""",
                 "https://ts15.tarafdari.com/contents/user687779/content-sound/when_we_were_young.mp3",
-                HelloApplication.class.getResource("img/cover/when we were young.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/when we were young.jpg")).toExternalForm());
         SingerController.getSingerController().publishing("Send My Love", "Jazz",
                 """
                         This was all you, none of it me
@@ -104,7 +108,7 @@ public class HelloApplication extends Application {
                         You couldn't keep up, you were falling down (down), mmm
                         There's only one way down""",
                 "https://ts2.tarafdari.com/contents/user6984/content-sound/04_-_send_my_love_to_your_new_lover.mp3",
-                HelloApplication.class.getResource("img/cover/send my love.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/send my love.jpg")).toExternalForm());
         SingerController.getSingerController().publishing("Easy on ME", "Pop", """
                         There ain't no gold in this river
                         That I've been washin' my hands in forever
@@ -132,34 +136,34 @@ public class HelloApplication extends Application {
                         What I chose to do
                         So go easy on me""",
                 "https://ts10.tarafdari.com/contents/user493647/content-sound/easy_on_me_-_adele_320.mp3",
-                HelloApplication.class.getResource("img/cover/easy on me.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/easy on me.jpg")).toExternalForm());
         SingerController.getSingerController().publishing("Rolling in the Deep", "Pop", """
-            There's a fire starting in my heart
-            Reaching a fever pitch and it's bringing me out the dark
-            Finally, I can see you crystal clear
-            Go ahead and sell me out and I'll lay your shit bare
-            See how I'll leave with every piece of you
-            Don't underestimate the things that I will do
-            There's a fire starting in my heart
-            Reaching a fever pitch, and it's bringing me out the dark
+                        There's a fire starting in my heart
+                        Reaching a fever pitch and it's bringing me out the dark
+                        Finally, I can see you crystal clear
+                        Go ahead and sell me out and I'll lay your shit bare
+                        See how I'll leave with every piece of you
+                        Don't underestimate the things that I will do
+                        There's a fire starting in my heart
+                        Reaching a fever pitch, and it's bringing me out the dark
 
-            The scars of your love remind me of us
-            They keep me thinkin' that we almost had it all
-            The scars of your love, they leave me breathless
-            I can't help feeling
-            We could've had it all
-            (You're gonna wish you never had met me)
-            Rolling in the deep
-            (Tears are gonna fall, rolling in the deep)
-            You had my heart inside of your hand
-            (You're gonna wish you never had met me)
-            And you played it to the beat
-            (Tears are gonna fall, rolling in the deep)
-            """,
+                        The scars of your love remind me of us
+                        They keep me thinkin' that we almost had it all
+                        The scars of your love, they leave me breathless
+                        I can't help feeling
+                        We could've had it all
+                        (You're gonna wish you never had met me)
+                        Rolling in the deep
+                        (Tears are gonna fall, rolling in the deep)
+                        You had my heart inside of your hand
+                        (You're gonna wish you never had met me)
+                        And you played it to the beat
+                        (Tears are gonna fall, rolling in the deep)
+                        """,
                 "https://ts14.tarafdari.com/contents/user837317/content-sound/01_rolling_in_the_deep.mp3",
-                HelloApplication.class.getResource("img/cover/deep.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/deep.jpg")).toExternalForm());
 
-        SingerController.getSingerController().loginArtist("bad omens");
+        SingerController.getSingerController().loginArtist(singerModel2.getUserName());
         SingerController.getSingerController().publishing("Just Pretend", "Rock",
                 """
                         I'm not afraid of the war you've come to wage against my sins
@@ -172,7 +176,7 @@ public class HelloApplication extends Application {
                         I can stay away if you want me to
                         I can wait for years if I gotta
                         Heaven knows I ain't getting over you""", "https://ts13.tarafdari.com/contents/user742612/content-sound/bad_omens_-_just_pretend.mp3",
-                HelloApplication.class.getResource("img/cover/just pretend.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/just pretend.jpg")).toExternalForm());
         SingerController.getSingerController().publishing("The Death of Peace of Mind", "Rock",
                 """
                         Thought I could make it out
@@ -191,7 +195,7 @@ public class HelloApplication extends Application {
                         For granted, in vain, I took everything
                         I ever cared about"""
                 , "https://ts13.tarafdari.com/contents/user823957/content-sound/bad-omens-the-death-of-peace-of-mind.mp3",
-                HelloApplication.class.getResource("img/cover/the death of peace of mind.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/the death of peace of mind.jpg")).toExternalForm());
         SingerController.getSingerController().publishing("Take My First", "Rock",
                 """
                         Oh God, I tried but I don't know how
@@ -209,10 +213,10 @@ public class HelloApplication extends Application {
                         If I could escape it
                         I'd trade in the blame, you can take it
                         If I doesn't take me first
-                        If I doesn't take me first""","https://ts15.tarafdari.com/contents/user810598/content-sound/13_-_take_me_first_-_bad_omens_128.mp3",
-                HelloApplication.class.getResource("img/cover/take my first.jpg").toExternalForm());
+                        If I doesn't take me first""", "https://ts15.tarafdari.com/contents/user810598/content-sound/13_-_take_me_first_-_bad_omens_128.mp3",
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/take my first.jpg")).toExternalForm());
 
-        SingerController.getSingerController().loginArtist("Charlie Puth");
+        SingerController.getSingerController().loginArtist(singerModel3.getUserName());
         SingerController.getSingerController().publishing("I love U dangerously", "Pop",
                 """
                         This is gonna hurt, but I blame myself first
@@ -244,7 +248,7 @@ public class HelloApplication extends Application {
                         Didn't care if the explosion ruined me (me, me)
                         Baby, I loved you dangerously""",
                 "https://ts2.tarafdari.com/contents/user478021/content-sound/dangerously_-_charlie_puth.mp3",
-                HelloApplication.class.getResource("img/cover/Charlie_Puth_-_Dangerously.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/Charlie_Puth_-_Dangerously.jpg")).toExternalForm());
         SingerController.getSingerController().publishing("We don't talk anymore ", "Pop", """
                         We don't talk anymore
                         We don't talk anymore
@@ -268,192 +272,190 @@ public class HelloApplication extends Application {
                         Should've known your love was a game
                         Now I can't get you out of my brain
                         Oh, it's such a shame"""
-                ,"https://ts9.tarafdari.com/contents/user678699/content-sound/charlie_puth_-_we_dont_talk_anymore_lyrics_feat._selena_gomez.mp3",
-                HelloApplication.class.getResource("img/cover/We_Don't_Talk_Anymore.png").toExternalForm());
+                , "https://ts9.tarafdari.com/contents/user678699/content-sound/charlie_puth_-_we_dont_talk_anymore_lyrics_feat._selena_gomez.mp3",
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/We_Don't_Talk_Anymore.png")).toExternalForm());
         SingerController.getSingerController().publishing("See You Again", "HipHop", """
-                     It's been a long day without you, my friend
-                     And I'll tell you all about it when I see you again
-                     We've come a long way from where we began
-                     Oh, I'll tell you all about it when I see you again
-                     When I see you again
-                     … Damn, who knew?
-                     All the planes we flew, good things we been through
-                     That I'd be standing right here talking to you
-                     'Bout another path, I know we loved to hit the road and laugh
-                     But something told me that it wouldn't last
-                     Had to switch up, look at things different, see the bigger picture
-                     Those were the days, hard work forever pays
-                     Now I see you in a better place (see you in a better place)
-                     Uh
-                     … How can we not talk about family when family's all that we got?
-                     Everything I went through, you were standing there by my side
-                     And now you gon' be with me for the last ride
-                     … It's been a long day without you, my friend
-                     And I'll tell you all about it when I see you again (I'll see you again)
-                     We've come a long way (yeah, we came a long way)
-                     From where we began (you know we started)
-                     Oh, I'll tell you all about it when I see you again (I'll tell you)
-                     When I see you again
-                     … First, you both go out your way and the vibe is feeling strong
-                     And what's small turned to a friendship, a friendship turned to a bond
-                     And that bond will never be broken, the love will never get lost
-                     (The love will never get lost)
-                     And when brotherhood come first, then the line will never be crossed
-                     Established it on our own when that line had to be drawn
-                     And that line is what we reached, so remember me when I'm gone
-                     (Remember me when I'm gone)"""
-                ,"https://ts1.tarafdari.com/contents/user188286/content-sound/wiz_khalifa_ft._charlie_puth_-_see_you_again.mp3",
-                HelloApplication.class.getResource("img/cover/see you again.jpg").toExternalForm());
+                        It's been a long day without you, my friend
+                        And I'll tell you all about it when I see you again
+                        We've come a long way from where we began
+                        Oh, I'll tell you all about it when I see you again
+                        When I see you again
+                        … Damn, who knew?
+                        All the planes we flew, good things we been through
+                        That I'd be standing right here talking to you
+                        'Bout another path, I know we loved to hit the road and laugh
+                        But something told me that it wouldn't last
+                        Had to switch up, look at things different, see the bigger picture
+                        Those were the days, hard work forever pays
+                        Now I see you in a better place (see you in a better place)
+                        Uh
+                        … How can we not talk about family when family's all that we got?
+                        Everything I went through, you were standing there by my side
+                        And now you gon' be with me for the last ride
+                        … It's been a long day without you, my friend
+                        And I'll tell you all about it when I see you again (I'll see you again)
+                        We've come a long way (yeah, we came a long way)
+                        From where we began (you know we started)
+                        Oh, I'll tell you all about it when I see you again (I'll tell you)
+                        When I see you again
+                        … First, you both go out your way and the vibe is feeling strong
+                        And what's small turned to a friendship, a friendship turned to a bond
+                        And that bond will never be broken, the love will never get lost
+                        (The love will never get lost)
+                        And when brotherhood come first, then the line will never be crossed
+                        Established it on our own when that line had to be drawn
+                        And that line is what we reached, so remember me when I'm gone
+                        (Remember me when I'm gone)"""
+                , "https://ts1.tarafdari.com/contents/user188286/content-sound/wiz_khalifa_ft._charlie_puth_-_see_you_again.mp3",
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/see you again.jpg")).toExternalForm());
 
-        ArtistController.getArtistController().loginArtist("Sasha Sloan");
-        ArtistController.getArtistController().publishing("Older","Pop", """
-                I used to shut my door while my mother screamed in the kitchen
-                I'd turn the music up, get high and try not to listen
-                To every little fight, 'cause neither one was right
-                I swore I'd never be like them
-                But I was just a kid back then
-                The older I get the more that I see
-                My parents aren't heroes, they're just like me
-                And loving is hard, it don't always work
-                You just try your best not to get hurt
-                I used to be mad but now I know
-                Sometimes it's better to let someone go
-                It just hadn't hit me yet
-                The older I get
-                I used to wonder why, why they could never be happy
-                I used to close my eyes and pray for a whole 'nother family
-                Where everything was fine, one that felt like mine
-                I swore I'd never be like them
-                But I was just a kid back then
-                The older I get the more that I see
-                My parents aren't heroes, they're just like me
-                And loving is hard, it don't always work
-                You just try your best not to get hurt
-                I used to be mad but now I know
-                Sometimes it's better to let someone go
-                It just hadn't hit me yet
-                The older I get
-                The older I get the more that I see
-                My parents aren't heroes, they're just like me
-                And loving is hard, it don't always work
-                You just try your best not to get hurt
-                I used to be mad but now I know
-                Sometimes it's better to let someone go
-                It just hadn't hit me yet
-                The older I get
-                ""","https://ts12.tarafdari.com/contents/user677085/content-sound/sasha_sloan_-_older.mp3",
-                HelloApplication.class.getResource("img/cover/older.jpg").toExternalForm());
+        ArtistController.getArtistController().loginArtist(singerModel4.getUserName());
+        ArtistController.getArtistController().publishing("Older", "Pop", """
+                        I used to shut my door while my mother screamed in the kitchen
+                        I'd turn the music up, get high and try not to listen
+                        To every little fight, 'cause neither one was right
+                        I swore I'd never be like them
+                        But I was just a kid back then
+                        The older I get the more that I see
+                        My parents aren't heroes, they're just like me
+                        And loving is hard, it don't always work
+                        You just try your best not to get hurt
+                        I used to be mad but now I know
+                        Sometimes it's better to let someone go
+                        It just hadn't hit me yet
+                        The older I get
+                        I used to wonder why, why they could never be happy
+                        I used to close my eyes and pray for a whole 'nother family
+                        Where everything was fine, one that felt like mine
+                        I swore I'd never be like them
+                        But I was just a kid back then
+                        The older I get the more that I see
+                        My parents aren't heroes, they're just like me
+                        And loving is hard, it don't always work
+                        You just try your best not to get hurt
+                        I used to be mad but now I know
+                        Sometimes it's better to let someone go
+                        It just hadn't hit me yet
+                        The older I get
+                        The older I get the more that I see
+                        My parents aren't heroes, they're just like me
+                        And loving is hard, it don't always work
+                        You just try your best not to get hurt
+                        I used to be mad but now I know
+                        Sometimes it's better to let someone go
+                        It just hadn't hit me yet
+                        The older I get
+                        """, "https://ts12.tarafdari.com/contents/user677085/content-sound/sasha_sloan_-_older.mp3",
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/older.jpg")).toExternalForm());
         ArtistController.getArtistController().publishing("Dancing With Your Ghost", "Pop",
-        """
-                Yelling at the sky
-                Screaming at the world
-                Baby, why'd you go away?
-                I'm still your girl
-                Holding on too tight
-                Head up in the clouds
-                Heaven only knows where you are now
-                How do I love, how do I love again?
-                How do I trust, how do I trust again?
-                I stay up all night, tell myself I'm alright
-                Baby, you're just harder to see than most
-                I put the record on, wait 'til I hear our song
-                Every night, I'm dancing with your ghost
-                Every night, I'm dancing with your ghost
-                Never got the chance
-                To say a last goodbye
-                I gotta move on
-                But it hurts to try
-                How do I love, how do I love again?
-                How do I trust, how do I trust again?
-                I stay up all night, tell myself I'm alright
-                Baby, you're just harder to see than most
-                I put the record on, wait 'til I hear our song
-                Every night, I'm dancing with your ghost
-                Every night, I'm dancing with your ghost
-                How do I love, how do I love again?
-                How do I trust, how do I trust again?
-                I stay up all night, tell myself I'm alright
-                Baby, you're just harder to see than most
-                I put the record on, wait 'til I hear our song
-                Every night, I'm dancing with your ghost
-                Every night, I'm dancing with your ghost
-                Every night, I'm dancing with your ghost""",
-                "https://ts10.tarafdari.com/contents/user768849/content-sound/sasha-sloan-dancing-with-your-ghost.mp3",
-                HelloApplication.class.getResource("img/cover/dancing.jpg").toExternalForm());
-        ArtistController.getArtistController().publishing("Is It Just Me","Pop",
                 """
-                    Is it just me?
-                    Is it just me?
-                    I hate holding babies and people tryna save me
-                    Think religion is a business where you pay for God's forgiveness
-                    Modern art is borin', politicians are annoyin'
-                    I don't think love lasts forever and old music was better
-                    Am I just high
-                    Or am I kinda right?
-                    Is it just me or does anybody
-                    Feel the way that I feel?
-                    They're just not being real
-                    Tell me, is it just me or is anybody
-                    Thinking all the same shit?
-                    They're just not saying it
-                    Or is it just me?
-                    Is it just me?
-                    (Is it just me?)
-                    Weddings are outdated, the show 'Friends' was overrated
-                    I think rich kids have it easy and PDA is creepy
-                    The internet's obnoxious, people my age make me nauseous
-                    I think marijuana's classy and doing coke is trashy
-                    Am I just high
-                    Or am I kinda right?
-                    Is it just me or does anybody
-                    Feel the way that I feel?
-                    They're just not being real
-                    Tell me, is it just me or is anybody
-                    Thinking all the same shit?
-                    They're just not saying it
-                    Or is it just me?
-                    Is it just me?""","https://ts13.tarafdari.com/contents/user627598/content-sound/sasha_sloan_-_is_it_just_me.mp3",
-                HelloApplication.class.getResource("img/cover/is it.jpg").toExternalForm());
+                        Yelling at the sky
+                        Screaming at the world
+                        Baby, why'd you go away?
+                        I'm still your girl
+                        Holding on too tight
+                        Head up in the clouds
+                        Heaven only knows where you are now
+                        How do I love, how do I love again?
+                        How do I trust, how do I trust again?
+                        I stay up all night, tell myself I'm alright
+                        Baby, you're just harder to see than most
+                        I put the record on, wait 'til I hear our song
+                        Every night, I'm dancing with your ghost
+                        Every night, I'm dancing with your ghost
+                        Never got the chance
+                        To say a last goodbye
+                        I gotta move on
+                        But it hurts to try
+                        How do I love, how do I love again?
+                        How do I trust, how do I trust again?
+                        I stay up all night, tell myself I'm alright
+                        Baby, you're just harder to see than most
+                        I put the record on, wait 'til I hear our song
+                        Every night, I'm dancing with your ghost
+                        Every night, I'm dancing with your ghost
+                        How do I love, how do I love again?
+                        How do I trust, how do I trust again?
+                        I stay up all night, tell myself I'm alright
+                        Baby, you're just harder to see than most
+                        I put the record on, wait 'til I hear our song
+                        Every night, I'm dancing with your ghost
+                        Every night, I'm dancing with your ghost
+                        Every night, I'm dancing with your ghost""",
+                "https://ts10.tarafdari.com/contents/user768849/content-sound/sasha-sloan-dancing-with-your-ghost.mp3",
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/dancing.jpg")).toExternalForm());
+        ArtistController.getArtistController().publishing("Is It Just Me", "Pop",
+                """
+                        Is it just me?
+                        Is it just me?
+                        I hate holding babies and people tryna save me
+                        Think religion is a business where you pay for God's forgiveness
+                        Modern art is borin', politicians are annoyin'
+                        I don't think love lasts forever and old music was better
+                        Am I just high
+                        Or am I kinda right?
+                        Is it just me or does anybody
+                        Feel the way that I feel?
+                        They're just not being real
+                        Tell me, is it just me or is anybody
+                        Thinking all the same shit?
+                        They're just not saying it
+                        Or is it just me?
+                        Is it just me?
+                        (Is it just me?)
+                        Weddings are outdated, the show 'Friends' was overrated
+                        I think rich kids have it easy and PDA is creepy
+                        The internet's obnoxious, people my age make me nauseous
+                        I think marijuana's classy and doing coke is trashy
+                        Am I just high
+                        Or am I kinda right?
+                        Is it just me or does anybody
+                        Feel the way that I feel?
+                        They're just not being real
+                        Tell me, is it just me or is anybody
+                        Thinking all the same shit?
+                        They're just not saying it
+                        Or is it just me?
+                        Is it just me?""", "https://ts13.tarafdari.com/contents/user627598/content-sound/sasha_sloan_-_is_it_just_me.mp3",
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/is it.jpg")).toExternalForm());
         ArtistController.getArtistController().publishing("Hero", "Pop", """
-                Been here before, it's in my muscle memory
-                I'm pretty sure I recognize you
-                There is somethin' in your eyes
-                Won't let you get away tonight
-                You leave me in the dark
-                I'm stumblin' around like I'm a question mark
-                Wonderin' if you're around to catch me if I fall
-                If I come crashin' to the wall
-                Will you light me up, jumpstart my heart?
-                I need someone before the sun goes down
-                Who's gonna save me now?
-                Some kind of hero
-                I can't breathe
-                Hopin' you're here to rescue me
-                Before the sun goes down
-                Who's gonna save me now?
-                Some kind of hero
-                Been here before, it's in my muscle memory
-                I'm pretty sure I've felt this energy
-                There's somethin' in your touch
-                Somethin' reminded me of us
-                Will you light me up, jumpstart my heart?
-                I need someone before the sun goes down
-                Who's gonna save me now?
-                Some kind of hero
-                I can't breathe
-                Hopin' you're here to rescue me
-                Before the sun goes down
-                Who's gonna save me now?
-                Some kind of hero
-                Some kind of hero
-                Da, da-da, da-da
-                Da-da-da-da-da-da-da
-                Da-da, da-da, da-da-da-da-da-da""",
+                        Been here before, it's in my muscle memory
+                        I'm pretty sure I recognize you
+                        There is somethin' in your eyes
+                        Won't let you get away tonight
+                        You leave me in the dark
+                        I'm stumblin' around like I'm a question mark
+                        Wonderin' if you're around to catch me if I fall
+                        If I come crashin' to the wall
+                        Will you light me up, jumpstart my heart?
+                        I need someone before the sun goes down
+                        Who's gonna save me now?
+                        Some kind of hero
+                        I can't breathe
+                        Hopin' you're here to rescue me
+                        Before the sun goes down
+                        Who's gonna save me now?
+                        Some kind of hero
+                        Been here before, it's in my muscle memory
+                        I'm pretty sure I've felt this energy
+                        There's somethin' in your touch
+                        Somethin' reminded me of us
+                        Will you light me up, jumpstart my heart?
+                        I need someone before the sun goes down
+                        Who's gonna save me now?
+                        Some kind of hero
+                        I can't breathe
+                        Hopin' you're here to rescue me
+                        Before the sun goes down
+                        Who's gonna save me now?
+                        Some kind of hero
+                        Some kind of hero
+                        Da, da-da, da-da
+                        Da-da-da-da-da-da-da
+                        Da-da, da-da, da-da-da-da-da-da""",
                 "https://ts14.tarafdari.com/contents/user804506/content-sound/alan_walker_-_hero.mp3",
-                HelloApplication.class.getResource("img/cover/Hero.jpg").toExternalForm());
+                Objects.requireNonNull(HelloApplication.class.getResource("img/cover/Hero.jpg")).toExternalForm());
 
-        FreeController.getFreeController().signupListener("Mina","mnbbspr","Mina Abbaspour", "Mina@gmail.com","09133138555",LocalDate.of(2005,1,2));
-
-        launch();
+        FreeController.getFreeController().signupListener("Mina", "mnbbspr", "Mina Abbaspour", "Mina@gmail.com", "09133138555", LocalDate.of(2005, 1, 2));
     }
 }

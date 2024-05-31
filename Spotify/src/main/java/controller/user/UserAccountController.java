@@ -1,4 +1,4 @@
-package controller;
+package controller.user;
 
 import model.Database;
 import exceptions.InvalidFormatException;
@@ -23,13 +23,16 @@ abstract public class UserAccountController {
                 throw new Exception("username already exists");
         }
 
+        if(checkPassword(password) < 3)
+            throw new InvalidFormatException("your password is weak\nuse 0-9 a-z A-Z @#$%& in your password");
+
         if(!checkRegex("^[0][9]\\d{9}$",phoneNumber))
             throw new InvalidFormatException("Invalid Phone Number");
 
         if(!checkRegex("^[\\w\\-\\.]+@([\\w-]+\\.)[\\w-]{2,}$" , email))
             throw new InvalidFormatException("Invalid Email");
 
-        return "making new Account Completed Successfully\nThe security of your password is: " + checkPassword(password)+"/5";
+        return "making new Account Completed Successfully";
     }
     private int checkPassword(String password){
         int score = 0;
@@ -57,7 +60,7 @@ abstract public class UserAccountController {
     //ورود به حساب کاربری
     public UserAccountModel login(String username, String password) throws FailedLoginException {
         if(username.isEmpty() || password.isEmpty())
-            throw new NullPointerException("fill text Box!");
+            throw new NullPointerException("fill all text field!");
         UserAccountModel userAccount = null;
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(username.equals(user.getUserName())) {

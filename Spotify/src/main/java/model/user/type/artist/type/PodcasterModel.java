@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class PodcasterModel extends ArtistModel {
-    private ArrayList<PodcastModel> podcastList;
+    private final ArrayList<PodcastModel> podcastList;
 
     public PodcasterModel(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate, String bio) {
         super(userName, password, name, email, phoneNumber, birthDate, bio);

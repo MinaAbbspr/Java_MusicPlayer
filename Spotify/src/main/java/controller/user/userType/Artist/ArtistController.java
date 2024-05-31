@@ -1,6 +1,6 @@
-package controller.userType.Artist;
+package controller.user.userType.Artist;
 
-import controller.UserAccountController;
+import controller.user.UserAccountController;
 import model.audio.AudioModel;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
@@ -52,9 +52,5 @@ public class ArtistController extends UserAccountController {
     public int showNumberOfPlayed(){return 0;}
     //محاسبه درآمد
     public String calculateEarnings(){return "Polymorphism method";}
-    public String showInfo(){
-        return getArtist().toString();
-    }
-    public String newAlbum(String name){ return "Polymorphism method";}
     public String publishing(String audioName, String genre, String lyric, String link, String cover){ return "Polymorphism method";}
 }

@@ -4,7 +4,7 @@ import model.Database;
 import model.audio.AudioModel;
 
 public class PodcastModel extends AudioModel {
-    private String caption;
+    private final String caption;
 
     public PodcastModel(String audioName, String artistName, String genre, String link, String cover, String caption) {
         super(audioName, artistName, genre, link, cover);
@@ -15,10 +15,6 @@ public class PodcastModel extends AudioModel {
     //Getter
     public String getCaption() {
         return caption;
-    }
-    //Setter
-    public void setCaption(String caption) {
-        this.caption = caption;
     }
     @Override
     public String toString(){

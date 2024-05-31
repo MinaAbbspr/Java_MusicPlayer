@@ -1,6 +1,6 @@
 package view.listener;
 
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -66,11 +66,10 @@ public class ListenerPanel implements Initializable {
     @FXML
     void openPlaylist(MouseEvent event) throws IOException {
         String playlistName = listView.getSelectionModel().getSelectedItem();
-        if(playlistName.isEmpty()){}
-        else if(playlistName.equals("+ create new playlist...")) {
+        if(playlistName.equals("+ create new playlist...")) {
             View.getView().showAddPlaylist();
         }
-        else{
+        else if (!playlistName.isEmpty()){
             View.getView().setPlaylist(ListenerController.getListenerController().selectPlaylist(playlistName));
             View.getView().showMainPage("playlistsAudio.fxml");
         }

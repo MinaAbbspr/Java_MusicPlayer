@@ -1,6 +1,6 @@
 package view.stables.header.components.signup;
 
-import controller.userType.Listener.type.FreeController;
+import controller.user.userType.Listener.type.FreeController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;

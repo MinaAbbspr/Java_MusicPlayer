@@ -2,7 +2,7 @@ package view.stables.artist;
 
 import controller.AudioController;
 import controller.StableController;
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.Listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

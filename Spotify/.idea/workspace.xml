@@ -4,43 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="checking warnings">
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/FreeAccountLimitException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/InvalidFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NotEnoughBalanceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/failedLogin/FailedLoginException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/failedLogin/type/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/failedLogin/type/WrongPasswordException.java" afterDir="false" />
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="clean model">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/UserAccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/userType/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/userType/Artist/ArtistController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/userType/Artist/type/PodcasterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/userType/Artist/type/SingerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/userType/Listener/ListenerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/userType/Listener/type/FreeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/userType/Listener/type/PremiumController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/AudioControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/StableControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/user/UserAccountControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/user/userType/AdminControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/FreeAccountLimitException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/InvalidFormatException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/NotEnoughBalanceException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/failedLogin/FailedLoginException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/failedLogin/type/UserNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/failedLogin/type/WrongPasswordException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/AddAudioToPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/AddAudioToPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/AddPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/AddPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/GetPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/GetPremium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/genre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/genre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/StableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/ArtistController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/FreeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/type/PremiumController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/audio/AlbumModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/audio/AudioModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audio/AudioModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/audio/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audio/PlaylistModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/audio/type/MusicModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audio/type/MusicModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/audio/type/PodcastModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audio/type/PodcastModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/ArtistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/ArtistModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/PodcasterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/PodcasterModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/SingerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/SingerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/ArtistPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/ArtistPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/components/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/components/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/components/followers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/components/followers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Artist/components/publish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Artist/components/publish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/admin/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/admin/AdminPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/admin/components/ReportPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/admin/components/ReportPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/ListenerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/ListenerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/AddAudioToPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/AddAudioToPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/AddPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/AddPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/Following.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/Following.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/listener/components/GetPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/listener/components/GetPremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/artist/ArtistInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/artist/ArtistInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/artist/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/artist/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/Sidebar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/user/userType/Artist/ArtistControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/user/userType/Artist/ArtistControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +71,8 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -83,6 +102,30 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
+    "JUnit.AdminControllerTest.testReportInfoNullPointerException.executor": "Run",
+    "JUnit.ArtistControllerTest.testShowFollowersNullPointerException.executor": "Run",
+    "JUnit.AudioControllerTest.executor": "Run",
+    "JUnit.AudioControllerTest.testDateFilter.executor": "Run",
+    "JUnit.AudioControllerTest.testDateFilterNullAnswer.executor": "Run",
+    "JUnit.AudioControllerTest.testGenreFilter.executor": "Run",
+    "JUnit.AudioControllerTest.testIsGenre.executor": "Run",
+    "JUnit.AudioControllerTest.testIsGenreWrongAnswer.executor": "Run",
+    "JUnit.AudioControllerTest.testSearchWithArtistName.executor": "Run",
+    "JUnit.AudioControllerTest.testSearchWithAudioName.executor": "Run",
+    "JUnit.AudioControllerTest.testSort.executor": "Run",
+    "JUnit.AudioControllerTest.testTwoDateFilter.executor": "Run",
+    "JUnit.StableControllerTest.executor": "Run",
+    "JUnit.StableControllerTest.tstArtistList.executor": "Run",
+    "JUnit.StableControllerTest.tstArtistsInfo.executor": "Run",
+    "JUnit.UserAccountControllerTest.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSLogin.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSLoginNullPointException.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSignup.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSignupEmailException.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSignupNullPointEx.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSignupPasswordException.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSignupPhoneNumberException.executor": "Run",
+    "JUnit.UserAccountControllerTest.testSignupUsernameException.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -103,6 +146,7 @@
       <recent name="E:\Uni\2\Quera\9\phase2\spotify\src\main\resources\view" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="controller" />
       <recent name="" />
       <recent name="view" />
     </key>
@@ -110,23 +154,93 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.HelloApplication" />
+  <component name="RunManager" selected="JUnit.ArtistControllerTest.testShowFollowersNullPointerException">
+    <configuration name="AdminControllerTest.testReportInfoNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.stables.sidebar.components.*" />
+          <option name="PATTERN" value="controller.user.userType.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller.user.userType" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.userType.AdminControllerTest" />
+      <option name="METHOD_NAME" value="testReportInfoNullPointerException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArtistControllerTest.testShowFollowersNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.userType.Artist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user.userType.Artist" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.userType.Artist.ArtistControllerTest" />
+      <option name="METHOD_NAME" value="testShowFollowersNullPointerException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.UserAccountControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAccountControllerTest.testSLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.UserAccountControllerTest" />
+      <option name="METHOD_NAME" value="testSLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAccountControllerTest.testSLoginNullPointException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.UserAccountControllerTest" />
+      <option name="METHOD_NAME" value="testSLoginNullPointException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="JUnit.ArtistControllerTest.testShowFollowersNullPointerException" />
+        <item itemvalue="JUnit.AdminControllerTest.testReportInfoNullPointerException" />
+        <item itemvalue="JUnit.UserAccountControllerTest" />
+        <item itemvalue="JUnit.UserAccountControllerTest.testSLogin" />
+        <item itemvalue="JUnit.UserAccountControllerTest.testSLoginNullPointException" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716220214748</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="clean model">
+      <option name="closed" value="true" />
+      <created>1717007167641</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717007167641</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,17 +447,7 @@
     <MESSAGE value="design" />
     <MESSAGE value="add audios" />
     <MESSAGE value="checking warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="checking warnings" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="clean model" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean model" />
   </component>
 </project>

@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class Database {
     private static Database database;
-    private ArrayList <UserAccountModel> userAccounts;
-    private ArrayList <AudioModel> audios;
-    private ArrayList<Report> reports;
+    private final ArrayList <UserAccountModel> userAccounts;
+    private final ArrayList <AudioModel> audios;
+    private final ArrayList<Report> reports;
 
     private Database() {
         userAccounts = new ArrayList<>();

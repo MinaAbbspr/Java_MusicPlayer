@@ -1,6 +1,6 @@
 package view.artist;
 
-import controller.userType.Artist.ArtistController;
+import controller.user.userType.Artist.ArtistController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;

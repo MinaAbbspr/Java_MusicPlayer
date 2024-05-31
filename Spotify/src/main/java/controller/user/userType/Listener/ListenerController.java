@@ -1,6 +1,6 @@
-package controller.userType.Listener;
+package controller.user.userType.Listener;
 
-import controller.UserAccountController;
+import controller.user.UserAccountController;
 import model.Database;
 import model.Report;
 import model.Subscription;
@@ -41,6 +41,7 @@ public class ListenerController extends UserAccountController {
     public void setListener(ListenerModel listener) {
         this.listener = listener;
     }
+
     //ثبت نام کاربر
     public void signupListener(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate){
         FreeModel freeModel = new FreeModel(userName, password, name, email, phoneNumber, birthDate);

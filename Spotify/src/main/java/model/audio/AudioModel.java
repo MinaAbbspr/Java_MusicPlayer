@@ -7,14 +7,14 @@ import java.time.LocalDate;
 abstract public class AudioModel implements Comparable<AudioModel>{
     private static int code = 0;
     private final long ID;
-    private String audioName;
-    private String artistName;
+    private final String audioName;
+    private final String artistName;
     private int numberOfPlays;
     private int numberOfLikes;
-    private LocalDate dateOfRelease;
+    private final LocalDate dateOfRelease;
     private Genre genre;
-    private String link;
-    private String cover;
+    private final String link;
+    private final String cover;
 
     public AudioModel(String audioName, String artistName, String genre, String link, String cover) {
         this.audioName = audioName;
@@ -60,29 +60,14 @@ abstract public class AudioModel implements Comparable<AudioModel>{
         return cover;
     }
     //Setter
-    public void setAudioName(String audioName) {
-        this.audioName = audioName;
-    }
-    public void setArtistName(String artistName) {
-        this.artistName = artistName;
-    }
     public void setNumberOfPlays(int numberOfPlays) {
         this.numberOfPlays = numberOfPlays;
     }
     public void setNumberOfLikes(int numberOfLikes) {
         this.numberOfLikes = numberOfLikes;
     }
-    public void setDateOfRelease(LocalDate dateOfRelease) {
-        this.dateOfRelease = dateOfRelease;
-    }
     public void setGenre(Genre genre) {
         this.genre = genre;
-    }
-    public void setLink(String link) {
-        this.link = link;
-    }
-    public void setCover(String cover) {
-        this.cover = cover;
     }
     @Override
     public String toString(){
@@ -95,9 +80,6 @@ abstract public class AudioModel implements Comparable<AudioModel>{
     public int compareTo(AudioModel o){
         if(this.audioName.compareTo(o.audioName) == 0){
             if(this.getNumberOfLikes() - o.getNumberOfLikes() == 0){
-                if(this.getClass().isInstance(o)){
-                    return this.getNumberOfPlays() - o.getNumberOfPlays();
-                }
                 if(o instanceof MusicModel)
                     return -1;
                 return 1;

@@ -1,6 +1,6 @@
-package controller.userType.Artist.type;
+package controller.user.userType.Artist.type;
 
-import controller.userType.Artist.ArtistController;
+import controller.user.userType.Artist.ArtistController;
 import model.Database;
 import model.audio.AudioModel;
 import model.audio.type.PodcastModel;

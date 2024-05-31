@@ -1,6 +1,6 @@
-package controller.userType.Listener.type;
+package controller.user.userType.Listener.type;
 
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.Listener.ListenerController;
 import model.Database;
 import model.Report;
 import model.Subscription;
@@ -24,7 +24,7 @@ public class PremiumController extends ListenerController {
     private static PremiumController premiumController;
 
     private PremiumController() {
-        ListenerController.getListenerController().getListener();
+        super();
         reductionOfSubscriptionDays();
     }
 

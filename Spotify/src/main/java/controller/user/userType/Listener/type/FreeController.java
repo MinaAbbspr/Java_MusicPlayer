@@ -1,6 +1,6 @@
-package controller.userType.Listener.type;
+package controller.user.userType.Listener.type;
 
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.Listener.ListenerController;
 import model.Database;
 import model.Report;
 import model.Subscription;
@@ -23,7 +23,7 @@ public class FreeController extends ListenerController {
     private static FreeController freeController;
 
     private FreeController() {
-        ListenerController.getListenerController().getListener();
+        super();
     }
 
     public FreeModel getFree() {

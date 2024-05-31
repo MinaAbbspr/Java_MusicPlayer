@@ -1,11 +1,10 @@
 package view.stables.header.components;
 
-import controller.userType.AdminController;
-import controller.userType.Artist.type.PodcasterController;
-import controller.userType.Artist.type.SingerController;
-import controller.userType.Listener.ListenerController;
-import controller.userType.Listener.type.FreeController;
-import controller.userType.Listener.type.PremiumController;
+import controller.user.userType.Artist.type.PodcasterController;
+import controller.user.userType.Artist.type.SingerController;
+import controller.user.userType.Listener.ListenerController;
+import controller.user.userType.Listener.type.FreeController;
+import controller.user.userType.Listener.type.PremiumController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -71,30 +70,31 @@ public class Login implements Initializable {
     private void findClass(UserAccountModel user, String username) throws IOException {
         View.getView().setLogin(true);
         stage.close();
-        if(user instanceof PodcasterModel){
-            PodcasterController.getPodcasterController().loginArtist(username);
-            View.getView().setListener(false);
-            View.getView().showMainPage("artistPanel.fxml");
-        }
-        else if(user instanceof SingerModel){
-            SingerController.getSingerController().loginArtist(username);
-            View.getView().setListener(false);
-            View.getView().showMainPage("artistPanel.fxml");
-        }
-        else if(user instanceof PremiumModel){
-            PremiumController.getPremiumController().loginListener(username);
-            View.getView().setListener(true);
-            View.getView().showMainPage("listenerPanel.fxml");
-        }
-        else if(user instanceof FreeModel){
-            FreeController.getFreeController().loginListener(username);
-            View.getView().setListener(true);
-            View.getView().showMainPage("listenerPanel.fxml");
-        }
-        else {
-            AdminController.getAdminController().loginAdmin(username);
-            View.getView().setListener(false);
-            View.getView().showMainPage("adminPanel.fxml");
+        switch (user) {
+            case PodcasterModel podcasterModel -> {
+                PodcasterController.getPodcasterController().loginArtist(username);
+                View.getView().setListener(false);
+                View.getView().showMainPage("artistPanel.fxml");
+            }
+            case SingerModel singerModel -> {
+                SingerController.getSingerController().loginArtist(username);
+                View.getView().setListener(false);
+                View.getView().showMainPage("artistPanel.fxml");
+            }
+            case PremiumModel premiumModel -> {
+                PremiumController.getPremiumController().loginListener(username);
+                View.getView().setListener(true);
+                View.getView().showMainPage("listenerPanel.fxml");
+            }
+            case FreeModel freeModel -> {
+                FreeController.getFreeController().loginListener(username);
+                View.getView().setListener(true);
+                View.getView().showMainPage("listenerPanel.fxml");
+            }
+            case null, default -> {
+                View.getView().setListener(false);
+                View.getView().showMainPage("adminPanel.fxml");
+            }
         }
     }
 }
