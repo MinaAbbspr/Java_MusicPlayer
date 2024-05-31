@@ -12,6 +12,7 @@ import view.View;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class VBoxArtist implements Initializable {
@@ -36,7 +37,7 @@ public class VBoxArtist implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.artistModel = View.getView().getArtistModel();
-        img_account.setImage(new Image(HelloApplication.class.getResource("img/account/Account.png").toExternalForm()));
+        img_account.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/account/Account.png")).toExternalForm()));
         lbl_artistName.setText(artistModel.getName());
         lbl_bio.setText(artistModel.getBio());
     }

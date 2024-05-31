@@ -34,7 +34,7 @@ abstract public class UserAccountController {
 
         return "making new Account Completed Successfully";
     }
-    private int checkPassword(String password){
+    public int checkPassword(String password){
         int score = 0;
         if(password.length() >= 8)
             score ++;

@@ -23,6 +23,7 @@ import view.View;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ArtistInfo implements Initializable {
@@ -85,7 +86,7 @@ public class ArtistInfo implements Initializable {
         artistModel = View.getView().getArtistModel();
         lbl_bio.setText(View.getView().getArtistModel().getBio());
         lbl_username.setText(View.getView().getArtistModel().getUserName());
-        img.setImage(new Image(HelloApplication.class.getResource("img/account/Account.png").toExternalForm()));
+        img.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/account/Account.png")).toExternalForm()));
         root.setBackground(Background.fill(Color.WHITE));
         hBox.setBackground(Background.fill(Color.WHITE));
         hBoxFiller();

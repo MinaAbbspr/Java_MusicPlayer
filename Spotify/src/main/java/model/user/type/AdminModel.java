@@ -12,12 +12,11 @@ public class AdminModel extends UserAccountModel {
         Database.getDatabase().getUserAccounts().add(this);
     }
 
-    public static AdminModel getAdmin() {
+    public static void getAdmin() {
         if(admin == null) {
             LocalDate birthDate = LocalDate.of(1995,4,23);
             admin = new AdminModel("Admin", "A#45", "Ali Karimi", "Ali.Karimi@gmail.com", "09132581397", birthDate);
         }
-        return admin;
     }
     @Override
     public String toString(){

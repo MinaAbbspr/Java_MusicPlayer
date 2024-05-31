@@ -26,6 +26,7 @@ import view.View;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class PlayMusic implements Initializable {
@@ -84,13 +85,13 @@ public class PlayMusic implements Initializable {
     @FXML
     private AnchorPane main;
 
-    private final ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
-    private final ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
-    private final Image next = new Image(HelloApplication.class.getResource("img/music/next-track.png").toExternalForm());
-    private final Image back = new Image(HelloApplication.class.getResource("img/music/previous.png").toExternalForm());
-    private final Image like = new Image(HelloApplication.class.getResource("img/music/like.png").toExternalForm());
-    private final Image redLike = new Image(HelloApplication.class.getResource("img/music/redLike02.png").toExternalForm());
-    private final Image add = new Image(HelloApplication.class.getResource("img/music/plus.png").toExternalForm());
+    private final ImagePattern play = new ImagePattern(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/play.png")).toExternalForm()));
+    private final ImagePattern pause = new ImagePattern(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/pause.png")).toExternalForm()));
+    private final Image next = new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/next-track.png")).toExternalForm());
+    private final Image back = new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/previous.png")).toExternalForm());
+    private final Image like = new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/like.png")).toExternalForm());
+    private final Image redLike = new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/redLike02.png")).toExternalForm());
+    private final Image add = new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/plus.png")).toExternalForm());
     private boolean isLike;
 
 

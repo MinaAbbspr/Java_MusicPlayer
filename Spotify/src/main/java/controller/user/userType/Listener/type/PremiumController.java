@@ -66,6 +66,7 @@ public class PremiumController extends ListenerController {
             if(playlistName.equals(playlist.getPlaylistName()))
                 playlistModel = playlist;
 
+        assert playlistModel != null;
         if(playlistModel.getAudioList().contains(audioModel))
             throw new Exception("you have already added this Audio to playlist");
 

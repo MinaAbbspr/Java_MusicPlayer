@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Search implements Initializable {
@@ -201,7 +202,7 @@ public class Search implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sort = "none";
         filter = "none";
-        img_search.setImage(new Image(HelloApplication.class.getResource("img/header/search.png").toExternalForm()));
+        img_search.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/header/search.png")).toExternalForm()));
         root.setBackground(Background.fill(Color.WHITE));
         gridPane.setBackground(Background.fill(Color.WHITE));
     }

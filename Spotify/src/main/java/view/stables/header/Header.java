@@ -11,13 +11,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import view.HelloApplication;
 import view.View;
-import view.stables.GeneralOperationsHeader;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class Header implements Initializable, GeneralOperationsHeader {
+public class Header implements Initializable{
 
     @FXML
     private Circle crl_back;
@@ -26,13 +26,11 @@ public class Header implements Initializable, GeneralOperationsHeader {
     private AnchorPane root;
 
     @FXML
-    @Override
     public void backTo(MouseEvent event) throws IOException {
         View.getView().stepBack();
     }
 
     @FXML
-    @Override
     public void login_logout(MouseEvent event) throws IOException {
         if(View.getView().isLogin()){
             View.getView().setLogin(false);
@@ -44,14 +42,13 @@ public class Header implements Initializable, GeneralOperationsHeader {
     }
 
     @FXML
-    @Override
     public void signup(MouseEvent event) throws IOException {
         View.getView().showSignupPage();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        crl_back.setFill(new ImagePattern(new Image(HelloApplication.class.getResource("img/header/left-arrow.png").toExternalForm())));
+        crl_back.setFill(new ImagePattern(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/header/left-arrow.png")).toExternalForm())));
         root.setBackground(Background.fill(Color.rgb(7, 25, 82)));
     }
 }
