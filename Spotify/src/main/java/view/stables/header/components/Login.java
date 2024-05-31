@@ -1,10 +1,10 @@
 package view.stables.header.components;
 
-import controller.user.userType.Artist.type.PodcasterController;
-import controller.user.userType.Artist.type.SingerController;
-import controller.user.userType.Listener.ListenerController;
-import controller.user.userType.Listener.type.FreeController;
-import controller.user.userType.Listener.type.PremiumController;
+import controller.user.userType.artist.type.PodcasterController;
+import controller.user.userType.artist.type.SingerController;
+import controller.user.userType.listener.ListenerController;
+import controller.user.userType.listener.type.FreeController;
+import controller.user.userType.listener.type.PremiumController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;

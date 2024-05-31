@@ -1,6 +1,6 @@
-package controller.user.userType.Listener.type;
+package controller.user.userType.listener.type;
 
-import controller.user.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import model.Database;
 import model.Report;
 import model.Subscription;
@@ -67,6 +67,7 @@ public class FreeController extends ListenerController {
             if(playlistName.equals(playlist.getPlaylistName()))
                 playlistModel = playlist;
 
+        assert playlistModel != null;
         if(playlistModel.getAudioList().contains(audioModel))
             throw new Exception("you have already added this Audio to playlist");
 

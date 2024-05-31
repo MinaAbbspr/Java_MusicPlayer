@@ -1,5 +1,6 @@
 package controller.user.userType.artist.type;
 
+import model.Database;
 import model.audio.AudioModel;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -11,12 +12,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class PodcasterControllerTest {
-
+public class SingerControllerTest {
     @BeforeAll
     public static void setup(){
         HelloApplication.fillDatabase();
-        PodcasterController.getPodcasterController().loginArtist("RokhPodcast");
+        SingerController.getSingerController().loginArtist("Adele");
     }
 
     @Test
@@ -25,7 +25,7 @@ public class PodcasterControllerTest {
         int expected = 0;
 
         //Act
-        int actual = PodcasterController.getPodcasterController().showNumberOfPlayed();
+        int actual = SingerController.getSingerController().showNumberOfPlayed();
 
         //Assert
         assertEquals(expected,actual);
@@ -37,7 +37,7 @@ public class PodcasterControllerTest {
         String expected = "your income is 0.0 dollars" ;
 
         //Act
-        String actual = PodcasterController.getPodcasterController().calculateEarnings();
+        String actual = SingerController.getSingerController().calculateEarnings();
 
         //Assert
         assertEquals(expected,actual);
@@ -51,7 +51,7 @@ public class PodcasterControllerTest {
 
         //Act
         NullPointerException actual = assertThrows(NullPointerException.class, () -> {
-             PodcasterController.getPodcasterController().publishing("", "History", "caption", "link", "cover");
+            SingerController.getSingerController().publishing("", "Pop", "lyrics", "link", "cover");
         });
 
         //Assert
@@ -61,9 +61,9 @@ public class PodcasterControllerTest {
     @Test
     public void testPublishing() {
         //Arrange
-        String expected = "podcast published successfully";
+        String expected = "music published successfully";
         //Act
-        String actual = PodcasterController.getPodcasterController().publishing("name","History","caption","link","cover");
+        String actual = SingerController.getSingerController().publishing("name", "Pop", "caption", "link", "cover");
 
         //Assert
         assertEquals(expected,actual);
@@ -73,9 +73,14 @@ public class PodcasterControllerTest {
     public void testGetAudios() {
         //Arrange
         List<AudioModel> expected = new ArrayList<>();
+        expected.add(Database.getDatabase().getAudios().get(0));
+        expected.add(Database.getDatabase().getAudios().get(1));
+        expected.add(Database.getDatabase().getAudios().get(2));
+        expected.add(Database.getDatabase().getAudios().get(3));
+        expected.add(Database.getDatabase().getAudios().get(4));
 
         //Act
-        List<AudioModel> actual = PodcasterController.getPodcasterController().getAudios();
+        List<AudioModel> actual = SingerController.getSingerController().getAudios();
 
         //Assert
         assertEquals(expected,actual);

@@ -1,6 +1,6 @@
-package controller.user.userType.Artist.type;
+package controller.user.userType.artist.type;
 
-import controller.user.userType.Artist.ArtistController;
+import controller.user.userType.artist.ArtistController;
 import model.Database;
 import model.audio.AudioModel;
 import model.audio.type.PodcastModel;
@@ -66,6 +66,9 @@ public class PodcasterController extends ArtistController {
     @Override
     //انتشار پادکست
     public String publishing(String audioName, String genre, String caption, String link, String cover){
+        if(audioName.isEmpty() || genre.isEmpty() || caption.isEmpty() || link.isEmpty() || cover.isEmpty())
+            throw new NullPointerException("write all information");
+
         PodcastModel podcast = new PodcastModel(audioName,getPodcaster().getUserName(),genre,link,cover,caption);
         getPodcaster().getPodcastList().add(podcast);
         return "podcast published successfully";

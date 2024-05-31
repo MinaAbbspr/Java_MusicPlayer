@@ -1,7 +1,7 @@
 package view.stables.header.components.signup;
 
-import controller.user.userType.Artist.type.PodcasterController;
-import controller.user.userType.Listener.type.FreeController;
+import controller.user.userType.artist.type.PodcasterController;
+import controller.user.userType.listener.type.FreeController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;

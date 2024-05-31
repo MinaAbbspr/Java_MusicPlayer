@@ -1,6 +1,6 @@
 package controller.user;
 
-import controller.user.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import exceptions.InvalidFormatException;
 import exceptions.failedLogin.FailedLoginException;
 import exceptions.failedLogin.type.UserNotFoundException;
@@ -115,7 +115,7 @@ public class UserAccountControllerTest {
 
 
     @Test
-    public void testSLoginNullPointException(){
+    public void testLoginNullPointException(){
         //Arrange
         String expected = "fill all text field!";
 
@@ -130,7 +130,7 @@ public class UserAccountControllerTest {
     }
 
     @Test
-    public void testSLoginUserNotFoundException(){
+    public void testLoginUserNotFoundException(){
         //Arrange
         String expected = new UserNotFoundException().getMessage();
 
@@ -145,7 +145,7 @@ public class UserAccountControllerTest {
     }
 
     @Test
-    public void testSLoginWrongPasswordException(){
+    public void testLoginWrongPasswordException(){
         //Arrange
         String expected = new WrongPasswordException().getMessage();
 
@@ -160,7 +160,7 @@ public class UserAccountControllerTest {
     }
 
     @Test
-    public void testSLogin() throws FailedLoginException {
+    public void testLogin() throws FailedLoginException {
         //Arrange
         UserAccountModel expected = Database.getDatabase().getUserAccounts().get(1);
 

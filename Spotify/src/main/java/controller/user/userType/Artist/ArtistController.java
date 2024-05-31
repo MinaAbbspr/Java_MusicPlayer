@@ -1,4 +1,4 @@
-package controller.user.userType.Artist;
+package controller.user.userType.artist;
 
 import controller.user.UserAccountController;
 import model.audio.AudioModel;

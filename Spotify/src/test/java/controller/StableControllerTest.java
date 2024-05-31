@@ -1,6 +1,6 @@
 package controller;
 
-import controller.user.userType.Artist.type.SingerController;
+import controller.user.userType.artist.type.SingerController;
 import model.audio.AudioModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.SingerModel;

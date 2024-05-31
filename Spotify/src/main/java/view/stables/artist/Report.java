@@ -1,6 +1,6 @@
 package view.stables.artist;
 
-import controller.user.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

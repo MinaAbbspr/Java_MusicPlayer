@@ -1,4 +1,4 @@
-package controller.user.userType.Artist;
+package controller.user.userType.artist;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

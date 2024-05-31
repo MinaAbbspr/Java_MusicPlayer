@@ -1,7 +1,7 @@
 package view.stables.sidebar.components;
 
 import controller.AudioController;
-import controller.user.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

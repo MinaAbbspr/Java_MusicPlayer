@@ -1,4 +1,4 @@
-package controller.user.userType.Listener;
+package controller.user.userType.listener;
 
 import controller.user.UserAccountController;
 import model.Database;
@@ -92,13 +92,16 @@ public class ListenerController extends UserAccountController {
     }
 
     //دنبال کردن آرتیست
-    public void followArtist(String username){
+    public void followArtist(String username) throws Exception {
         for(UserAccountModel user : Database.getDatabase().getUserAccounts())
             if(username.equals(user.getUserName())){
                 if(user instanceof SingerModel || user instanceof PodcasterModel){
                     ArtistModel artist = (ArtistModel) user;
+                    if(artist.getFollowers().contains(getListener()))
+                        throw new Exception("you already follow Artist");
                     artist.getFollowers().add(getListener());
                 }
+                break;
             }
     }
 

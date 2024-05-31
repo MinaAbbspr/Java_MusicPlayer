@@ -1,6 +1,6 @@
-package controller.user.userType.Listener.type;
+package controller.user.userType.listener.type;
 
-import controller.user.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import model.Database;
 import model.Report;
 import model.Subscription;

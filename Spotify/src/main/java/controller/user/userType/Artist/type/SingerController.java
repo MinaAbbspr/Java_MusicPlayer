@@ -1,13 +1,16 @@
-package controller.user.userType.Artist.type;
+package controller.user.userType.artist.type;
 
-import controller.user.userType.Artist.ArtistController;
+import controller.user.userType.artist.ArtistController;
 import model.Database;
+import model.audio.AudioModel;
 import model.audio.type.MusicModel;
 import model.user.UserAccountModel;
 import model.user.type.artist.ArtistModel;
 import model.user.type.artist.type.SingerModel;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SingerController extends ArtistController {
     private SingerModel singer;
@@ -62,8 +65,16 @@ public class SingerController extends ArtistController {
     @Override
     //انتشار آهنگ
     public String publishing(String audioName, String genre, String lyric, String link, String cover){
+        if(audioName.isEmpty() || genre.isEmpty() || lyric.isEmpty() || link.isEmpty() || cover.isEmpty())
+            throw new NullPointerException("write all information");
+
         MusicModel music = new MusicModel(audioName,getSinger().getUserName(),genre,link,cover,lyric);
         SingerController.getSingerController().getSinger().getMusicList().add(music);
         return "music published successfully";
+    }
+
+    @Override
+    public List<AudioModel> getAudios(){
+        return new ArrayList<>(getSinger().getMusicList());
     }
 }

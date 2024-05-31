@@ -2,7 +2,7 @@ package view.stables.artist;
 
 import controller.AudioController;
 import controller.StableController;
-import controller.user.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,10 +48,16 @@ public class ArtistInfo implements Initializable {
     @FXML
     void Follow(MouseEvent event) {
         if(View.getView().isLogin() && View.getView().isListener()){
-            ListenerController.getListenerController().followArtist(artistModel.getUserName());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("you Follow " + artistModel.getUserName());
-            alert.showAndWait();
+            try {
+                ListenerController.getListenerController().followArtist(artistModel.getUserName());
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("you Follow " + artistModel.getUserName());
+                alert.showAndWait();
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(e.getMessage());
+                alert.showAndWait();
+            }
         }
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
