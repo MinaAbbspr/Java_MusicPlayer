@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.audio.Playbar">
    <children>
-      <Slider fx:id="slider" layoutX="87.0" layoutY="79.0" onMouseDragged="#changeTime" prefHeight="14.0" prefWidth="625.0" />
+      <Slider fx:id="slider" layoutX="87.0" layoutY="79.0" onMouseDragged="#changeTime" prefHeight="14.0" prefWidth="625.0" styleClass="hand-cursor" stylesheets="@hand_cursor.css" />
       <ImageView fx:id="img_cover" fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="lbl_audioName" layoutX="87.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0">
          <font>
@@ -20,7 +20,7 @@
       <Label fx:id="lbl_currentTime" layoutX="31.0" layoutY="77.0" />
       <Label fx:id="lbl_duration" layoutX="746.0" layoutY="77.0" />
       <Label fx:id="lbl_artistName" layoutX="87.0" layoutY="37.0" prefHeight="25.0" prefWidth="200.0" />
-      <HBox alignment="CENTER" layoutX="618.0" layoutY="17.0" prefHeight="40.0" prefWidth="167.0" spacing="15.0">
+      <HBox alignment="CENTER" layoutX="618.0" layoutY="17.0" prefHeight="40.0" prefWidth="167.0" spacing="15.0" styleClass="hand-cursor" stylesheets="@hand_cursor.css">
          <children>
             <ImageView fx:id="img_previous" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#previous" pickOnBounds="true" preserveRatio="true" />
             <Circle fx:id="crl_play_pause" fill="#1f93ff00" onMouseClicked="#play_pause" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />

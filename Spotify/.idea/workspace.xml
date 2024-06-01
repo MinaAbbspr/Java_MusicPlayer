@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="signup ui">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/hand_cursor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/audio/AudioModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audio/AudioModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/AudioControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/AudioControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/StableControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/StableControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/user/UserAccountControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/user/UserAccountControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/user/userType/AdminControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/user/userType/AdminControllerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="Css" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -405,7 +392,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717162681645</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Css">
+      <option name="closed" value="true" />
+      <created>1717236191698</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1717236191698</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Css">
+      <option name="closed" value="true" />
+      <created>1717236718003</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1717236718003</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -467,7 +470,8 @@
     <MESSAGE value="test part2" />
     <MESSAGE value="warning check2" />
     <MESSAGE value="signup ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="signup ui" />
+    <MESSAGE value="Css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

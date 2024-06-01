@@ -59,7 +59,7 @@
       </VBox>
       <Button fx:id="btn_following" layoutX="635.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#showFollowing" prefWidth="100.0" text="following" />
       <Button fx:id="btn_premium" layoutX="635.0" layoutY="369.0" mnemonicParsing="false" onMouseClicked="#getPremium" prefWidth="100.0" text="premium" />
-      <ScrollPane hbarPolicy="NEVER" layoutX="301.0" layoutY="212.0" prefHeight="225.0" prefWidth="270.0">
+      <ScrollPane hbarPolicy="NEVER" layoutX="301.0" layoutY="212.0" prefHeight="225.0" prefWidth="270.0" styleClass="hand-cursor" stylesheets="@hand_cursor.css">
          <content>
             <ListView fx:id="listView" onMouseClicked="#openPlaylist" prefHeight="225.0" prefWidth="270.0" />
          </content>
