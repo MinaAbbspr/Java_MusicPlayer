@@ -79,11 +79,6 @@ abstract public class AudioModel implements Comparable<AudioModel>{
     @Override
     public int compareTo(AudioModel o){
         if(this.audioName.compareTo(o.audioName) == 0){
-            if(this.getNumberOfLikes() - o.getNumberOfLikes() == 0){
-                if(o instanceof MusicModel)
-                    return -1;
-                return 1;
-            }
             return this.getNumberOfLikes() - o.getNumberOfLikes();
         }
         return this.audioName.compareTo(o.audioName);

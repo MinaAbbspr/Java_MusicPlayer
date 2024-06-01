@@ -67,7 +67,7 @@ public class AudioController {
         return audios.stream().filter(a -> a.getArtistName().equals(name)).toList();
     }
     public List<AudioModel> genreFilter(List <AudioModel> audios, String filter){
-        return audios.stream().filter(a -> a.getGenre().toString().equals(filter)).toList();
+        return audios.stream().filter(a -> a.getGenre().equals(Genre.valueOf(filter))).toList();
     }
     public List<AudioModel> dateFilter(List <AudioModel> audios, LocalDate localDate){
         return audios.stream().filter(a -> a.getDateOfRelease().equals(localDate)).toList();

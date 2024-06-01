@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class UserAccountControllerTest {
 
     @BeforeAll
-    public static void setup() throws Exception {
+    public static void setup(){
         HelloApplication.fillDatabase();
     }
 

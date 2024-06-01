@@ -1,6 +1,5 @@
 package controller.user.userType;
 
-import exceptions.failedLogin.FailedLoginException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class AdminControllerTest {
 
     @Test
-    public void testReportInfoNullPointerException() throws FailedLoginException {
+    public void testReportInfoNullPointerException() {
         //Arrange
         String expected = "There is no report";
 

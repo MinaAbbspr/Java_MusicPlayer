@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="signup ui">
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/signup/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/signup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/hand_cursor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/audio/AudioModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/audio/AudioModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/sidebar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/AudioControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/AudioControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/StableControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/StableControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/user/UserAccountControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/user/UserAccountControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/user/userType/AdminControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/user/userType/AdminControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +28,8 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -49,9 +59,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AdminControllerTest.testReportInfoNullPointerException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ArtistControllerTest.testShowFollowersNullPointerException.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AudioControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testArtistFilter.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AudioControllerTest.testDateFilter.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AudioControllerTest.testDateFilterNullAnswer.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AudioControllerTest.testGenreFilter.executor&quot;: &quot;Run&quot;,
@@ -59,7 +72,7 @@
     &quot;JUnit.AudioControllerTest.testIsGenreWrongAnswer.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AudioControllerTest.testSearchWithArtistName.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AudioControllerTest.testSearchWithAudioName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AudioControllerTest.testSort.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testSort.executor&quot;: &quot;Debug&quot;,
     &quot;JUnit.AudioControllerTest.testTwoDateFilter.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FreeControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FreeControllerTest.testAddAudioToPlaylistException.executor&quot;: &quot;Run&quot;,
@@ -68,6 +81,7 @@
     &quot;JUnit.FreeControllerTest.testMakePlaylistRepeatedNameException.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FreeControllerTest.testSelectPlaylist.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FreeControllerType.testMakePlaylistException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ListenerControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ListenerControllerTest.testLoginWrongPasswordException.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ListenerControllerTest.testSelectPlaylist.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ListenerControllerTest.testShowFollowings.executor&quot;: &quot;Run&quot;,
@@ -81,6 +95,8 @@
     &quot;JUnit.SingerControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.SingerControllerTest.testGetAudios.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.StableControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StableControllerTest.testArtistList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StableControllerTest.testArtistsInfo.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.StableControllerTest.tstArtistList.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.StableControllerTest.tstArtistsInfo.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.UserAccountControllerTest.executor&quot;: &quot;Run&quot;,
@@ -134,63 +150,62 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FreeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AudioControllerTest.testSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.user.userType.listener.type.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller.user.userType.listener.type" />
-      <option name="MAIN_CLASS_NAME" value="controller.user.userType.listener.type.FreeControllerTest" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.AudioControllerTest" />
+      <option name="METHOD_NAME" value="testSort" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PodcasterControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.userType.artist.type.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user.userType.artist.type" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.userType.artist.type.PodcasterControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FreeControllerTest.testAddAudioToPlaylistException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SingerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.user.userType.listener.type.*" />
+          <option name="PATTERN" value="controller.user.userType.artist.type.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller.user.userType.listener.type" />
-      <option name="MAIN_CLASS_NAME" value="controller.user.userType.listener.type.FreeControllerTest" />
-      <option name="METHOD_NAME" value="testAddAudioToPlaylistException" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="controller.user.userType.artist.type" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.userType.artist.type.SingerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FreeControllerTest.testMakePlaylistRepeatedNameException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserAccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.user.userType.listener.type.*" />
+          <option name="PATTERN" value="controller.user.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller.user.userType.listener.type" />
-      <option name="MAIN_CLASS_NAME" value="controller.user.userType.listener.type.FreeControllerTest" />
-      <option name="METHOD_NAME" value="testMakePlaylistRepeatedNameException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PremiumControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spotify" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.user.userType.listener.type.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller.user.userType.listener.type" />
-      <option name="MAIN_CLASS_NAME" value="controller.user.userType.listener.type.PremiumControllerTest" />
+      <option name="PACKAGE_NAME" value="controller.user" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.UserAccountControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,10 +214,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="JUnit.FreeControllerTest.testMakePlaylistRepeatedNameException" />
-        <item itemvalue="JUnit.PremiumControllerTest" />
-        <item itemvalue="JUnit.FreeControllerTest" />
-        <item itemvalue="JUnit.FreeControllerTest.testAddAudioToPlaylistException" />
+        <item itemvalue="JUnit.AudioControllerTest.testSort" />
+        <item itemvalue="JUnit.PodcasterControllerTest" />
+        <item itemvalue="JUnit.SingerControllerTest" />
+        <item itemvalue="JUnit.UserAccountControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -382,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717159458981</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="signup ui">
+      <option name="closed" value="true" />
+      <created>1717162681645</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1717162681645</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -450,9 +473,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Home.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

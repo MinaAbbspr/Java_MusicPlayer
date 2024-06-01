@@ -25,7 +25,7 @@
       </MenuButton>
       <MenuButton fx:id="btn_sort" layoutX="638.0" layoutY="28.0" mnemonicParsing="false" prefWidth="70.0" text="Sort">
          <items>
-            <MenuItem fx:id="menu_sort" mnemonicParsing="false" onAction="#sort" text="sort" />
+            <MenuItem fx:id="menu_sort" mnemonicParsing="false" onAction="#sort" text="name" />
             <MenuItem fx:id="menu_play" mnemonicParsing="false" onAction="#playSort" text="Play" />
             <MenuItem fx:id="menu_Like" mnemonicParsing="false" onAction="#likeSort" text="Like" />
             <MenuItem fx:id="menu_noneSort" mnemonicParsing="false" onAction="#noneSort" text="none" />

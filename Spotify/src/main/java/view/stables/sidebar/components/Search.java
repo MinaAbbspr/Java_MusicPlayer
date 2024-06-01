@@ -96,13 +96,13 @@ public class Search implements Initializable {
     }
     @FXML
     void playSort(ActionEvent event) {
-        btn_sort.setText("Play");
+        btn_sort.setText("play");
         sort = "play";
     }
     @FXML
     void sort(ActionEvent event) {
-        btn_sort.setText("sort");
-        sort = "sort";
+        btn_sort.setText("name");
+        sort = "name";
     }
 
     @FXML
@@ -154,7 +154,7 @@ public class Search implements Initializable {
         switch (sort){
             case "like" -> sorted = AudioController.getAudioController().likeSort(list);
             case "play" -> sorted = AudioController.getAudioController().playSort(list);
-            case "sort" -> sorted = AudioController.getAudioController().sort(list);
+            case "name" -> sorted = AudioController.getAudioController().sort(list);
         }
         return sorted;
     }
@@ -168,23 +168,23 @@ public class Search implements Initializable {
                 String[] day1 = dates[0].split("/");
                 String[] day2 = dates[1].split("/");
 
-                filtered = AudioController.getAudioController().twoDateFilter(list,
+                AudioController.getAudioController().twoDateFilter(list,
                         LocalDate.of(Integer.parseInt(day1[0]), Integer.parseInt(day1[1]), Integer.parseInt(day1[2])),
                         LocalDate.of(Integer.parseInt(day2[0]), Integer.parseInt(day2[1]), Integer.parseInt(day2[2])));
             }
             case "Date" -> {
                 String[] date = txt_filter.getText().split("/");
-                filtered = AudioController.getAudioController().dateFilter(list,
+                AudioController.getAudioController().dateFilter(list,
                         LocalDate.of(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2])));
             }
             case "genre" -> {
                 if(! AudioController.getAudioController().isGenre(txt_filter.getText()))
                     throw new Exception();
-                filtered = AudioController.getAudioController().genreFilter(list, txt_filter.getText());
+                list = AudioController.getAudioController().genreFilter(list, txt_filter.getText());
             }
-            case "artist" -> filtered = AudioController.getAudioController().artistFilter(list, txt_filter.getText());
+            case "artist" -> AudioController.getAudioController().artistFilter(list, txt_filter.getText());
         }
-        return filtered;
+        return list;
     }
     private void setVBox(List<AudioModel> list){
         int counter = 0;

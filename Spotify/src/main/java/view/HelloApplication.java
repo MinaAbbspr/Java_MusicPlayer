@@ -29,7 +29,7 @@ public class HelloApplication extends Application {
         AdminModel.getAdmin();
         SingerModel singerModel1 = new SingerModel("Adele", "Ad88", "Adele Adkins", "Adele.Adkins@gmail.com", "09945632105", LocalDate.of(1988, 5, 5), "Musician\nadele.com");
         SingerModel singerModel2 = new SingerModel("bad omens", "12345fGGG@", "bad omens band", "bad_omens@gmail.com", "09911039121", LocalDate.of(2004, 10, 12), "BAD OMENS\nCONCRETE\nbadomensofficial.com");
-        SingerModel singerModel3 = new SingerModel("Charlie Puth", "1224fGGG@", "Charles Otto Puth", "Charles_Puth@gmail.com", "09910039122", LocalDate.of(1991, 12, 2), "charlieputh.lnk.to/Hero");
+        SingerModel singerModel3 = new SingerModel("Charlie Puth", "1224fGGG@", "Charlie Otto Puth", "Charles_Puth@gmail.com", "09910039122", LocalDate.of(1991, 12, 2), "charlieputh.lnk.to/Hero");
         SingerModel singerModel4 = new SingerModel("Sasha Sloan", "slo", "Sasha Alex Sloan", "Sasha_Sloan@gmail.com", "09910039182", LocalDate.of(1995, 3, 11), "voted most creative in\nmy 9th grade yearbook");
 
         PodcasterModel podcasterModel = new PodcasterModel("RokhPodcast", "Rp99", "Amir Sodbakhsh", "RokhPodcast@gmail.com", "09456789012", LocalDate.of(1992,3,20),"History lover ☕");
