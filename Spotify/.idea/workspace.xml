@@ -4,35 +4,112 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81132f70-1caf-44f8-9a34-c3e9a48d30a0" name="Changes" comment="" />
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="add audios">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/ArtistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/ArtistModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/PodcasterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/PodcasterModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/SingerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/SingerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/listener/ListenerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/listener/ListenerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/listener/type/FreeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/listener/type/FreeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
-  <component name="ProjectId" id="2fxmxa0D5RnESeA4Q2aqZU4036V" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2gB5iPBZ8cZS8Ka88NgN4nMdkCp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Uni/2/Quera/8/firstproject-musicplayer-phase2-MinaAbbspr",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;phase2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Uni/2/Quera/9/phase2/spotify/src/main/resources/view&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Uni\2\Quera\9\phase2\spotify\src\main\resources\view" />
+      <recent name="E:\Uni\2\Quera\9\phase2\spotify\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Uni\2\Quera\9\phase2\spotify\src\main\resources\view" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="view" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="view" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.HelloApplication" />
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.stables.sidebar.components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -43,12 +120,141 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="81132f70-1caf-44f8-9a34-c3e9a48d30a0" name="Changes" comment="" />
-      <created>1714751352441</created>
+      <changelist id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="" />
+      <created>1715158258233</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1714751352441</updated>
+      <updated>1715158258233</updated>
     </task>
+    <task id="LOCAL-00001" summary="exceptions">
+      <option name="closed" value="true" />
+      <created>1715246314431</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715246314431</updated>
+    </task>
+    <task id="LOCAL-00002" summary="throw exceptions">
+      <option name="closed" value="true" />
+      <created>1715255083238</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715255083239</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Playbar &amp; Sidebar">
+      <option name="closed" value="true" />
+      <created>1715318306452</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715318306452</updated>
+    </task>
+    <task id="LOCAL-00004" summary="header &amp; mainPage">
+      <option name="closed" value="true" />
+      <created>1715330570297</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715330570297</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Home &amp; Login pages">
+      <option name="closed" value="true" />
+      <created>1715354809396</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715354809396</updated>
+    </task>
+    <task id="LOCAL-00006" summary="signup page">
+      <option name="closed" value="true" />
+      <created>1715359338841</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715359338841</updated>
+    </task>
+    <task id="LOCAL-00007" summary="genre Page">
+      <option name="closed" value="true" />
+      <created>1715448763049</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715448763049</updated>
+    </task>
+    <task id="LOCAL-00008" summary="music player pannel">
+      <option name="closed" value="true" />
+      <created>1715523504710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715523504710</updated>
+    </task>
+    <task id="LOCAL-00009" summary="listener Panel">
+      <option name="closed" value="true" />
+      <created>1715799752553</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715799752553</updated>
+    </task>
+    <task id="LOCAL-00010" summary="search panel">
+      <option name="closed" value="true" />
+      <created>1715949201452</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715949201452</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add audio to playlist, get premium">
+      <option name="closed" value="true" />
+      <created>1716046850466</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716046850466</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add audio to playlist, get premium">
+      <option name="closed" value="true" />
+      <created>1716047204147</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716047204147</updated>
+    </task>
+    <task id="LOCAL-00013" summary="admin &amp; artist panel">
+      <option name="closed" value="true" />
+      <created>1716131154270</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716131154270</updated>
+    </task>
+    <task id="LOCAL-00014" summary="admin &amp; artist panel">
+      <option name="closed" value="true" />
+      <created>1716131165619</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716131165619</updated>
+    </task>
+    <task id="LOCAL-00015" summary="design">
+      <option name="closed" value="true" />
+      <created>1716150803033</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716150803033</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add audios">
+      <option name="closed" value="true" />
+      <created>1716218087558</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716218087558</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -56,10 +262,51 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="phase2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="interfaces" />
+    <MESSAGE value="exceptions" />
+    <MESSAGE value="throw exceptions" />
+    <MESSAGE value="Playbar &amp; Sidebar" />
+    <MESSAGE value="header &amp; mainPage" />
+    <MESSAGE value="Home &amp; Login pages" />
+    <MESSAGE value="signup page" />
+    <MESSAGE value="genre Page" />
+    <MESSAGE value="music player pannel" />
+    <MESSAGE value="listener Panel" />
+    <MESSAGE value="search panel" />
+    <MESSAGE value="add audio to playlist, get premium" />
+    <MESSAGE value="admin &amp; artist panel" />
+    <MESSAGE value="design" />
+    <MESSAGE value="add audios" />
+    <option name="LAST_COMMIT_MESSAGE" value="add audios" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

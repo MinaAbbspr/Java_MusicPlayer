@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.admin.AdminPanel">
+    <children>
+        <VBox alignment="CENTER" layoutX="611.0" layoutY="135.0" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+            <children>
+                <Label fx:id="lbl_artists" onMouseClicked="#artists" text="Show Artists">
+                    <font>
+                        <Font name="Lucida Bright Demibold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_audios" onMouseClicked="#audios" text="Show Audios">
+                    <font>
+                        <Font name="Lucida Bright Demibold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_reports" onMouseClicked="#report" text="Show Reports">
+                    <font>
+                        <Font name="Lucida Bright Demibold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        <BarChart fx:id="barChart" layoutX="14.0" layoutY="35.0">
+            <xAxis>
+                <CategoryAxis label="Audios" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="number of like" side="LEFT" upperBound="50.0" />
+            </yAxis>
+        </BarChart>
+    </children>
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.audio.PlayMusic">
+   <children>
+      <AnchorPane fx:id="header" prefHeight="50.0" prefWidth="800.0" />
+      <AnchorPane fx:id="main" prefHeight="590.0" prefWidth="800.0">
+         <children>
+            <ImageView fx:id="img_cover" fitHeight="250.0" fitWidth="250.0" layoutX="71.0" layoutY="44.0" pickOnBounds="true" />
+            <VBox layoutX="71.0" layoutY="310.0" prefHeight="130.0" prefWidth="630.0" spacing="20.0">
+               <children>
+                  <Label fx:id="lbl_audioName" text="Label">
+                     <font>
+                        <Font name="Lucida Bright Italic" size="18.0" />
+                     </font></Label>
+                  <Label fx:id="lbl_artistName" text="Label">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lbl_genre" text="Label">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lbl_date" text="Label">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="14.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <Slider fx:id="slider" layoutX="121.0" layoutY="531.0" onMouseDragged="#changeTime" prefHeight="14.0" prefWidth="558.0" />
+            <Label fx:id="lbl_currentTime" layoutX="57.0" layoutY="529.0" text="Label">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label fx:id="lbl_duration" layoutX="725.0" layoutY="529.0" text="Label">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Circle fx:id="crl_play_pause" fill="#1f93ff00" layoutX="400.0" layoutY="493.0" onMouseClicked="#playOrPause" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <ImageView fx:id="img_previous" fitHeight="20.0" fitWidth="20.0" layoutX="336.0" layoutY="483.0" onMouseClicked="#previous" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img_add" fitHeight="20.0" fitWidth="20.0" layoutX="273.0" layoutY="483.0" onMouseClicked="#add" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img_next" fitHeight="20.0" fitWidth="20.0" layoutX="444.0" layoutY="483.0" onMouseClicked="#next" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img_like" fitHeight="20.0" fitWidth="20.0" layoutX="501.0" layoutY="483.0" onMouseClicked="#like" pickOnBounds="true" preserveRatio="true" />
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="400.0" layoutY="44.0" prefHeight="250.0" prefWidth="363.0">
+               <content>
+                  <Label fx:id="lbl_lyrics" text="Label">
+                     <font>
+                        <Font name="Leelawadee UI Semilight" size="18.0" />
+                     </font></Label>
+               </content>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sidebar" prefHeight="60.0" prefWidth="800.0" />
+   </children>
+</VBox>

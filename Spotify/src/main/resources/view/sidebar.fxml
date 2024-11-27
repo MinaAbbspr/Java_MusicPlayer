@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="root" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="800.0" spacing="100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.stables.sidebar.Sidebar">
+   <children>
+      <VBox fx:id="vBox_audio" alignment="TOP_CENTER" onMouseClicked="#showAllAudios" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="img_audio" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="All Audios" textFill="WHITE" />
+         </children>
+         <HBox.margin>
+            <Insets top="5.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox fx:id="vBox_artist" alignment="TOP_CENTER" onMouseClicked="#showAllArtist" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="img_artist" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="All Artists" textFill="WHITE" />
+         </children>
+         <HBox.margin>
+            <Insets top="5.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox fx:id="vBox_library" alignment="TOP_CENTER" onMouseClicked="#showLibrary" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="img_library" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Library" textFill="WHITE" />
+         </children>
+         <HBox.margin>
+            <Insets top="5.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox fx:id="vBox_search" alignment="TOP_CENTER" onMouseClicked="#search" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="img_search" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Search" textFill="WHITE" />
+         </children>
+         <HBox.margin>
+            <Insets top="5.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox fx:id="vBox_home" alignment="TOP_CENTER" onMouseClicked="#showHome" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="img_home" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Home" textFill="WHITE" />
+         </children>
+         <HBox.margin>
+            <Insets top="5.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>
