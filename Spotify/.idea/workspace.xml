@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="add audios">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AudioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/PodcasterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Artist/type/SingerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/userType/Listener/ListenerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/ArtistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/ArtistModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/PodcasterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/PodcasterModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/SingerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/artist/type/SingerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/listener/ListenerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/listener/ListenerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/user/type/listener/type/FreeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/user/type/listener/type/FreeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java" afterDir="false" />
-    </list>
+    <list default="true" id="682b4fe0-7406-470d-9d48-188241de9873" name="Changes" comment="Css" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="phase2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -63,10 +46,59 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminControllerTest.testReportInfoNullPointerException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistControllerTest.testShowFollowersNullPointerException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testArtistFilter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testDateFilter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testDateFilterNullAnswer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testGenreFilter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testIsGenre.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testIsGenreWrongAnswer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testSearchWithArtistName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testSearchWithAudioName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AudioControllerTest.testSort.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.AudioControllerTest.testTwoDateFilter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FreeControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FreeControllerTest.testAddAudioToPlaylistException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FreeControllerTest.testAddAudioToPlaylistRepeatedAudioException.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.FreeControllerTest.testMakePlaylistException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FreeControllerTest.testMakePlaylistRepeatedNameException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FreeControllerTest.testSelectPlaylist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FreeControllerType.testMakePlaylistException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ListenerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ListenerControllerTest.testLoginWrongPasswordException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ListenerControllerTest.testSelectPlaylist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ListenerControllerTest.testShowFollowings.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PodcasterControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PodcasterControllerTest.testCalculateEarnings.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PodcasterControllerTest.testGetAudios.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PodcasterControllerTest.testPublishing.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PodcasterControllerTest.testPublishingNullPointException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PodcasterControllerTest.testSLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PremiumControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SingerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SingerControllerTest.testGetAudios.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StableControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StableControllerTest.testArtistList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StableControllerTest.testArtistsInfo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StableControllerTest.tstArtistList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StableControllerTest.tstArtistsInfo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSLoginNullPointException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSignup.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSignupEmailException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSignupNullPointEx.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSignupPasswordException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSignupPhoneNumberException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAccountControllerTest.testSignupUsernameException.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;phase2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;final&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/Uni/2/Quera/9/phase2/spotify/src/main/resources/view&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -83,6 +115,7 @@
       <recent name="E:\Uni\2\Quera\9\phase2\spotify\src\main\resources\view" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="controller" />
       <recent name="" />
       <recent name="view" />
     </key>
@@ -90,13 +123,13 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.HelloApplication" />
       <module name="spotify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.stables.sidebar.components.*" />
+          <option name="PATTERN" value="view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,9 +137,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AudioControllerTest.testSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.AudioControllerTest" />
+      <option name="METHOD_NAME" value="testSort" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PodcasterControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.userType.artist.type.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user.userType.artist.type" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.userType.artist.type.PodcasterControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SingerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.userType.artist.type.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user.userType.artist.type" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.userType.artist.type.SingerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller.user" />
+      <option name="MAIN_CLASS_NAME" value="controller.user.UserAccountControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="JUnit.AudioControllerTest.testSort" />
+        <item itemvalue="JUnit.PodcasterControllerTest" />
+        <item itemvalue="JUnit.SingerControllerTest" />
+        <item itemvalue="JUnit.UserAccountControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -254,10 +352,81 @@
       <option name="project" value="LOCAL" />
       <updated>1716218087558</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="checking warnings">
+      <option name="closed" value="true" />
+      <created>1716220214748</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716220214748</updated>
+    </task>
+    <task id="LOCAL-00018" summary="clean model">
+      <option name="closed" value="true" />
+      <created>1717007167641</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717007167641</updated>
+    </task>
+    <task id="LOCAL-00019" summary="test part2">
+      <option name="closed" value="true" />
+      <created>1717145031516</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717145031516</updated>
+    </task>
+    <task id="LOCAL-00020" summary="signup ui">
+      <option name="closed" value="true" />
+      <created>1717159458981</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717159458981</updated>
+    </task>
+    <task id="LOCAL-00021" summary="signup ui">
+      <option name="closed" value="true" />
+      <created>1717162681645</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1717162681645</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Css">
+      <option name="closed" value="true" />
+      <created>1717236191698</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1717236191698</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Css">
+      <option name="closed" value="true" />
+      <created>1717236718003</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1717236718003</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="final" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -268,7 +437,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="phase2" />
+                        <option value="final" />
                       </list>
                     </value>
                   </entry>
@@ -296,15 +465,21 @@
     <MESSAGE value="admin &amp; artist panel" />
     <MESSAGE value="design" />
     <MESSAGE value="add audios" />
-    <option name="LAST_COMMIT_MESSAGE" value="add audios" />
+    <MESSAGE value="checking warnings" />
+    <MESSAGE value="clean model" />
+    <MESSAGE value="test part2" />
+    <MESSAGE value="warning check2" />
+    <MESSAGE value="signup ui" />
+    <MESSAGE value="Css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/stables/header/components/Login.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/view/stables/sidebar/components/Search.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,32 +1,22 @@
 package model.user.type.artist.type;
 
 import model.Database;
-import model.audio.AlbumModel;
+import model.audio.type.MusicModel;
 import model.user.type.artist.ArtistModel;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class SingerModel extends ArtistModel {
-    private ArrayList <AlbumModel> albumList;
+    private final ArrayList <MusicModel> musicList;
 
     public SingerModel(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate, String bio) {
         super(userName, password, name, email, phoneNumber, birthDate, bio);
-        albumList = new ArrayList<>();
-        albumList.add(new AlbumModel("",name));
+        musicList = new ArrayList<>();
         Database.getDatabase().getUserAccounts().add(this);
     }
 
-    public ArrayList<AlbumModel> getAlbumList() {
-        return albumList;
-    }
-    @Override
-    public String toString(){
-        StringBuilder stringBuilder = new StringBuilder(super.toString() + "\tnumber of album: " + albumList.size());
-        if(!albumList.isEmpty()){
-            for(AlbumModel album : albumList)
-                stringBuilder.append("\n\talbum name: " + album.getAlbumName() + "\tID: " + album.getID());
-        }
-        return String.valueOf(stringBuilder);
+    public ArrayList<MusicModel> getMusicList() {
+        return musicList;
     }
 }

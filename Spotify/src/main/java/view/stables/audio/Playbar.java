@@ -19,6 +19,7 @@ import view.HelloApplication;
 import view.View;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Playbar implements Initializable {
@@ -54,10 +55,10 @@ public class Playbar implements Initializable {
     @FXML
     private Slider slider;
 
-    private final ImagePattern play = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/play.png").toExternalForm()));
-    private final ImagePattern pause = new ImagePattern(new Image(HelloApplication.class.getResource("img/music/pause.png").toExternalForm()));
-    private final Image next = new Image(HelloApplication.class.getResource("img/music/next-track.png").toExternalForm());
-    private final Image back = new Image(HelloApplication.class.getResource("img/music/previous.png").toExternalForm());
+    private final ImagePattern play = new ImagePattern(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/play.png")).toExternalForm()));
+    private final ImagePattern pause = new ImagePattern(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/pause.png")).toExternalForm()));
+    private final Image next = new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/next-track.png")).toExternalForm());
+    private final Image back = new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/music/previous.png")).toExternalForm());
 
 
     @FXML

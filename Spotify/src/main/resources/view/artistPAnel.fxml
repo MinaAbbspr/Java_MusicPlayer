@@ -57,17 +57,17 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="37.0" layoutY="309.0" prefHeight="146.0" prefWidth="256.0" spacing="15.0">
          <children>
-            <Label fx:id="lbl_followers" onMouseClicked="#followers" text="Followers">
+            <Label fx:id="lbl_followers" onMouseClicked="#followers" styleClass="hand-cursor" stylesheets="@hand_cursor.css" text="Followers">
                <font>
                   <Font name="Lucida Bright Demibold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lbl_statistics" onMouseClicked="#statistics" text="Views Statistics">
+            <Label fx:id="lbl_statistics" onMouseClicked="#statistics" styleClass="hand-cursor" stylesheets="@hand_cursor.css" text="Views Statistics">
                <font>
                   <Font name="Lucida Bright Demibold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lbl_publish" onMouseClicked="#publish" text="Publish">
+            <Label fx:id="lbl_publish" onMouseClicked="#publish" styleClass="hand-cursor" stylesheets="@hand_cursor.css" text="Publish">
                <font>
                   <Font name="Lucida Bright Demibold" size="14.0" />
                </font>

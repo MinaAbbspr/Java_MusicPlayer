@@ -2,7 +2,7 @@ package view.stables.artist;
 
 import controller.AudioController;
 import controller.StableController;
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,6 +23,7 @@ import view.View;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ArtistInfo implements Initializable {
@@ -48,10 +49,16 @@ public class ArtistInfo implements Initializable {
     @FXML
     void Follow(MouseEvent event) {
         if(View.getView().isLogin() && View.getView().isListener()){
-            ListenerController.getListenerController().followArtist(artistModel.getUserName());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("you Follow " + artistModel.getUserName());
-            alert.showAndWait();
+            try {
+                ListenerController.getListenerController().followArtist(artistModel.getUserName());
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("you Follow " + artistModel.getUserName());
+                alert.showAndWait();
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(e.getMessage());
+                alert.showAndWait();
+            }
         }
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -79,7 +86,7 @@ public class ArtistInfo implements Initializable {
         artistModel = View.getView().getArtistModel();
         lbl_bio.setText(View.getView().getArtistModel().getBio());
         lbl_username.setText(View.getView().getArtistModel().getUserName());
-        img.setImage(new Image(HelloApplication.class.getResource("img/account/Account.png").toExternalForm()));
+        img.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/account/Account.png")).toExternalForm()));
         root.setBackground(Background.fill(Color.WHITE));
         hBox.setBackground(Background.fill(Color.WHITE));
         hBoxFiller();

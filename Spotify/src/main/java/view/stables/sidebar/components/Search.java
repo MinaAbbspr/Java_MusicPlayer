@@ -1,7 +1,6 @@
 package view.stables.sidebar.components;
 
 import controller.AudioController;
-import controller.StableController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Search implements Initializable {
@@ -96,13 +96,13 @@ public class Search implements Initializable {
     }
     @FXML
     void playSort(ActionEvent event) {
-        btn_sort.setText("Play");
+        btn_sort.setText("play");
         sort = "play";
     }
     @FXML
     void sort(ActionEvent event) {
-        btn_sort.setText("sort");
-        sort = "sort";
+        btn_sort.setText("name");
+        sort = "name";
     }
 
     @FXML
@@ -115,7 +115,7 @@ public class Search implements Initializable {
             alert.showAndWait();
             return;
         }
-        List<AudioModel> list = StableController.getStableController().search(txtField.getText());
+        List<AudioModel> list = AudioController.getAudioController().search(txtField.getText());
         if(list.isEmpty()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Nothing found!");
@@ -152,9 +152,9 @@ public class Search implements Initializable {
     private List<AudioModel> sort(List<AudioModel> list) {
         List<AudioModel> sorted = list;
         switch (sort){
-            case "like" -> sorted = StableController.getStableController().likeSort(list);
-            case "play" -> sorted = StableController.getStableController().playSort(list);
-            case "sort" -> sorted = StableController.getStableController().sort(list);
+            case "like" -> sorted = AudioController.getAudioController().likeSort(list);
+            case "play" -> sorted = AudioController.getAudioController().playSort(list);
+            case "name" -> sorted = AudioController.getAudioController().sort(list);
         }
         return sorted;
     }
@@ -168,23 +168,23 @@ public class Search implements Initializable {
                 String[] day1 = dates[0].split("/");
                 String[] day2 = dates[1].split("/");
 
-                filtered = StableController.getStableController().twoDateFilter(list,
+                AudioController.getAudioController().twoDateFilter(list,
                         LocalDate.of(Integer.parseInt(day1[0]), Integer.parseInt(day1[1]), Integer.parseInt(day1[2])),
                         LocalDate.of(Integer.parseInt(day2[0]), Integer.parseInt(day2[1]), Integer.parseInt(day2[2])));
             }
             case "Date" -> {
                 String[] date = txt_filter.getText().split("/");
-                filtered = StableController.getStableController().dateFilter(list,
+                AudioController.getAudioController().dateFilter(list,
                         LocalDate.of(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2])));
             }
             case "genre" -> {
-                if(! StableController.getStableController().isGenre(txt_filter.getText()))
+                if(! AudioController.getAudioController().isGenre(txt_filter.getText()))
                     throw new Exception();
-                filtered = StableController.getStableController().genreFilter(list, txt_filter.getText());
+                list = AudioController.getAudioController().genreFilter(list, txt_filter.getText());
             }
-            case "artist" -> filtered = StableController.getStableController().artistFilter(list, txt_filter.getText());
+            case "artist" -> AudioController.getAudioController().artistFilter(list, txt_filter.getText());
         }
-        return filtered;
+        return list;
     }
     private void setVBox(List<AudioModel> list){
         int counter = 0;
@@ -202,7 +202,7 @@ public class Search implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sort = "none";
         filter = "none";
-        img_search.setImage(new Image(HelloApplication.class.getResource("img/header/search.png").toExternalForm()));
+        img_search.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/header/search.png")).toExternalForm()));
         root.setBackground(Background.fill(Color.WHITE));
         gridPane.setBackground(Background.fill(Color.WHITE));
     }

@@ -1,15 +1,18 @@
 package view.stables.header.components.signup;
 
-import controller.userType.Artist.type.PodcasterController;
-import controller.userType.Listener.type.FreeController;
+import controller.user.userType.artist.type.PodcasterController;
+import controller.user.userType.listener.ListenerController;
+import controller.user.userType.listener.type.FreeController;
+import exceptions.InvalidFormatException;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import model.exceptions.InvalidFormatException;
 import view.View;
 
 import java.net.URL;
@@ -18,67 +21,36 @@ import java.util.ResourceBundle;
 public class Signup implements Initializable {
 
     @FXML
-    private DatePicker LDatePicker;
+    private DatePicker DatePicker;
 
     @FXML
-    private DatePicker PDatePicker;
+    private Label lbl_bio;
 
     @FXML
-    private DatePicker SDatePicker;
+    private Label lbl_password;
 
     @FXML
-    private TextField txt_Lemail;
+    private TextField txt_bio;
 
     @FXML
-    private TextField txt_Lname;
+    private TextField txt_email;
 
     @FXML
-    private TextField txt_Lpassword;
+    private TextField txt_name;
 
     @FXML
-    private TextField txt_LphoneNumber;
+    private PasswordField txt_password;
 
     @FXML
-    private TextField txt_Lusername;
+    private TextField txt_phoneNumber;
 
     @FXML
-    private TextField txt_Pbio;
+    private TextField txt_username;
 
     @FXML
-    private TextField txt_Pemail;
+    private AnchorPane root;
 
-    @FXML
-    private TextField txt_Pname;
-
-    @FXML
-    private TextField txt_Ppassword;
-
-    @FXML
-    private TextField txt_PphoneNumber;
-
-    @FXML
-    private TextField txt_Pusername;
-
-    @FXML
-    private TextField txt_Sbio;
-
-    @FXML
-    private TextField txt_Semail;
-
-    @FXML
-    private TextField txt_Sname;
-
-    @FXML
-    private TextField txt_Spassword;
-
-    @FXML
-    private TextField txt_SphoneNumber;
-
-    @FXML
-    private TextField txt_Susername;
-
-    @FXML
-    private TabPane root;
+    private String signupType = null;
 
     private static Stage stage;
 
@@ -87,17 +59,31 @@ public class Signup implements Initializable {
     }
 
     @FXML
-    void listenerSignup(MouseEvent event) {
+    void signup(MouseEvent event) {
+        switch (signupType){
+            case "listener" -> listenerSignup();
+            case "singer" -> singerSignup();
+            case "podcaster" -> podcasterSignup();
+            case null ->{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Failed Signup");
+                alert.setContentText("choose Listener, Singer or Podcaster");
+                alert.showAndWait();
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + signupType);
+        }
+    }
+    private void listenerSignup() {
         try {
-            String answer = FreeController.getFreeController().signup(txt_Lusername.getText(), txt_Lpassword.getText(), txt_Lname.getText(),
-                    txt_Lemail.getText(), txt_LphoneNumber.getText(), LDatePicker.getValue(), "null");
+            String answer = FreeController.getFreeController().signup(txt_username.getText(), txt_password.getText(), txt_name.getText(),
+                    txt_email.getText(), txt_phoneNumber.getText(), DatePicker.getValue(), "null");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("successful Signup");
             alert.setContentText(answer);
             alert.showAndWait();
             stage.close();
-            FreeController.getFreeController().signupListener(txt_Lusername.getText(), txt_Lpassword.getText(),
-                    txt_Lname.getText(), txt_Lemail.getText(), txt_LphoneNumber.getText(), LDatePicker.getValue());
+            FreeController.getFreeController().signupListener(txt_username.getText(), txt_password.getText(),
+                    txt_name.getText(), txt_email.getText(), txt_phoneNumber.getText(), DatePicker.getValue());
             View.getView().showGenrePage();
         } catch (InvalidFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -115,19 +101,45 @@ public class Signup implements Initializable {
             alert.showAndWait();
         }
     }
-
-    @FXML
-    void podcasterSignup(MouseEvent event) {
+    private void podcasterSignup() {
         try {
-            String answer = FreeController.getFreeController().signup(txt_Pusername.getText(), txt_Ppassword.getText(), txt_Pname.getText(),
-                    txt_Pemail.getText(), txt_PphoneNumber.getText(), PDatePicker.getValue(), txt_Pbio.getText());
+            String answer = FreeController.getFreeController().signup(txt_username.getText(), txt_password.getText(), txt_name.getText(),
+                    txt_email.getText(), txt_phoneNumber.getText(), DatePicker.getValue(), txt_bio.getText());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("successful Signup");
             alert.setContentText(answer);
             alert.showAndWait();
             stage.close();
-            PodcasterController.getPodcasterController().signupArtist(txt_Pusername.getText(), txt_Ppassword.getText(), txt_Pname.getText(),
-                    txt_Pemail.getText(), txt_PphoneNumber.getText(), PDatePicker.getValue(), txt_Pbio.getText());
+            PodcasterController.getPodcasterController().signupArtist(txt_username.getText(), txt_password.getText(), txt_name.getText(),
+                    txt_email.getText(), txt_phoneNumber.getText(), DatePicker.getValue(), txt_bio.getText());
+            View.getView().showMainPage("home.fxml");
+        } catch (InvalidFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Failed Signup");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        } catch (NullPointerException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("empty filed");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
+    }
+    private void singerSignup() {
+        try {
+            String answer = FreeController.getFreeController().signup(txt_username.getText(), txt_password.getText(), txt_name.getText(),
+                    txt_email.getText(), txt_phoneNumber.getText(), DatePicker.getValue(), txt_bio.getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("successful Signup");
+            alert.setContentText(answer);
+            alert.showAndWait();
+            stage.close();
+            PodcasterController.getPodcasterController().signupArtist(txt_username.getText(), txt_password.getText(), txt_name.getText(),
+                    txt_email.getText(), txt_phoneNumber.getText(), DatePicker.getValue(), txt_bio.getText());
             View.getView().showMainPage("home.fxml");
         } catch (InvalidFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -147,33 +159,49 @@ public class Signup implements Initializable {
     }
 
     @FXML
-    void singerSignup(MouseEvent event) {
-        try {
-            String answer = FreeController.getFreeController().signup(txt_Susername.getText(), txt_Spassword.getText(), txt_Sname.getText(),
-                    txt_Semail.getText(), txt_SphoneNumber.getText(), SDatePicker.getValue(), txt_Sbio.getText());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("successful Signup");
-            alert.setContentText(answer);
-            alert.showAndWait();
-            stage.close();
-            PodcasterController.getPodcasterController().signupArtist(txt_Susername.getText(), txt_Spassword.getText(), txt_Sname.getText(),
-                    txt_Semail.getText(), txt_SphoneNumber.getText(), SDatePicker.getValue(), txt_Sbio.getText());
-            View.getView().showMainPage("home.fxml");
-        } catch (InvalidFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Failed Signup");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
-        } catch (NullPointerException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("empty filed");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
-        }catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+    void checkPassword(KeyEvent event) {
+        int score = ListenerController.getListenerController().checkPassword(txt_password.getText());
+
+        switch (score) {
+            case 1 -> {
+                lbl_password.setText("Very Weak");
+                lbl_password.setTextFill(Color.RED);
+            }
+            case 2, 3 -> {
+                lbl_password.setText("Weak");
+                lbl_password.setTextFill(Color.ORANGE);
+            }
+            case 4 -> {
+                lbl_password.setText("Good");
+                lbl_password.setTextFill(Color.YELLOWGREEN);
+            }
+            case 5 -> {
+                lbl_password.setText("Strong");
+                lbl_password.setTextFill(Color.GREEN);
+            }
         }
+
+    }
+
+    @FXML
+    void listener(MouseEvent event) {
+        signupType = "listener";
+        txt_bio.setVisible(false);
+        lbl_bio.setVisible(false);
+    }
+
+    @FXML
+    void podcaster(MouseEvent event) {
+        signupType = "podcaster";
+        txt_bio.setVisible(true);
+        lbl_bio.setVisible(true);
+    }
+
+    @FXML
+    void singer(MouseEvent event) {
+        signupType = "singer";
+        txt_bio.setVisible(true);
+        lbl_bio.setVisible(true);
     }
 
     @Override

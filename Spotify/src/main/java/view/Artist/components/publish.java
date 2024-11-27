@@ -1,6 +1,6 @@
 package view.artist.components;
 
-import controller.userType.Artist.ArtistController;
+import controller.user.userType.artist.ArtistController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -14,6 +14,7 @@ import javafx.scene.paint.Color;
 import view.HelloApplication;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Publish implements Initializable {
@@ -63,14 +64,6 @@ public class Publish implements Initializable {
 
     @FXML
     void publish(MouseEvent event) {
-        if(txt_name.getText().isEmpty() || txt_link.getText().isEmpty() || txt_cover.getText().isEmpty() || txt_lyrics.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Empty Field");
-            alert.setContentText("write all information");
-            alert.showAndWait();
-            return;
-        }
-
         try {
             if(!checkGenre()){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -86,12 +79,20 @@ public class Publish implements Initializable {
             alert.showAndWait();
             return;
         }
-        ArtistController.getArtistController().publishing(txt_name.getText(),genre,txt_lyrics.getText(),txt_link.getText(),
-                HelloApplication.class.getResource(txt_cover.getText()).toExternalForm());
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Successfully");
-        alert.setContentText("Audio Published Successfully");
-        alert.showAndWait();
+
+        try {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Successfully");
+            alert.setContentText(ArtistController.getArtistController().publishing(txt_name.getText(),genre,txt_lyrics.getText(),txt_link.getText(),
+                    Objects.requireNonNull(HelloApplication.class.getResource(txt_cover.getText())).toExternalForm()));
+            alert.showAndWait();
+        }catch (NullPointerException exception){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Empty Field");
+            alert.setContentText(exception.getMessage());
+            alert.showAndWait();
+        }
+
     }
 
     private boolean checkGenre(){

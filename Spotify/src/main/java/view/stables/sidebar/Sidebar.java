@@ -8,18 +8,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import model.user.type.AdminModel;
 import view.HelloApplication;
 import view.View;
-import view.stables.GeneralOperationSidebar;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class Sidebar implements Initializable, GeneralOperationSidebar {
+public class Sidebar implements Initializable {
 
     @FXML
     private ImageView img_artist;
@@ -79,18 +78,17 @@ public class Sidebar implements Initializable, GeneralOperationSidebar {
     }
 
     @FXML
-    @Override
     public void search(MouseEvent event) throws IOException {
         View.getView().showMainPage("search.fxml");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        img_home.setImage(new Image(HelloApplication.class.getResource("img/sidebar/home.png").toExternalForm()));
-        img_search.setImage(new Image(HelloApplication.class.getResource("img/sidebar/loupe.png").toExternalForm()));
-        img_library.setImage(new Image(HelloApplication.class.getResource("img/sidebar/books.png").toExternalForm()));
-        img_artist.setImage(new Image(HelloApplication.class.getResource("img/sidebar/microphone.png").toExternalForm()));
-        img_audio.setImage(new Image(HelloApplication.class.getResource("img/sidebar/music (1).png").toExternalForm()));
+        img_home.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/sidebar/home.png")).toExternalForm()));
+        img_search.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/sidebar/loupe.png")).toExternalForm()));
+        img_library.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/sidebar/books.png")).toExternalForm()));
+        img_artist.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/sidebar/microphone.png")).toExternalForm()));
+        img_audio.setImage(new Image(Objects.requireNonNull(HelloApplication.class.getResource("img/sidebar/music (1).png")).toExternalForm()));
         root.setBackground(Background.fill(Color.rgb(7, 25, 82)));
     }
 }

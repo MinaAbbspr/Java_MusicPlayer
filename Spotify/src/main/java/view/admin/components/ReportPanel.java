@@ -1,6 +1,6 @@
 package view.admin.components;
 
-import controller.userType.AdminController;
+import controller.user.userType.AdminController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;

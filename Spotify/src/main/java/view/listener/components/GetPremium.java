@@ -1,6 +1,6 @@
 package view.listener.components;
 
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,7 +12,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Subscription;
-import model.exceptions.NotEnoughBalanceException;
+import exceptions.NotEnoughBalanceException;
 import model.user.type.listener.ListenerModel;
 import view.View;
 

@@ -1,12 +1,10 @@
 package view.admin;
 
-import controller.StableController;
+import controller.AudioController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -48,7 +46,7 @@ public class AdminPanel implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         XYChart.Series<String,Integer> series = new XYChart.Series<>();
-        List<AudioModel> audios = StableController.getStableController().likeSort(Database.getDatabase().getAudios());
+        List<AudioModel> audios = AudioController.getAudioController().likeSort(Database.getDatabase().getAudios());
         for(AudioModel audioModel : audios){
             series.getData().add(new XYChart.Data<>(audioModel.getAudioName(), audioModel.getNumberOfLikes()));
         }

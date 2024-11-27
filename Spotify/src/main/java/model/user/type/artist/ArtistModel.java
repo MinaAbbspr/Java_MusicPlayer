@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ArtistModel extends UserAccountModel {
     private double income;
-    private ArrayList <UserAccountModel> followers;
+    private final ArrayList <UserAccountModel> followers;
     private String bio;
 
     public ArtistModel(String userName, String password, String name, String email, String phoneNumber, LocalDate birthDate, String bio) {

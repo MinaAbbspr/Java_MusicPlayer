@@ -1,15 +1,21 @@
 package view.stables.header.components.signup;
 
-import controller.userType.Listener.type.FreeController;
+import controller.user.userType.listener.type.FreeController;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class Genre {
+public class Genre implements Initializable {
 
     @FXML
     private CheckBox checkB_country;
@@ -37,6 +43,9 @@ public class Genre {
 
     @FXML
     private CheckBox checkB_trueCrime;
+
+    @FXML
+    private AnchorPane root;
 
     private static Stage stage;
 
@@ -89,5 +98,10 @@ public class Genre {
         alert.setContentText("Genres saved successfully");
         alert.showAndWait();
         stage.close();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        root.setBackground(Background.fill(Color.rgb(202, 244, 255)));
     }
 }

@@ -1,8 +1,7 @@
 package view.stables.sidebar.components;
 
 import controller.AudioController;
-import controller.StableController;
-import controller.userType.Listener.ListenerController;
+import controller.user.userType.listener.ListenerController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,7 +28,7 @@ public class Home implements Initializable {
             setVBox(ListenerController.getListenerController().getSuggestion());
         }
         else{
-            setVBox(StableController.getStableController().likeSort(Database.getDatabase().getAudios()));
+            setVBox(AudioController.getAudioController().likeSort(Database.getDatabase().getAudios()));
         }
         gridPane.setBackground(Background.fill(Color.WHITE));
     }
@@ -44,7 +43,7 @@ public class Home implements Initializable {
                 throw new RuntimeException(e);
             }
 
-            if(counter == StableController.getStableController().getMaxLength()) break;
+            if(counter == AudioController.getAudioController().getMaxLength()) break;
         }
     }
 }
